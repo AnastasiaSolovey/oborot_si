@@ -30,7 +30,8 @@ namespace Oborot_SI
         {
             this.Hide();
             measuringInstrument F = new measuringInstrument();
-            F.Show();
+            F.ShowDialog();
+            this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -87,7 +88,11 @@ namespace Oborot_SI
             if (dialog == DialogResult.Yes)
             {
 
-                Application.Exit();
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
     }
