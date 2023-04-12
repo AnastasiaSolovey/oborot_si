@@ -40,7 +40,6 @@
             this.inventoryBox = new System.Windows.Forms.TextBox();
             this.factoryBox = new System.Windows.Forms.TextBox();
             this.factoryLabel = new System.Windows.Forms.Label();
-            this.etalonButton = new System.Windows.Forms.RadioButton();
             this.etalonLabel = new System.Windows.Forms.Label();
             this.belongLabel = new System.Windows.Forms.Label();
             this.belongBox = new System.Windows.Forms.ComboBox();
@@ -70,6 +69,7 @@
             this.Search_Button = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
+            this.EtalonStatusCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.measuringsGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,20 +190,6 @@
             this.factoryLabel.Size = new System.Drawing.Size(170, 24);
             this.factoryLabel.TabIndex = 11;
             this.factoryLabel.Text = "Заводской номер";
-            // 
-            // etalonButton
-            // 
-            this.etalonButton.AutoSize = true;
-            this.etalonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.etalonButton.Location = new System.Drawing.Point(262, 388);
-            this.etalonButton.Margin = new System.Windows.Forms.Padding(2);
-            this.etalonButton.Name = "etalonButton";
-            this.etalonButton.Size = new System.Drawing.Size(52, 28);
-            this.etalonButton.TabIndex = 12;
-            this.etalonButton.TabStop = true;
-            this.etalonButton.Text = "Да";
-            this.etalonButton.UseVisualStyleBackColor = true;
-            this.etalonButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // etalonLabel
             // 
@@ -497,6 +483,17 @@
             this.updateButton.Text = "Обновить данные";
             this.updateButton.UseVisualStyleBackColor = true;
             // 
+            // EtalonStatusCheckBox
+            // 
+            this.EtalonStatusCheckBox.AutoSize = true;
+            this.EtalonStatusCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.EtalonStatusCheckBox.Location = new System.Drawing.Point(262, 388);
+            this.EtalonStatusCheckBox.Name = "EtalonStatusCheckBox";
+            this.EtalonStatusCheckBox.Size = new System.Drawing.Size(53, 28);
+            this.EtalonStatusCheckBox.TabIndex = 33;
+            this.EtalonStatusCheckBox.Text = "Да";
+            this.EtalonStatusCheckBox.UseVisualStyleBackColor = true;
+            // 
             // measuringInstrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +501,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1240, 757);
+            this.Controls.Add(this.EtalonStatusCheckBox);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.Search_Button);
@@ -521,7 +519,6 @@
             this.Controls.Add(this.belongLabel);
             this.Controls.Add(this.belongBox);
             this.Controls.Add(this.etalonLabel);
-            this.Controls.Add(this.etalonButton);
             this.Controls.Add(this.factoryLabel);
             this.Controls.Add(this.factoryBox);
             this.Controls.Add(this.inventoryBox);
@@ -558,7 +555,6 @@
         private System.Windows.Forms.TextBox inventoryBox;
         private System.Windows.Forms.TextBox factoryBox;
         private System.Windows.Forms.Label factoryLabel;
-        private System.Windows.Forms.RadioButton etalonButton;
         private System.Windows.Forms.Label etalonLabel;
         private System.Windows.Forms.Label belongLabel;
         private System.Windows.Forms.ComboBox belongBox;
@@ -588,5 +584,6 @@
         private System.Windows.Forms.Button Search_Button;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.CheckBox EtalonStatusCheckBox;
     }
 }

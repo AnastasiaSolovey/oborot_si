@@ -51,7 +51,7 @@ namespace Oborot_SI
 
         private void LoadDate()
         {
-            BD ConnDB = new BD();
+           /* BD ConnDB = new BD();
             ConnDB.openConnection();
             string request = "Select id_si, naimenovanie, tip, firma, diapazon, invent_nomer, zavod_nomer,etalon,sostoyanie,komplectacia,opisanie,prinadlejnost From si_card Order By naimenovanie";
             MySqlCommand Reader = new MySqlCommand(request, ConnDB.getConnection());
@@ -78,9 +78,24 @@ namespace Oborot_SI
             reader.Close();
             ConnDB.CloseConnection();
             foreach (string[] s in data)
-                measuringsGridView.Rows.Add(s);
+                measuringsGridView.Rows.Add(s);*/
 
         }
+
+        private void InitNameBox()
+        {
+            nameBox.DataSource = Program.DbHelper.GetInstrumentNames();
+            nameBox.DisplayMember = "Name";
+            nameBox.ValueMember = "ID";
+        }
+
+        /*private void InitCondititonBox()
+        {
+            nameBox.DataSource = Program.DbHelper.GetInstrumentNames();
+            nameBox.DisplayMember = "Name";
+            nameBox.ValueMember = "ID";
+        }*/
+
         private void Card_si_Load(object sender, EventArgs e)
         {
             DataTable Naimen = new DataTable();
@@ -90,12 +105,14 @@ namespace Oborot_SI
             MySqlCommand Nado1 = new MySqlCommand(request1, ConnDB1.getConnection());
             ConnDB1.getConnection();
             MySqlDataAdapter sqlData = new MySqlDataAdapter(Nado1);
-            sqlData.Fill(Naimen);
-            for (int i = 0; i < Naimen.Rows.Count; i++)
+            //sqlData.Fill(Naimen);
+            /*for (int i = 0; i < Naimen.Rows.Count; i++)
             {
                 nameBox.Items.Add(Naimen.Rows[i]["naimenovanie"].ToString());
 
-            }
+            }*/
+
+            InitNameBox();
 
             DataTable Sostoyanie = new DataTable();
             BD ConnDB2 = new BD();
@@ -104,7 +121,7 @@ namespace Oborot_SI
             MySqlCommand Nado2 = new MySqlCommand(request2, ConnDB2.getConnection());
             ConnDB2.getConnection();
             MySqlDataAdapter sqlData2 = new MySqlDataAdapter(Nado2);
-            sqlData2.Fill(Sostoyanie);
+            //sqlData2.Fill(Sostoyanie);
             for (int i = 0; i < Sostoyanie.Rows.Count; i++)
             {
                 conditionBox.Items.Add(Sostoyanie.Rows[i]["sostoyanie"].ToString());
@@ -119,7 +136,7 @@ namespace Oborot_SI
             MySqlCommand Nado3 = new MySqlCommand(request3, ConnDB3.getConnection());
             ConnDB3.getConnection();
             MySqlDataAdapter sqlData3 = new MySqlDataAdapter(Nado3);
-            sqlData3.Fill(Prinadl);
+            //sqlData3.Fill(Prinadl);
             for (int i = 0; i < Prinadl.Rows.Count; i++)
             {
                 belongBox.Items.Add(Prinadl.Rows[i]["prinadlejnost"].ToString());
@@ -228,12 +245,35 @@ namespace Oborot_SI
             else
                 MessageBox.Show("Все обязательные поля должны быть заполнены!");*/
 
-            measuring_instrument MeasuringInstrument = new measuring_instrument(nameBox.Text, typeBox.Text, manufacturerBox.Text, rangeBox.Text, inventoryBox.Text, factoryBox.Text, isEtalon, conditionBox.Text, equipmentBox.Text, belongBox.Text);
-            int id_measuring_instrument = MeasuringInstrument.CreateExampleClass(nameBox.Text, typeBox.Text, manufacturerBox.Text, rangeBox.Text, inventoryBox.Text, factoryBox.Text, isEtalon, conditionBox.Text, equipmentBox.Text, belongBox.Text);
-            if (id_measuring_instrument != 0)
+            //MeasuringInstrument MeasuringInstrument = new MeasuringInstrument
+            //    (nameBox.Text, typeBox.Text, manufacturerBox.Text, rangeBox.Text, inventoryBox.Text, factoryBox.Text, isEtalon, conditionBox.Text, equipmentBox.Text, belongBox.Text);
+            //int id_measuring_instrument = MeasuringInstrument.CreateExampleClass
+            //(nameBox.Text, typeBox.Text, manufacturerBox.Text, rangeBox.Text, inventoryBox.Text, factoryBox.Text, isEtalon, conditionBox.Text, equipmentBox.Text, belongBox.Text);
+
+            MeasuringInstrument instrument = new MeasuringInstrument()
+            {
+                InstrumentNameReferenceID = Convert.ToInt32(nameBox.SelectedValue),
+                Type = typeBox.Text,
+                Manufacturer = manufacturerBox.Text,
+                MeasuringRange = rangeBox.Text,
+                InventoryNumber = inventoryBox.Text,
+                FactoryNumber = factoryBox.Text,
+                Etalon = EtalonStatusCheckBox.Checked,
+                ConditionReferenceId = 1,
+                Equipment = equipmentBox.Text,
+                BelongsToReferenceID = 1
+            };
+
+            if(instrument.Create())
             {
                 MessageBox.Show("Средство измерения было добавлено в Базу данных");
+                this.DialogResult = DialogResult.OK;
             }
+
+            /*if (id_measuring_instrument != 0)
+            {
+                
+            }*/
         }
 
         private void Update_Button_Click(object sender, EventArgs e)
@@ -340,9 +380,9 @@ namespace Oborot_SI
 
                         if (sqlData1[0].ToString() == "True")
                         {
-                            etalonButton.Checked = true;
+                            EtalonStatusCheckBox.Checked = true;
                         }
-                        else etalonButton.Checked = false;
+                        else EtalonStatusCheckBox.Checked = false;
                     }
                     conditionBox.Text = sqlDataReader[6].ToString();
                     equipmentBox.Text = sqlDataReader[7].ToString();
@@ -367,7 +407,7 @@ namespace Oborot_SI
             rangeBox.Clear();
             inventoryBox.Text = "0";
             factoryBox.Text = "0";
-            etalonButton.Checked = false;
+            EtalonStatusCheckBox.Checked = false;
             equipmentBox.Clear();
             descriptionBox.Clear();
 
@@ -375,9 +415,9 @@ namespace Oborot_SI
 
         private void measuringInstrument_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             mainMenu F = new mainMenu();
-            F.Show();
+            F.Show();*/
         }
     }
 }

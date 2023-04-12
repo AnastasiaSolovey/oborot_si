@@ -4,14 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Avionika_Si.Helpers;
 
 namespace Avionika_Si
 {
     internal static class Program
     {
+        public static DatabaseHelper DbHelper = new DatabaseHelper();
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
+        /// 
         [STAThread]
         static void Main()
         {
