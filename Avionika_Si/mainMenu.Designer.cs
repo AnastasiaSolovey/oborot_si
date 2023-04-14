@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class mainMenu
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.measuringButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.mainmenuLabel = new System.Windows.Forms.Label();
@@ -143,7 +143,7 @@
             this.certificateButton.UseVisualStyleBackColor = true;
             this.certificateButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // mainMenu
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,7 +159,7 @@
             this.Controls.Add(this.measuringButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "mainMenu";
+            this.Name = "MainMenu";
             this.Text = "Главное меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainMenu_FormClosing);
             this.Load += new System.EventHandler(this.MainMenu_Load);

@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class scheduleView
+    partial class ScheduleView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scheduleView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleView));
             this.invent_Box = new System.Windows.Forms.TextBox();
             this.zavod_Box = new System.Windows.Forms.TextBox();
             this.backButton = new System.Windows.Forms.Button();
@@ -254,7 +254,7 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "ПАСПОРТ";
             // 
-            // scheduleView
+            // ScheduleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -271,7 +271,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "scheduleView";
+            this.Name = "ScheduleView";
             this.Text = "Просмотр графика";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.scheduleView_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGridView)).EndInit();

@@ -21,11 +21,14 @@ namespace Avionika_Si.Models
         public string InventoryNumber { get; set; }
         public string FactoryNumber { get; set; }
         public bool Etalon { get; set; }
-        public int ConditionReferenceId{ get; set; }
+        public int ConditionReferenceId { get; set; }
         public string Equipment { get; set; }
         public string Description { get; set; }
         public int BelongsToReferenceID { get; set; }
         public InstrumentName InstName { get; set; }
+        public Condition Cond { get; set; }
+        public BelongTo Belongs { get; set; }
+
 
         public MeasuringInstrument()
         {
@@ -48,6 +51,8 @@ namespace Avionika_Si.Models
             BelongsToReferenceID = DB.DataConverter.Convert<int>(input["id_belong_to"]);
 
             Program.DbHelper.GetInstrumentNameById(InstrumentNameReferenceID);
+            Program.DbHelper.GetConditionById(ConditionReferenceId);
+            Program.DbHelper.GetBelongToById(BelongsToReferenceID);
         }
 
         public MeasuringInstrument(string login, DateTime date, DateTime startTime, DateTime endTime, string comment, int ownerProblemID, bool lunchBreakFlag)
@@ -60,6 +65,11 @@ namespace Avionika_Si.Models
             return Program.DbHelper.CreateMeasuringInstrument(this);
         }
 
+    
+        public bool Update()
+        {
+            return Program.DbHelper.UpdateInstrument(this);
+        }
 
     }
 }

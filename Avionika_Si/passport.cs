@@ -38,7 +38,7 @@ namespace Oborot_SI
         {
    
                 this.Hide();
-                mainMenu F = new mainMenu();
+                MainMenu F = new MainMenu();
                 F.Show();
 
         }
@@ -81,7 +81,7 @@ namespace Oborot_SI
         private void passport_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            mainMenu F = new mainMenu();
+            MainMenu F = new MainMenu();
             F.Show();
         }
     }

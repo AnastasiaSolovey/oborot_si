@@ -85,89 +85,100 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="certificate.cs">
+    <Compile Include="Certificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="certificate.Designer.cs">
-      <DependentUpon>certificate.cs</DependentUpon>
+    <Compile Include="Certificate.Designer.cs">
+      <DependentUpon>Certificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="authorization.cs">
+    <Compile Include="Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="authorization.Designer.cs">
-      <DependentUpon>authorization.cs</DependentUpon>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
     <Compile Include="BD.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
-    <Compile Include="measuringInstrument.cs">
+    <Compile Include="MeasuringInstrument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="measuringInstrument.Designer.cs">
-      <DependentUpon>measuringInstrument.cs</DependentUpon>
+    <Compile Include="MeasuringInstrument.Designer.cs">
+      <DependentUpon>MeasuringInstrument.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BelongTo.cs" />
+    <Compile Include="Models\Conclusion.cs" />
+    <Compile Include="Models\Condition.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeData.cs" />
     <Compile Include="Models\InstrumentName.cs" />
+    <Compile Include="Models\Journal.cs" />
     <Compile Include="Models\MeasuringInstrument.cs" />
-    <Compile Include="schedule.cs">
+    <Compile Include="Models\Protocol.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\TypeWork.cs" />
+    <Compile Include="Models\Venue.cs" />
+    <Compile Include="Schedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="schedule.Designer.cs">
-      <DependentUpon>schedule.cs</DependentUpon>
+    <Compile Include="Schedule.Designer.cs">
+      <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="scheduleView.cs">
+    <Compile Include="ScheduleView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="scheduleView.Designer.cs">
-      <DependentUpon>scheduleView.cs</DependentUpon>
+    <Compile Include="ScheduleView.Designer.cs">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="journal.cs">
+    <Compile Include="Journal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="journal.Designer.cs">
-      <DependentUpon>journal.cs</DependentUpon>
+    <Compile Include="Journal.Designer.cs">
+      <DependentUpon>Journal.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainMenu.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainMenu.Designer.cs">
-      <DependentUpon>mainMenu.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="passport.cs">
+    <Compile Include="Passport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="passport.Designer.cs">
-      <DependentUpon>passport.cs</DependentUpon>
+    <Compile Include="Passport.Designer.cs">
+      <DependentUpon>Passport.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="protocol.cs">
+    <Compile Include="Protocol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="protocol.Designer.cs">
-      <DependentUpon>protocol.cs</DependentUpon>
+    <Compile Include="Protocol.Designer.cs">
+      <DependentUpon>Protocol.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="certificate.resx">
-      <DependentUpon>certificate.cs</DependentUpon>
+    <EmbeddedResource Include="Certificate.resx">
+      <DependentUpon>Certificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="authorization.resx">
-      <DependentUpon>authorization.cs</DependentUpon>
+    <EmbeddedResource Include="Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="measuringInstrument.resx">
-      <DependentUpon>measuringInstrument.cs</DependentUpon>
+    <EmbeddedResource Include="MeasuringInstrument.resx">
+      <DependentUpon>MeasuringInstrument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="schedule.resx">
-      <DependentUpon>schedule.cs</DependentUpon>
+    <EmbeddedResource Include="Schedule.resx">
+      <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="scheduleView.resx">
-      <DependentUpon>scheduleView.cs</DependentUpon>
+    <EmbeddedResource Include="ScheduleView.resx">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="journal.resx">
-      <DependentUpon>journal.cs</DependentUpon>
+    <EmbeddedResource Include="Journal.resx">
+      <DependentUpon>Journal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainMenu.resx">
-      <DependentUpon>mainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="passport.resx">
-      <DependentUpon>passport.cs</DependentUpon>
+    <EmbeddedResource Include="Passport.resx">
+      <DependentUpon>Passport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,8 +189,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="protocol.resx">
-      <DependentUpon>protocol.cs</DependentUpon>
+    <EmbeddedResource Include="Protocol.resx">
+      <DependentUpon>Protocol.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

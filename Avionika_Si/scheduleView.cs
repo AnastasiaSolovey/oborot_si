@@ -13,9 +13,9 @@ using Avionika_Si;
 
 namespace Oborot_SI
 {
-    public partial class scheduleView : Form
+    public partial class ScheduleView : Form
     {
-        public scheduleView()
+        public ScheduleView()
         {
             InitializeComponent();
             LoadDate();
@@ -95,14 +95,14 @@ namespace Oborot_SI
         {
 
                 this.Hide();
-                mainMenu F = new mainMenu();
+                MainMenu F = new MainMenu();
                 F.Show();
         }
 
         private void scheduleView_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            mainMenu F = new mainMenu();
+            MainMenu F = new MainMenu();
             F.Show();
         }
     }

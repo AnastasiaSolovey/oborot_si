@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class journal
+    partial class Journal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(journal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Journal));
             this.factoryLabel = new System.Windows.Forms.Label();
             this.factoryBox = new System.Windows.Forms.TextBox();
             this.inventoryBox = new System.Windows.Forms.TextBox();
@@ -241,7 +241,7 @@
             this.idBox.TabIndex = 34;
             this.idBox.Text = "0";
             // 
-            // journal
+            // Journal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -265,7 +265,7 @@
             this.Controls.Add(this.inventoryLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "journal";
+            this.Name = "Journal";
             this.Text = "Заполнение журнала";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.journal_FormClosing);
             this.Load += new System.EventHandler(this.Journal_Load);

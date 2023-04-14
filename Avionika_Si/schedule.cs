@@ -13,9 +13,9 @@ using Avionika_Si;
 
 namespace Oborot_SI
 {
-    public partial class schedule : Form
+    public partial class Schedule : Form
     {
-        public schedule()
+        public Schedule()
         {
             InitializeComponent();
             Width = Screen.PrimaryScreen.Bounds.Width;
@@ -73,8 +73,8 @@ namespace Oborot_SI
                     var newdata = DateTime.Parse(sqlDataReader[0].ToString());
                     if (!string.IsNullOrEmpty(frequencyBox.Text) && !string.IsNullOrWhiteSpace(frequencyBox.Text))
                     {
-                        authorization.periodichnost = Convert.ToInt32(frequencyBox.Text);
-                        newdata= newdata.AddMonths(authorization.periodichnost);
+                        Authorization.periodichnost = Convert.ToInt32(frequencyBox.Text);
+                        newdata= newdata.AddMonths(Authorization.periodichnost);
                         newdata = newdata.AddDays(-1);
                         newDateBox.Text = newdata.ToString();
                         oldVenueBox.Visible = true;
@@ -96,7 +96,7 @@ namespace Oborot_SI
         {
 
                 this.Hide();
-                mainMenu F = new mainMenu();
+                MainMenu F = new MainMenu();
                 F.Show();
         }
 
@@ -123,10 +123,10 @@ namespace Oborot_SI
                 sqlData1.Read();
                 if (sqlData1.HasRows)
                 {
-                    authorization.ID_SI = Convert.ToInt32(sqlData1[0].ToString());
+                    Authorization.ID_SI = Convert.ToInt32(sqlData1[0].ToString());
                 }
                 else MessageBox.Show("Такого СИ нет в базе данных");
-                Komand.Parameters.Add("@id_si", MySqlDbType.Int64).Value = authorization.ID_SI;
+                Komand.Parameters.Add("@id_si", MySqlDbType.Int64).Value = Authorization.ID_SI;
                 Komand.Parameters.Add("@periodichnost", MySqlDbType.VarChar).Value = frequencyBox.Text;
                 Komand.Parameters.Add("@mesto_proved_old", MySqlDbType.VarChar).Value = oldVenueBox.Text;
                 Komand.Parameters.Add("@data", MySqlDbType.Date).Value = newDateBox.Value.Date;
@@ -163,7 +163,7 @@ namespace Oborot_SI
             if (dialog == DialogResult.Yes)
             {
                 this.Hide();
-                scheduleView F = new scheduleView();
+                ScheduleView F = new ScheduleView();
                 F.Show();
             }
         }
@@ -171,7 +171,7 @@ namespace Oborot_SI
         private void schedule_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            mainMenu F = new mainMenu();
+            MainMenu F = new MainMenu();
             F.Show();
         }
     }

@@ -26,7 +26,7 @@ namespace Oborot_SI
         {
 
                 this.Hide();
-                mainMenu F = new mainMenu();
+                MainMenu F = new MainMenu();
                 F.Show();
 
         }
@@ -96,10 +96,10 @@ namespace Oborot_SI
                     sqlData1.Read();
                     if (sqlData1.HasRows)
                     {
-                        authorization.ID_SI = Convert.ToInt32(sqlData1[0].ToString());
+                        Authorization.ID_SI = Convert.ToInt32(sqlData1[0].ToString());
                     }
                     else MessageBox.Show("Такого СИ нет в базе данных");
-                    Komand.Parameters.Add("@id_si", MySqlDbType.Int64).Value = authorization.ID_SI;
+                    Komand.Parameters.Add("@id_si", MySqlDbType.Int64).Value = Authorization.ID_SI;
                     Komand.Parameters.Add("@primechanie", MySqlDbType.VarChar).Value = descriptionBox.Text;
                     Komand.Parameters.Add("@id_sotrudnik", MySqlDbType.VarChar).Value = employeeBox.Text;
 
@@ -135,7 +135,7 @@ namespace Oborot_SI
         private void protocol_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            mainMenu F = new mainMenu();
+            MainMenu F = new MainMenu();
             F.Show();
         }
     }

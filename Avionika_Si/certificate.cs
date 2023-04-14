@@ -16,14 +16,14 @@ using Avionika_Si;
 
 namespace Oborot_SI
 {
-    public partial class certificate : Form
+    public partial class Certificate : Form
     {
 
         public Word.Application wordApp = new Word.Application();
         Word.Document document2;
         Object typeTrue = true;
 
-        public certificate()
+        public Certificate()
         {
             InitializeComponent();
             Width = Screen.PrimaryScreen.Bounds.Width;
@@ -74,7 +74,7 @@ namespace Oborot_SI
         private void Back_Button_Click(object sender, EventArgs e)
         {
                 this.Hide();
-                mainMenu F = new mainMenu();
+                MainMenu F = new MainMenu();
                 F.Show();
 
         }
@@ -238,7 +238,7 @@ namespace Oborot_SI
         private void certificate_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            mainMenu F = new mainMenu();
+            MainMenu F = new MainMenu();
             F.Show();
         }
     }

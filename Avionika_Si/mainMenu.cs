@@ -12,14 +12,14 @@ using MySql.Data.MySqlClient;
 
 namespace Oborot_SI
 {
-    public partial class mainMenu : Form
+    public partial class MainMenu : Form
     {
         private void MainMenu_Load(object sender, EventArgs e)
         {
 
 
         }
-        public mainMenu()
+        public MainMenu()
         {
             InitializeComponent();
             Width = Screen.PrimaryScreen.Bounds.Width;
@@ -29,20 +29,14 @@ namespace Oborot_SI
         private void Card_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            measuringInstrument F = new measuringInstrument();
+            MeasuringInstrument F = new MeasuringInstrument();
             F.ShowDialog();
             this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Вы уверены, что хотите выйти из приложения?", "", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
-
-                Application.Exit();
-            }
-
+            Environment.Exit(0);
         }
 
         private void toPasp_Button_Click(object sender, EventArgs e)
@@ -56,14 +50,14 @@ namespace Oborot_SI
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            schedule F = new schedule();
+            Schedule F = new Schedule();
             F.Show();
         }
 
         private void Journal_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            journal F = new journal();
+            Journal F = new Journal();
             F.Show();
         }
 
@@ -78,22 +72,22 @@ namespace Oborot_SI
         {
 
             this.Hide();
-            certificate F = new certificate();
+            Certificate F = new Certificate();
             F.Show();
         }
 
         private void mainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Вы уверены, что хотите выйти из приложения?", "", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
+           // DialogResult dialog = MessageBox.Show("Вы уверены, что хотите выйти из приложения?", "", MessageBoxButtons.YesNo);
+           //if (dialog == DialogResult.Yes)
+           // {
 
                 Environment.Exit(0);
-            }
-            else
-            {
-                e.Cancel = true;
-            }
+           // }
+           //else
+           // {
+           //    e.Cancel = true;
+           // }
         }
     }
 }

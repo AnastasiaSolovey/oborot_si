@@ -15,16 +15,14 @@ using static Mysqlx.Expect.Open.Types.Condition.Types;
 
 namespace Oborot_SI
 {
-    public partial class authorization : Form
+    public partial class Authorization : Form
     {
-        private string connectionString = "server=avitube;user id=example;password=example;charset=utf8;persistsecurityinfo=True;database=example;allowuservariables=True";
-        private IDatabaseAdapter DatabaseAdapter;
-        public authorization()
+
+        public Authorization()
         {
             InitializeComponent();
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
-            DatabaseAdapter = new MySqlAdapter(connectionString);
         }
         public static string Role = "";
         public int Attestacia;
@@ -63,7 +61,7 @@ namespace Oborot_SI
                         {
                             Role = sqlData[0].ToString();
                             this.Hide();
-                            mainMenu F = new mainMenu();
+                            MainMenu F = new MainMenu();
                             F.Show();
                         }
                         else

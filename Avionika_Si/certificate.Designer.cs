@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class certificate
+    partial class Certificate
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(certificate));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Certificate));
             this.attestatLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.factoryLabel = new System.Windows.Forms.Label();
@@ -316,7 +316,7 @@
             this.protocolLabel.Text = "№Протокола";
             this.protocolLabel.Click += new System.EventHandler(this.label9_Click);
             // 
-            // certificate
+            // Certificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -344,7 +344,7 @@
             this.Controls.Add(this.attestatLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "certificate";
+            this.Name = "Certificate";
             this.Text = "Создание аттестата";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.certificate_FormClosing);
             this.Load += new System.EventHandler(this.Attestat_Load);
