@@ -162,13 +162,12 @@ namespace Avionika_Si.Helpers
                 $"`journal`.`id_type_work " +
                 $"FROM `oborot_si`.`journal`; ");
         }
-        public Models.Journal GetLastIdJournalQuery()
+        public int GetLastIdJournalQuery()
         {
-            return DatabaseAdapter.GetObjectDataByQuery<Models.Journal>
+            return DatabaseAdapter.GetScalarQuery<int>
             ($"SELECT `journal`.`id_journal` " +
             $"FROM `journal` " +
             $"ORDER BY `id_journal` DESC LIMIT 1");
-
         }
 
         public TypeWork GetTypeWorkById(int id_type_work)
