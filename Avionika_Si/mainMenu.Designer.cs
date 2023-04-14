@@ -69,12 +69,11 @@
             // 
             this.mainmenuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mainmenuLabel.AutoSize = true;
-            this.mainmenuLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.mainmenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mainmenuLabel.Location = new System.Drawing.Point(180, 28);
             this.mainmenuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mainmenuLabel.Name = "mainmenuLabel";
-            this.mainmenuLabel.Size = new System.Drawing.Size(239, 33);
+            this.mainmenuLabel.Size = new System.Drawing.Size(237, 31);
             this.mainmenuLabel.TabIndex = 3;
             this.mainmenuLabel.Text = "ГЛАВНОЕ МЕНЮ";
             // 
@@ -157,8 +156,10 @@
             this.Controls.Add(this.mainmenuLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.measuringButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.Text = "Главное меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainMenu_FormClosing);

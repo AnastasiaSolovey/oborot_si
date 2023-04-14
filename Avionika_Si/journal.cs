@@ -19,8 +19,8 @@ namespace Oborot_SI
         public Journal()
         {
             InitializeComponent();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+            //Width = Screen.PrimaryScreen.Bounds.Width;
+            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
 
         private void InitTypeWorkBox()
@@ -114,6 +114,8 @@ namespace Oborot_SI
         }
         private void Add_Button_Click(object sender, EventArgs e)
         {
+            int nextId = Program.DbHelper.GetLastIdJournalQuery() + 1;
+            idBox.Text = nextId.ToString();
             /* if (!string.IsNullOrEmpty(inventoryBox.Text) && !string.IsNullOrWhiteSpace(inventoryBox.Text) &&
                     !string.IsNullOrEmpty(factoryBox.Text) && !string.IsNullOrWhiteSpace(factoryBox.Text))
              {
@@ -171,6 +173,7 @@ namespace Oborot_SI
 
             Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
             {
+                ID = nextId,
                 Date = dateworkBox.Value,
                 MeasuringInstrumentReferenceId = Convert.ToInt32(idBox.Text),
                 ConclusionReferenceId = Convert.ToInt32(conclusionBox.SelectedValue),

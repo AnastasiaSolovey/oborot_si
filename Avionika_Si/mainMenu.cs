@@ -22,8 +22,8 @@ namespace Oborot_SI
         public MainMenu()
         {
             InitializeComponent();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+            //Width = Screen.PrimaryScreen.Bounds.Width;
+            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
 
         private void Card_Button_Click(object sender, EventArgs e)

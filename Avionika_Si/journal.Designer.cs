@@ -97,12 +97,11 @@
             // 
             this.journalLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.journalLabel.AutoSize = true;
-            this.journalLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.journalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.journalLabel.Location = new System.Drawing.Point(25, 24);
             this.journalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.journalLabel.Name = "journalLabel";
-            this.journalLabel.Size = new System.Drawing.Size(132, 33);
+            this.journalLabel.Size = new System.Drawing.Size(130, 31);
             this.journalLabel.TabIndex = 16;
             this.journalLabel.Text = "ЖУРНАЛ";
             // 
@@ -233,10 +232,12 @@
             // idBox
             // 
             this.idBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.idBox.BackColor = System.Drawing.SystemColors.Control;
             this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.idBox.Location = new System.Drawing.Point(320, 87);
             this.idBox.Margin = new System.Windows.Forms.Padding(2);
             this.idBox.Name = "idBox";
+            this.idBox.ReadOnly = true;
             this.idBox.Size = new System.Drawing.Size(250, 29);
             this.idBox.TabIndex = 34;
             this.idBox.Text = "0";
@@ -263,8 +264,10 @@
             this.Controls.Add(this.factoryBox);
             this.Controls.Add(this.inventoryBox);
             this.Controls.Add(this.inventoryLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Journal";
             this.Text = "Заполнение журнала";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.journal_FormClosing);
