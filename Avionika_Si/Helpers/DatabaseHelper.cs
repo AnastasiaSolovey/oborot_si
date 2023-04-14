@@ -162,6 +162,8 @@ namespace Avionika_Si.Helpers
                 $"`journal`.`id_type_work " +
                 $"FROM `oborot_si`.`journal`; ");
         }
+
+        // Имеет смысл оставить ID как просто суррогатный ключ. А для внутреннего обнуляемого номера журнала ввести отдельное поле.
         public int GetLastIdJournalQuery()
         {
             return DatabaseAdapter.GetScalarQuery<int>
