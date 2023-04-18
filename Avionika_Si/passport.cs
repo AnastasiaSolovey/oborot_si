@@ -18,8 +18,8 @@ namespace Oborot_SI
         public passport()
         {
             InitializeComponent();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+            //Width = Screen.PrimaryScreen.Bounds.Width;
+            //Height = Screen.PrimaryScreen.Bounds.Height;
 
         }
 

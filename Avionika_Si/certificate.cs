@@ -26,8 +26,8 @@ namespace Oborot_SI
         public Certificate()
         {
             InitializeComponent();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+           // Width = Screen.PrimaryScreen.Bounds.Width;
+            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
         string name = "";
         private void Replace(string zam, string text, Word.Document word)

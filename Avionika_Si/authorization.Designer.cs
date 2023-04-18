@@ -36,16 +36,17 @@
             this.loginBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // authorizButton
             // 
             this.authorizButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.authorizButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.authorizButton.Location = new System.Drawing.Point(236, 288);
+            this.authorizButton.Location = new System.Drawing.Point(111, 245);
             this.authorizButton.Margin = new System.Windows.Forms.Padding(2);
             this.authorizButton.Name = "authorizButton";
-            this.authorizButton.Size = new System.Drawing.Size(152, 54);
+            this.authorizButton.Size = new System.Drawing.Size(162, 41);
             this.authorizButton.TabIndex = 0;
             this.authorizButton.Text = "Вход";
             this.authorizButton.UseVisualStyleBackColor = true;
@@ -56,12 +57,11 @@
             // 
             this.authorizationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.authorizationLabel.AutoSize = true;
-            this.authorizationLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.authorizationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.authorizationLabel.Location = new System.Drawing.Point(211, 52);
+            this.authorizationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.authorizationLabel.Location = new System.Drawing.Point(120, 28);
             this.authorizationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.authorizationLabel.Name = "authorizationLabel";
-            this.authorizationLabel.Size = new System.Drawing.Size(223, 33);
+            this.authorizationLabel.Size = new System.Drawing.Size(153, 24);
             this.authorizationLabel.TabIndex = 1;
             this.authorizationLabel.Text = "АВТОРИЗАЦИЯ";
             // 
@@ -69,11 +69,11 @@
             // 
             this.loginLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginLabel.Location = new System.Drawing.Point(36, 140);
+            this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loginLabel.Location = new System.Drawing.Point(52, 100);
             this.loginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(82, 29);
+            this.loginLabel.Size = new System.Drawing.Size(55, 20);
             this.loginLabel.TabIndex = 2;
             this.loginLabel.Text = "Логин";
             // 
@@ -81,33 +81,33 @@
             // 
             this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordLabel.Location = new System.Drawing.Point(36, 231);
+            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordLabel.Location = new System.Drawing.Point(52, 171);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(96, 29);
+            this.passwordLabel.Size = new System.Drawing.Size(67, 20);
             this.passwordLabel.TabIndex = 3;
             this.passwordLabel.Text = "Пароль";
             // 
             // loginBox
             // 
             this.loginBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginBox.Location = new System.Drawing.Point(157, 135);
+            this.loginBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loginBox.Location = new System.Drawing.Point(55, 118);
             this.loginBox.Margin = new System.Windows.Forms.Padding(2);
             this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(394, 34);
+            this.loginBox.Size = new System.Drawing.Size(295, 26);
             this.loginBox.TabIndex = 4;
             // 
             // passwordBox
             // 
             this.passwordBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordBox.Location = new System.Drawing.Point(157, 226);
+            this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordBox.Location = new System.Drawing.Point(56, 193);
             this.passwordBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
-            this.passwordBox.Size = new System.Drawing.Size(394, 34);
+            this.passwordBox.Size = new System.Drawing.Size(294, 26);
             this.passwordBox.TabIndex = 5;
             this.passwordBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Password_Box_KeyPress);
             // 
@@ -118,7 +118,7 @@
             this.errorLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(291, 358);
+            this.errorLabel.Location = new System.Drawing.Point(171, 295);
             this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(44, 20);
@@ -126,12 +126,25 @@
             this.errorLabel.Text = "Error";
             this.errorLabel.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(101, 56);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Пожалуйста, авторизуйтесь";
+            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(604, 426);
+            this.ClientSize = new System.Drawing.Size(415, 343);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.loginBox);
@@ -159,6 +172,7 @@
         private System.Windows.Forms.TextBox loginBox;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

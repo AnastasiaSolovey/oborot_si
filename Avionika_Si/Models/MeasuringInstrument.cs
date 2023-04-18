@@ -28,11 +28,12 @@ namespace Avionika_Si.Models
         public InstrumentName InstName { get; set; }
         public Condition Cond { get; set; }
         public BelongTo Belongs { get; set; }
+        public List<MeasuringInstrument> InstrumentList { get; set; }
 
 
         public MeasuringInstrument()
         {
-
+            InstrumentList = new List<MeasuringInstrument>();
         }
 
         public MeasuringInstrument(DataRow input)
@@ -70,6 +71,7 @@ namespace Avionika_Si.Models
         {
             return Program.DbHelper.UpdateInstrument(this);
         }
+
 
     }
 }

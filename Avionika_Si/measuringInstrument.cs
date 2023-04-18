@@ -35,8 +35,8 @@ namespace Oborot_SI
         {
             InitializeComponent();
             LoadDateGridView();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+            //Width = Screen.PrimaryScreen.Bounds.Width;
+            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
         public MeasuringInstrument(DataRow input)
         {
@@ -76,7 +76,8 @@ namespace Oborot_SI
              foreach (string[] s in data)
                  measuringsGridView.Rows.Add(s);*/
 
-            
+
+
 
         }
 
@@ -104,11 +105,11 @@ namespace Oborot_SI
         private void Card_si_Load(object sender, EventArgs e)
         {
             //DataTable Naimen = new DataTable();
-           // BD ConnDB1 = new BD();
-           // ConnDB1.openConnection();
+            // BD ConnDB1 = new BD();
+            // ConnDB1.openConnection();
             //string request1 = "Select naimenovanie from naimenovanie_si Order by naimenovanie";
             //MySqlCommand Nado1 = new MySqlCommand(request1, ConnDB1.getConnection());
-           // ConnDB1.getConnection();
+            // ConnDB1.getConnection();
             //MySqlDataAdapter sqlData = new MySqlDataAdapter(Nado1);
             //sqlData.Fill(Naimen);
             /*for (int i = 0; i < Naimen.Rows.Count; i++)
@@ -116,6 +117,9 @@ namespace Oborot_SI
                 nameBox.Items.Add(Naimen.Rows[i]["naimenovanie"].ToString());
 
             }*/
+
+     
+
 
             InitNameBox();
             InitConditionBox();
@@ -158,76 +162,6 @@ namespace Oborot_SI
 !string.IsNullOrEmpty(belongBox.Text) && !string.IsNullOrWhiteSpace(belongBox.Text))
 
             {
-
-               /* BD ConnDB = new BD();
-                using (MySqlCommand Komand = new MySqlCommand("INSERT INTO si_card VALUES (0, @naimenovanie, @tip,@firma,@diapazon,@invent_nomer,@zavod_nomer,@etalon,@sostoyanie,@komplectacia,@opisanie,@prinadlejnost)", ConnDB.getConnection()))
-                {
-
-                    Komand.Parameters.Add("@naimenovanie", MySqlDbType.VarChar).Value = nameBox.Text;
-                    Komand.Parameters.Add("@tip", MySqlDbType.VarChar).Value = typeBox.Text;
-                    Komand.Parameters.Add("@firma", MySqlDbType.VarChar).Value = manufacturerBox.Text;
-                    Komand.Parameters.Add("@diapazon", MySqlDbType.VarChar).Value = rangeBox.Text;
-                    Komand.Parameters.Add("@invent_nomer", MySqlDbType.VarChar).Value = inventoryBox.Text;
-                    Komand.Parameters.Add("@zavod_nomer", MySqlDbType.VarChar).Value = factoryBox.Text;
-                    Komand.Parameters.Add("@etalon", MySqlDbType.Bit).Value = isEtalon;
-                    Komand.Parameters.Add("@sostoyanie", MySqlDbType.VarChar).Value = conditionBox.Text;
-                    Komand.Parameters.Add("@komplectacia", MySqlDbType.Text).Value = equipmentBox.Text;
-                    Komand.Parameters.Add("@opisanie", MySqlDbType.Text).Value = descriptionBox.Text;
-                    Komand.Parameters.Add("@prinadlejnost", MySqlDbType.VarChar).Value = belongBox.Text;
-
-                    ConnDB.openConnection();
-
-                    Komand.ExecuteNonQuery();
-                    MessageBox.Show("Средство измерения было добавлено в Базу данных");
-                    try
-                    {
-                        measuringsGridView.Rows.Clear();
-                        BD ConnDB1 = new BD();
-                        ConnDB1.openConnection();
-                        string request1 = "Select id_si, naimenovanie, tip, firma, diapazon, invent_nomer, zavod_nomer,etalon,sostoyanie,komplectacia,opisanie,prinadlejnost From si_card Order By naimenovanie";
-                        MySqlCommand Reader = new MySqlCommand(request1, ConnDB1.getConnection());
-                        MySqlDataReader reader = Reader.ExecuteReader();
-                        List<string[]> data = new List<string[]>();
-                        while (reader.Read())
-                        {
-                            data.Add(new string[12]);
-                            data[data.Count - 1][0] = reader[0].ToString();
-                            data[data.Count - 1][1] = reader[1].ToString();
-                            data[data.Count - 1][2] = reader[2].ToString();
-                            data[data.Count - 1][3] = reader[3].ToString();
-                            data[data.Count - 1][4] = reader[4].ToString();
-                            data[data.Count - 1][5] = reader[5].ToString();
-                            data[data.Count - 1][6] = reader[6].ToString();
-                            data[data.Count - 1][7] = reader[7].ToString();
-                            data[data.Count - 1][8] = reader[8].ToString();
-                            data[data.Count - 1][9] = reader[9].ToString();
-                            data[data.Count - 1][10] = reader[10].ToString();
-                            data[data.Count - 1][11] = reader[11].ToString();
-
-
-                        }
-                        reader.Close();
-                        ConnDB1.CloseConnection();
-                        foreach (string[] s in data)
-                            measuringsGridView.Rows.Add(s);
-                    }
-                    catch (MySqlException isq)
-                    {
-                        MessageBox.Show(isq.Message);
-                    }
-
-
-                }
-                ConnDB.CloseConnection();
-            }
-            else
-                MessageBox.Show("Все обязательные поля должны быть заполнены!");*/
-
-            //MeasuringInstrument MeasuringInstrument = new MeasuringInstrument
-            //    (nameBox.Text, typeBox.Text, manufacturerBox.Text, rangeBox.Text, inventoryBox.Text, factoryBox.Text, isEtalon, conditionBox.Text, equipmentBox.Text, belongBox.Text);
-            //int id_measuring_instrument = MeasuringInstrument.CreateExampleClass
-            //(nameBox.Text, typeBox.Text, manufacturerBox.Text, rangeBox.Text, inventoryBox.Text, factoryBox.Text, isEtalon, conditionBox.Text, equipmentBox.Text, belongBox.Text);
-
             Avionika_Si.Models.MeasuringInstrument instrument = new Avionika_Si.Models.MeasuringInstrument()
             {
                
@@ -259,15 +193,12 @@ namespace Oborot_SI
                  }
             else
                 MessageBox.Show("Все обязательные поля должны быть заполнены!");
-            /*if (id_measuring_instrument != 0)
-            {
-                
-            }*/
+
             }
 
         private void Update_Button_Click(object sender, EventArgs e)
         {
-            BD ConnDB = new BD();
+            /*BD ConnDB = new BD();
             MySqlCommand Izmenenie = new MySqlCommand("UPDATE si_card SET naimenovanie=@naimenovanie, tip=@tip,firma=@firma,diapazon=@diapazon,invent_nomer=@invent_nomer,zavod_nomer=@zavod_nomer,etalon=@etalon,sostoyanie=@sostoyanie,komplectacia=@komplectacia,opisanie=@opisanie,prinadlejnost=@prinadlejnost Where invent_nomer=@invent_nomer and zavod_nomer=@zavod_nomer", ConnDB.getConnection());
             Izmenenie.Parameters.Add("@naimenovanie", MySqlDbType.VarChar).Value = nameBox.Text;
             Izmenenie.Parameters.Add("@tip", MySqlDbType.VarChar).Value = typeBox.Text;
@@ -325,8 +256,7 @@ namespace Oborot_SI
 
             }
             else MessageBox.Show("Изменения не сохранены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ConnDB.CloseConnection();
-
+            ConnDB.CloseConnection();*/
 
         }
 
@@ -384,8 +314,24 @@ namespace Oborot_SI
 
                      MessageBox.Show("Такого средства измерения нет", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
                  ConnDB.CloseConnection();*/
+                Avionika_Si.Models.MeasuringInstrument instrument = new Avionika_Si.Models.MeasuringInstrument()
+                {
 
-               
+                    InstrumentNameReferenceID = Convert.ToInt32(nameBox.SelectedValue),
+                    Type = typeBox.Text,
+                    Manufacturer = manufacturerBox.Text,
+                    MeasuringRange = rangeBox.Text,
+                    InventoryNumber = inventoryBox.Text,
+                    FactoryNumber = factoryBox.Text,
+                    Etalon = EtalonStatusCheckBox.Checked,
+                    ConditionReferenceId = Convert.ToInt32(conditionBox.SelectedValue),
+                    Equipment = equipmentBox.Text,
+                    BelongsToReferenceID = Convert.ToInt32(belongBox.SelectedValue)
+
+
+                };
+
+
             }
             else
                 MessageBox.Show("Все обязательные поля должны быть заполнены!");
@@ -397,8 +343,8 @@ namespace Oborot_SI
             typeBox.Clear();
             manufacturerBox.Clear();
             rangeBox.Clear();
-            inventoryBox.Text = "0";
-            factoryBox.Text = "0";
+            inventoryBox.Clear();
+            factoryBox.Clear();
             EtalonStatusCheckBox.Checked = false;
             equipmentBox.Clear();
             descriptionBox.Clear();
@@ -464,6 +410,11 @@ namespace Oborot_SI
             }
             else
                 MessageBox.Show("Все обязательные поля должны быть заполнены!");
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

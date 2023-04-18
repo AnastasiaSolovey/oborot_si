@@ -18,8 +18,8 @@ namespace Oborot_SI
         public protocol()
         {
             InitializeComponent();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+            //Width = Screen.PrimaryScreen.Bounds.Width;
+            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
 
         private void Back_Button_Click(object sender, EventArgs e)
@@ -137,6 +137,11 @@ namespace Oborot_SI
             this.Hide();
             MainMenu F = new MainMenu();
             F.Show();
+        }
+
+        private void inventoryLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -65,6 +65,21 @@ namespace Avionika_Si.Helpers
                 $"FROM `oborot_si`.`belong_to` " +
                 $"WHERE `belong_to`.`id_belong_to` = {id_belongs};");
         }
+        public BelongTo GetInventoryById(string inventory_number)
+        {
+            return DatabaseAdapter.GetObjectDataByQuery<BelongTo>
+                ($"SELECT `measuring_instrument`.`inventory_number`," +
+                $"FROM `oborot_si`.`measuring_instrument` " +
+                $"WHERE `measuring_instrument`.`inventory_number` = {inventory_number};");
+        }
+        public BelongTo GetFactoryById(string factory_number)
+        {
+            return DatabaseAdapter.GetObjectDataByQuery<BelongTo>
+                ($"SELECT `measuring_instrument`.`factory_number`," +
+                $"FROM `oborot_si`.`measuring_instrument` " +
+                $"WHERE `measuring_instrument`.`factory_number` = {factory_number};");
+        }
+
 
 
         public List<InstrumentName> GetInstrumentNames()
@@ -143,13 +158,20 @@ namespace Avionika_Si.Helpers
             }
         }
 
-        public Models.MeasuringInstrument GetInventoryFactoryQuery(string inventory_number, string factory_number)
+        public Models.Journal GetInventoryFactoryQuery(Models.Journal InstrumentNumbers)
         {
-                return DatabaseAdapter.GetObjectDataByQuery<Models.MeasuringInstrument>
+            if (InstrumentNumbers.InventNumber.ToString() != "" && InstrumentNumbers.FactorNumber.ToString() != "")
+            {
+                return DatabaseAdapter.GetScalarQuery<Models.Journal>
                 ($"SELECT `measuring_instrument`.`id_measuring_instrument` " +
                 $"FROM `oborot_si`.`measuring_instrument` " +
-                $"WHERE `measuring_instrument`.`inventory_number` = {inventory_number} " +
-                $"AND `measuring_instrument`.`factory_number` = {factory_number} ");
+                $"WHERE `measuring_instrument`.`inventory_number` = {InstrumentNumbers.InventNumber} " +
+                $"AND `measuring_instrument`.`factory_number` = {InstrumentNumbers.FactorNumber} ");
+            }
+            else
+            {
+                Console.WriteLine("Невозможно добавить запись с несуществующим СИ");
+            }
         }
 
         public List<Models.Journal> GetJournalList()
@@ -163,7 +185,6 @@ namespace Avionika_Si.Helpers
                 $"FROM `oborot_si`.`journal`; ");
         }
 
-        // Имеет смысл оставить ID как просто суррогатный ключ. А для внутреннего обнуляемого номера журнала ввести отдельное поле.
         public int GetLastIdJournalQuery()
         {
             return DatabaseAdapter.GetScalarQuery<int>

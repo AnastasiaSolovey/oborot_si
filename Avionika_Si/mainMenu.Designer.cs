@@ -42,11 +42,11 @@
             // measuringButton
             // 
             this.measuringButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.measuringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.measuringButton.Location = new System.Drawing.Point(18, 107);
+            this.measuringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.measuringButton.Location = new System.Drawing.Point(46, 66);
             this.measuringButton.Margin = new System.Windows.Forms.Padding(2);
             this.measuringButton.Name = "measuringButton";
-            this.measuringButton.Size = new System.Drawing.Size(169, 64);
+            this.measuringButton.Size = new System.Drawing.Size(159, 44);
             this.measuringButton.TabIndex = 1;
             this.measuringButton.Text = "Средство измерения";
             this.measuringButton.UseVisualStyleBackColor = true;
@@ -55,11 +55,11 @@
             // exitButton
             // 
             this.exitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(206, 288);
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.Location = new System.Drawing.Point(155, 248);
             this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(169, 64);
+            this.exitButton.Size = new System.Drawing.Size(159, 40);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "Выход из приложения";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -69,22 +69,22 @@
             // 
             this.mainmenuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mainmenuLabel.AutoSize = true;
-            this.mainmenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mainmenuLabel.Location = new System.Drawing.Point(180, 28);
+            this.mainmenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mainmenuLabel.Location = new System.Drawing.Point(151, 30);
             this.mainmenuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mainmenuLabel.Name = "mainmenuLabel";
-            this.mainmenuLabel.Size = new System.Drawing.Size(237, 31);
+            this.mainmenuLabel.Size = new System.Drawing.Size(141, 20);
             this.mainmenuLabel.TabIndex = 3;
             this.mainmenuLabel.Text = "ГЛАВНОЕ МЕНЮ";
             // 
             // passportButton
             // 
             this.passportButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passportButton.Location = new System.Drawing.Point(412, 107);
+            this.passportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passportButton.Location = new System.Drawing.Point(240, 125);
             this.passportButton.Margin = new System.Windows.Forms.Padding(2);
             this.passportButton.Name = "passportButton";
-            this.passportButton.Size = new System.Drawing.Size(169, 64);
+            this.passportButton.Size = new System.Drawing.Size(159, 38);
             this.passportButton.TabIndex = 4;
             this.passportButton.Text = "Паспорт";
             this.passportButton.UseVisualStyleBackColor = true;
@@ -93,11 +93,11 @@
             // protocolButton
             // 
             this.protocolButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.protocolButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.protocolButton.Location = new System.Drawing.Point(206, 107);
+            this.protocolButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.protocolButton.Location = new System.Drawing.Point(46, 180);
             this.protocolButton.Margin = new System.Windows.Forms.Padding(2);
             this.protocolButton.Name = "protocolButton";
-            this.protocolButton.Size = new System.Drawing.Size(169, 64);
+            this.protocolButton.Size = new System.Drawing.Size(159, 38);
             this.protocolButton.TabIndex = 5;
             this.protocolButton.Text = "Протокол";
             this.protocolButton.UseVisualStyleBackColor = true;
@@ -106,11 +106,11 @@
             // journalButton
             // 
             this.journalButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.journalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.journalButton.Location = new System.Drawing.Point(18, 194);
+            this.journalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.journalButton.Location = new System.Drawing.Point(46, 125);
             this.journalButton.Margin = new System.Windows.Forms.Padding(2);
             this.journalButton.Name = "journalButton";
-            this.journalButton.Size = new System.Drawing.Size(169, 64);
+            this.journalButton.Size = new System.Drawing.Size(159, 38);
             this.journalButton.TabIndex = 6;
             this.journalButton.Text = "Журнал";
             this.journalButton.UseVisualStyleBackColor = true;
@@ -119,11 +119,11 @@
             // scheduleButton
             // 
             this.scheduleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.scheduleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.scheduleButton.Location = new System.Drawing.Point(206, 194);
+            this.scheduleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.scheduleButton.Location = new System.Drawing.Point(240, 72);
             this.scheduleButton.Margin = new System.Windows.Forms.Padding(2);
             this.scheduleButton.Name = "scheduleButton";
-            this.scheduleButton.Size = new System.Drawing.Size(169, 64);
+            this.scheduleButton.Size = new System.Drawing.Size(159, 38);
             this.scheduleButton.TabIndex = 7;
             this.scheduleButton.Text = "График";
             this.scheduleButton.UseVisualStyleBackColor = true;
@@ -132,11 +132,11 @@
             // certificateButton
             // 
             this.certificateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.certificateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.certificateButton.Location = new System.Drawing.Point(412, 194);
+            this.certificateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.certificateButton.Location = new System.Drawing.Point(240, 180);
             this.certificateButton.Margin = new System.Windows.Forms.Padding(2);
             this.certificateButton.Name = "certificateButton";
-            this.certificateButton.Size = new System.Drawing.Size(169, 64);
+            this.certificateButton.Size = new System.Drawing.Size(159, 38);
             this.certificateButton.TabIndex = 8;
             this.certificateButton.Text = "Аттестат";
             this.certificateButton.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(600, 375);
+            this.ClientSize = new System.Drawing.Size(459, 322);
             this.Controls.Add(this.certificateButton);
             this.Controls.Add(this.scheduleButton);
             this.Controls.Add(this.journalButton);

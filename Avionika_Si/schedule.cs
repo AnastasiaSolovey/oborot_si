@@ -18,8 +18,8 @@ namespace Oborot_SI
         public Schedule()
         {
             InitializeComponent();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+            //Width = Screen.PrimaryScreen.Bounds.Width;
+            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
 
         private void Grafic_Load(object sender, EventArgs e)

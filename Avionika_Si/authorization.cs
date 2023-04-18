@@ -21,8 +21,8 @@ namespace Oborot_SI
         public Authorization()
         {
             InitializeComponent();
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
+            //Width = Screen.PrimaryScreen.Bounds.Width;
+            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
         public static string Role = "";
         public int Attestacia;
