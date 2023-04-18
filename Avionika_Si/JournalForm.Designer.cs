@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class Journal
+    partial class JournalForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Journal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JournalForm));
             this.factoryLabel = new System.Windows.Forms.Label();
             this.FactoryBox = new System.Windows.Forms.TextBox();
             this.InventoryBox = new System.Windows.Forms.TextBox();
@@ -40,7 +40,6 @@
             this.ConclusionBox = new System.Windows.Forms.ComboBox();
             this.conclusionLabel = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
             this.idLabel = new System.Windows.Forms.Label();
             this.NumBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -185,19 +184,6 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.Add_Button_Click);
             // 
-            // clearButton
-            // 
-            this.clearButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearButton.Location = new System.Drawing.Point(172, 380);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(2);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(128, 40);
-            this.clearButton.TabIndex = 32;
-            this.clearButton.Text = "Очистить поля";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.Clear_button_Click);
-            // 
             // idLabel
             // 
             this.idLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -223,7 +209,7 @@
             this.NumBox.TabIndex = 34;
             this.NumBox.TextChanged += new System.EventHandler(this.idBox_TextChanged);
             // 
-            // Journal
+            // JournalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,7 +217,6 @@
             this.ClientSize = new System.Drawing.Size(370, 435);
             this.Controls.Add(this.NumBox);
             this.Controls.Add(this.idLabel);
-            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.conclusionLabel);
             this.Controls.Add(this.ConclusionBox);
@@ -247,9 +232,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "Journal";
+            this.Name = "JournalForm";
             this.Text = "Заполнение журнала";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.journal_FormClosing);
             this.Load += new System.EventHandler(this.Journal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,7 +253,6 @@
         private System.Windows.Forms.ComboBox ConclusionBox;
         private System.Windows.Forms.Label conclusionLabel;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.TextBox NumBox;
     }

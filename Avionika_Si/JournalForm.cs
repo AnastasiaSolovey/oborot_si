@@ -14,9 +14,9 @@ using Avionika_Si;
 
 namespace Oborot_SI
 {
-    public partial class Journal : Form
+    public partial class JournalForm : Form
     {
-        public Journal()
+        public JournalForm()
         {
             InitializeComponent();
             //Width = Screen.PrimaryScreen.Bounds.Width;
@@ -37,11 +37,6 @@ namespace Oborot_SI
             ConclusionBox.ValueMember = "ID";
         }
 
-          private void InitIdJournalBox()
-         {
-             var InstrId = Program.DbHelper.GetInventoryFactoryQuery();
-         }
-
 
         private void Journal_Load(object sender, EventArgs e) //вывод на экран следующего номера в журнале
         {
@@ -61,44 +56,55 @@ namespace Oborot_SI
                 F.Show();
         }
 
-        private void Clear_button_Click(object sender, EventArgs e)
-        {
-            InventoryBox.Clear();
-            FactoryBox.Clear();
-            DateworkBox.Value = DateTime.Now;
-        }
         private void Add_Button_Click(object sender, EventArgs e)
         {
-           // int nextId = Program.DbHelper.GetLastIdJournalQuery() + 1;
+            // int nextId = Program.DbHelper.GetLastIdJournalQuery() + 1;
             //idBox.Text = nextId.ToString();
-            
 
-            Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
-            {
-                NumJournal = Convert.ToInt32(NumBox.Text),
-                Date = DateworkBox.Value,
-                //?MeasuringInstrumentReferenceId = Convert.ToInt32(NumBox.Text),
-                ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
-                TypeWorkReferenceID = Convert.ToInt32(TypeworkBox.SelectedValue),
-            };
 
-            if (journal.Create())
+            if (string.IsNullOrEmpty(InventoryBox.Text))
             {
-                MessageBox.Show("Запись добавлена");
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show("Не указан ивентарный номер");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(FactoryBox.Text))
+            {
+                MessageBox.Show("Не указан заводской номер");
+                return;
+            }
+
+            int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
+
+
+            if (refMeasuringInstrumentId!=0)
+            {
+                Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
+                {
+                    NumJournal = Convert.ToInt32(NumBox.Text),
+                    Date = DateworkBox.Value,
+                    MeasuringInstrumentReferenceId = refMeasuringInstrumentId,
+                    ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
+                    TypeWorkReferenceID = Convert.ToInt32(TypeworkBox.SelectedValue),
+                };
+
+                if (journal.Create())
+                {
+                    MessageBox.Show("Запись добавлена");
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
+                    this.DialogResult = DialogResult.OK;
+                }
             }
             else
             {
-                MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show("Ошибка. СИ с таким инвентарным и заводским номером не найдено.");
             }
-        }
 
-        private void journal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            MainMenu F = new MainMenu();
-            F.Show();
+            
         }
 
         private void idLabel_Click(object sender, EventArgs e)

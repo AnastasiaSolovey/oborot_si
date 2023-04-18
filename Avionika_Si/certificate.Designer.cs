@@ -55,7 +55,7 @@
             // 
             this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchButton.Location = new System.Drawing.Point(5, 184);
+            this.searchButton.Location = new System.Drawing.Point(16, 189);
             this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(103, 32);
@@ -69,7 +69,7 @@
             this.factoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.factoryLabel.AutoSize = true;
             this.factoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.factoryLabel.Location = new System.Drawing.Point(2, 136);
+            this.factoryLabel.Location = new System.Drawing.Point(13, 141);
             this.factoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.factoryLabel.Name = "factoryLabel";
             this.factoryLabel.Size = new System.Drawing.Size(122, 16);
@@ -81,7 +81,7 @@
             // 
             this.factoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.factoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.factoryBox.Location = new System.Drawing.Point(5, 154);
+            this.factoryBox.Location = new System.Drawing.Point(16, 159);
             this.factoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.factoryBox.Name = "factoryBox";
             this.factoryBox.ReadOnly = true;
@@ -94,7 +94,7 @@
             // 
             this.inventoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inventoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventoryBox.Location = new System.Drawing.Point(5, 98);
+            this.inventoryBox.Location = new System.Drawing.Point(16, 103);
             this.inventoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.ReadOnly = true;
@@ -108,7 +108,7 @@
             this.inventoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inventoryLabel.AutoSize = true;
             this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventoryLabel.Location = new System.Drawing.Point(2, 80);
+            this.inventoryLabel.Location = new System.Drawing.Point(13, 85);
             this.inventoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.inventoryLabel.Name = "inventoryLabel";
             this.inventoryLabel.Size = new System.Drawing.Size(141, 16);
@@ -121,7 +121,7 @@
             this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateLabel.Location = new System.Drawing.Point(22, 373);
+            this.dateLabel.Location = new System.Drawing.Point(22, 383);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(90, 16);
@@ -135,7 +135,7 @@
             this.dateWork.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateWork.Enabled = false;
             this.dateWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateWork.Location = new System.Drawing.Point(25, 391);
+            this.dateWork.Location = new System.Drawing.Point(25, 401);
             this.dateWork.Margin = new System.Windows.Forms.Padding(2);
             this.dateWork.Name = "dateWork";
             this.dateWork.Size = new System.Drawing.Size(250, 22);
@@ -147,7 +147,7 @@
             this.belongLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.belongLabel.AutoSize = true;
             this.belongLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.belongLabel.Location = new System.Drawing.Point(22, 313);
+            this.belongLabel.Location = new System.Drawing.Point(22, 323);
             this.belongLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.belongLabel.Name = "belongLabel";
             this.belongLabel.Size = new System.Drawing.Size(119, 16);
@@ -162,7 +162,7 @@
             this.belongBox.Enabled = false;
             this.belongBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.belongBox.FormattingEnabled = true;
-            this.belongBox.Location = new System.Drawing.Point(25, 331);
+            this.belongBox.Location = new System.Drawing.Point(25, 341);
             this.belongBox.Margin = new System.Windows.Forms.Padding(2);
             this.belongBox.Name = "belongBox";
             this.belongBox.Size = new System.Drawing.Size(250, 24);
@@ -175,7 +175,7 @@
             this.newdateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newdateLabel.AutoSize = true;
             this.newdateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newdateLabel.Location = new System.Drawing.Point(22, 430);
+            this.newdateLabel.Location = new System.Drawing.Point(22, 440);
             this.newdateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newdateLabel.Name = "newdateLabel";
             this.newdateLabel.Size = new System.Drawing.Size(120, 16);
@@ -189,7 +189,7 @@
             this.newDate.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newDate.Enabled = false;
             this.newDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newDate.Location = new System.Drawing.Point(25, 448);
+            this.newDate.Location = new System.Drawing.Point(25, 458);
             this.newDate.Margin = new System.Windows.Forms.Padding(2);
             this.newDate.Name = "newDate";
             this.newDate.Size = new System.Drawing.Size(250, 22);
@@ -203,7 +203,7 @@
             this.employeeBox.Enabled = false;
             this.employeeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.employeeBox.FormattingEnabled = true;
-            this.employeeBox.Location = new System.Drawing.Point(25, 509);
+            this.employeeBox.Location = new System.Drawing.Point(25, 519);
             this.employeeBox.Margin = new System.Windows.Forms.Padding(2);
             this.employeeBox.Name = "employeeBox";
             this.employeeBox.Size = new System.Drawing.Size(250, 24);
@@ -216,7 +216,7 @@
             this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeLabel.AutoSize = true;
             this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.employeeLabel.Location = new System.Drawing.Point(22, 491);
+            this.employeeLabel.Location = new System.Drawing.Point(22, 501);
             this.employeeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.employeeLabel.Name = "employeeLabel";
             this.employeeLabel.Size = new System.Drawing.Size(110, 16);
@@ -228,7 +228,7 @@
             // 
             this.createButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.createButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.createButton.Location = new System.Drawing.Point(25, 552);
+            this.createButton.Location = new System.Drawing.Point(25, 562);
             this.createButton.Margin = new System.Windows.Forms.Padding(2);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(189, 46);
@@ -242,7 +242,7 @@
             this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameLabel.Location = new System.Drawing.Point(22, 255);
+            this.nameLabel.Location = new System.Drawing.Point(22, 265);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(128, 16);
@@ -257,7 +257,7 @@
             this.measuringBox.Enabled = false;
             this.measuringBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.measuringBox.FormattingEnabled = true;
-            this.measuringBox.Location = new System.Drawing.Point(25, 273);
+            this.measuringBox.Location = new System.Drawing.Point(25, 283);
             this.measuringBox.Margin = new System.Windows.Forms.Padding(2);
             this.measuringBox.Name = "measuringBox";
             this.measuringBox.Size = new System.Drawing.Size(250, 24);
@@ -269,7 +269,7 @@
             // 
             this.protocolNum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.protocolNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.protocolNum.Location = new System.Drawing.Point(5, 40);
+            this.protocolNum.Location = new System.Drawing.Point(16, 45);
             this.protocolNum.Margin = new System.Windows.Forms.Padding(2);
             this.protocolNum.Name = "protocolNum";
             this.protocolNum.Size = new System.Drawing.Size(250, 22);
@@ -281,7 +281,7 @@
             this.protocolLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.protocolLabel.AutoSize = true;
             this.protocolLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.protocolLabel.Location = new System.Drawing.Point(2, 22);
+            this.protocolLabel.Location = new System.Drawing.Point(13, 27);
             this.protocolLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.protocolLabel.Name = "protocolLabel";
             this.protocolLabel.Size = new System.Drawing.Size(93, 16);
@@ -300,7 +300,7 @@
             this.groupBox1.Controls.Add(this.searchButton);
             this.groupBox1.Location = new System.Drawing.Point(20, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(314, 226);
+            this.groupBox1.Size = new System.Drawing.Size(314, 236);
             this.groupBox1.TabIndex = 64;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Средство измерения";
@@ -310,7 +310,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(368, 609);
+            this.ClientSize = new System.Drawing.Size(368, 628);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.measuringBox);

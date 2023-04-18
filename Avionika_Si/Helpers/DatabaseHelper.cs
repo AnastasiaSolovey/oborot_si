@@ -158,20 +158,13 @@ namespace Avionika_Si.Helpers
             }
         }
 
-        public Models.Journal GetInventoryFactoryQuery(Models.Journal InstrumentNumbers)
+        public int GetInventoryFactoryQuery(string inventoryNumber, string factoryNumber)
         {
-            if (InstrumentNumbers.InventNumber.ToString() != "" && InstrumentNumbers.FactorNumber.ToString() != "")
-            {
-                return DatabaseAdapter.GetScalarQuery<Models.Journal>
+            return DatabaseAdapter.GetScalarQuery<int>
                 ($"SELECT `measuring_instrument`.`id_measuring_instrument` " +
                 $"FROM `oborot_si`.`measuring_instrument` " +
-                $"WHERE `measuring_instrument`.`inventory_number` = {InstrumentNumbers.InventNumber} " +
-                $"AND `measuring_instrument`.`factory_number` = {InstrumentNumbers.FactorNumber} ");
-            }
-            else
-            {
-                Console.WriteLine("Невозможно добавить запись с несуществующим СИ");
-            }
+                $"WHERE `measuring_instrument`.`inventory_number` like '%{inventoryNumber}%' " +
+                $"AND `measuring_instrument`.`factory_number` like '%{factoryNumber}%' ");
         }
 
         public List<Models.Journal> GetJournalList()

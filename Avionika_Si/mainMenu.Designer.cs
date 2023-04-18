@@ -43,10 +43,10 @@
             // 
             this.measuringButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.measuringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.measuringButton.Location = new System.Drawing.Point(46, 66);
+            this.measuringButton.Location = new System.Drawing.Point(46, 72);
             this.measuringButton.Margin = new System.Windows.Forms.Padding(2);
             this.measuringButton.Name = "measuringButton";
-            this.measuringButton.Size = new System.Drawing.Size(159, 44);
+            this.measuringButton.Size = new System.Drawing.Size(159, 38);
             this.measuringButton.TabIndex = 1;
             this.measuringButton.Text = "Средство измерения";
             this.measuringButton.UseVisualStyleBackColor = true;
@@ -56,14 +56,14 @@
             // 
             this.exitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(155, 248);
+            this.exitButton.Location = new System.Drawing.Point(144, 242);
             this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(159, 40);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "Выход из приложения";
             this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.button1_Click);
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // mainmenuLabel
             // 

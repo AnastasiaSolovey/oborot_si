@@ -29,15 +29,11 @@ namespace Oborot_SI
         private void Card_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MeasuringInstrument F = new MeasuringInstrument();
+            MeasuringInstrumentForm F = new MeasuringInstrumentForm();
             F.ShowDialog();
             this.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
 
         private void toPasp_Button_Click(object sender, EventArgs e)
         {
@@ -57,7 +53,7 @@ namespace Oborot_SI
         private void Journal_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Journal F = new Journal();
+            JournalForm F = new JournalForm();
             F.Show();
         }
 
@@ -88,6 +84,11 @@ namespace Oborot_SI
            // {
            //    e.Cancel = true;
            // }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

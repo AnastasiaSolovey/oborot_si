@@ -11,11 +11,11 @@ using System.Windows.Forms;
 using Avionika_Si;
 using MySql.Data.MySqlClient;
 using Avionika_Si.Models;
-
+using DFLS.Adapters;
 
 namespace Oborot_SI
 {
-    public partial class MeasuringInstrument : Form
+    public partial class MeasuringInstrumentForm : Form
     {
         public int id { get; private set; }
         public int name { get; set; }
@@ -29,16 +29,17 @@ namespace Oborot_SI
         public string equipment { get; set; }
         public string description { get; set; }
         public int idBelongTo { get; set; }
-      
-    
-        public MeasuringInstrument()
+
+        private List<MeasuringInstrument> measuringInstruments = null;
+
+        public MeasuringInstrumentForm()
         {
             InitializeComponent();
             LoadDateGridView();
             //Width = Screen.PrimaryScreen.Bounds.Width;
             //Height = Screen.PrimaryScreen.Bounds.Height;
         }
-        public MeasuringInstrument(DataRow input)
+        public MeasuringInstrumentForm(DataRow input)
         {
          
         }
@@ -125,41 +126,35 @@ namespace Oborot_SI
             InitConditionBox();
             InitBelongBox();
 
+            FillMesInstrumentsDataGrid();
 
         }
 
-        private void Back_Button_Click(object sender, EventArgs e)
+        private void FillMesInstrumentsDataGrid()
         {
-  
-                this.Hide();
-                MainMenu F = new MainMenu();
-                F.Show();
-
+            measuringInstruments = Program.DbHelper.GetMeasuringInstrumentsList();
+            TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(nameBox.Text) && !string.IsNullOrWhiteSpace(nameBox.Text) &&
-!string.IsNullOrEmpty(typeBox.Text) && !string.IsNullOrWhiteSpace(typeBox.Text)
-&&
-!string.IsNullOrEmpty(manufacturerBox.Text) && !string.IsNullOrWhiteSpace(manufacturerBox.Text)
-&&
-!string.IsNullOrEmpty(rangeBox.Text) && !string.IsNullOrWhiteSpace(rangeBox.Text)
-&&
-!string.IsNullOrEmpty(inventoryBox.Text) && !string.IsNullOrWhiteSpace(inventoryBox.Text)
-&&
-!string.IsNullOrEmpty(conditionBox.Text) && !string.IsNullOrWhiteSpace(conditionBox.Text)
-&&
-!string.IsNullOrEmpty(equipmentBox.Text) && !string.IsNullOrWhiteSpace(equipmentBox.Text)
-&&
-!string.IsNullOrEmpty(descriptionBox.Text) && !string.IsNullOrWhiteSpace(descriptionBox.Text)
-&&
-!string.IsNullOrEmpty(belongBox.Text) && !string.IsNullOrWhiteSpace(belongBox.Text))
+                !string.IsNullOrEmpty(typeBox.Text) && !string.IsNullOrWhiteSpace(typeBox.Text)
+                &&
+                !string.IsNullOrEmpty(manufacturerBox.Text) && !string.IsNullOrWhiteSpace(manufacturerBox.Text)
+                &&
+                !string.IsNullOrEmpty(rangeBox.Text) && !string.IsNullOrWhiteSpace(rangeBox.Text)
+                &&
+                !string.IsNullOrEmpty(inventoryBox.Text) && !string.IsNullOrWhiteSpace(inventoryBox.Text)
+                &&
+                !string.IsNullOrEmpty(conditionBox.Text) && !string.IsNullOrWhiteSpace(conditionBox.Text)
+                &&
+                !string.IsNullOrEmpty(equipmentBox.Text) && !string.IsNullOrWhiteSpace(equipmentBox.Text)
+                &&
+                !string.IsNullOrEmpty(descriptionBox.Text) && !string.IsNullOrWhiteSpace(descriptionBox.Text)
+                &&
+                !string.IsNullOrEmpty(belongBox.Text) && !string.IsNullOrWhiteSpace(belongBox.Text))
 
             {
             Avionika_Si.Models.MeasuringInstrument instrument = new Avionika_Si.Models.MeasuringInstrument()

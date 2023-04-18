@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class MeasuringInstrument
+    partial class MeasuringInstrumentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeasuringInstrument));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeasuringInstrumentForm));
             this.nameBox = new System.Windows.Forms.ComboBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.typeLabel = new System.Windows.Forms.Label();
@@ -283,9 +284,10 @@
             // 
             // measuringsGridView
             // 
+            this.measuringsGridView.AllowUserToAddRows = false;
+            this.measuringsGridView.AllowUserToDeleteRows = false;
             this.measuringsGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.measuringsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.measuringsGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.measuringsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.measuringsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -300,14 +302,22 @@
             this.komplectacia,
             this.opisanie,
             this.prinadlejnost});
-            this.measuringsGridView.Location = new System.Drawing.Point(536, 39);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.measuringsGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.measuringsGridView.Location = new System.Drawing.Point(523, 39);
             this.measuringsGridView.Margin = new System.Windows.Forms.Padding(2);
             this.measuringsGridView.Name = "measuringsGridView";
+            this.measuringsGridView.ReadOnly = true;
             this.measuringsGridView.RowHeadersWidth = 51;
             this.measuringsGridView.RowTemplate.Height = 24;
-            this.measuringsGridView.Size = new System.Drawing.Size(681, 609);
+            this.measuringsGridView.Size = new System.Drawing.Size(1123, 696);
             this.measuringsGridView.TabIndex = 22;
-            this.measuringsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // addButton
             // 
@@ -440,7 +450,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(this.Search_Button);
             this.groupBox1.Controls.Add(this.factoryBox);
             this.groupBox1.Controls.Add(this.inventoryLabel);
@@ -458,6 +467,7 @@
             this.naimenovanie.HeaderText = "Наименование";
             this.naimenovanie.MinimumWidth = 6;
             this.naimenovanie.Name = "naimenovanie";
+            this.naimenovanie.ReadOnly = true;
             this.naimenovanie.Width = 108;
             // 
             // tip
@@ -465,6 +475,7 @@
             this.tip.HeaderText = "Тип";
             this.tip.MinimumWidth = 6;
             this.tip.Name = "tip";
+            this.tip.ReadOnly = true;
             this.tip.Width = 51;
             // 
             // firma
@@ -472,6 +483,7 @@
             this.firma.HeaderText = "Фирма";
             this.firma.MinimumWidth = 6;
             this.firma.Name = "firma";
+            this.firma.ReadOnly = true;
             this.firma.Width = 69;
             // 
             // Diapazon
@@ -479,6 +491,7 @@
             this.Diapazon.HeaderText = "Диапазон";
             this.Diapazon.MinimumWidth = 6;
             this.Diapazon.Name = "Diapazon";
+            this.Diapazon.ReadOnly = true;
             this.Diapazon.Width = 83;
             // 
             // invent_nomer
@@ -486,6 +499,7 @@
             this.invent_nomer.HeaderText = "Инвентарный номер";
             this.invent_nomer.MinimumWidth = 6;
             this.invent_nomer.Name = "invent_nomer";
+            this.invent_nomer.ReadOnly = true;
             this.invent_nomer.Width = 124;
             // 
             // zavod_nomer
@@ -493,6 +507,7 @@
             this.zavod_nomer.HeaderText = "Заводской номер";
             this.zavod_nomer.MinimumWidth = 6;
             this.zavod_nomer.Name = "zavod_nomer";
+            this.zavod_nomer.ReadOnly = true;
             this.zavod_nomer.Width = 112;
             // 
             // etalon
@@ -500,6 +515,7 @@
             this.etalon.HeaderText = "Эталон";
             this.etalon.MinimumWidth = 6;
             this.etalon.Name = "etalon";
+            this.etalon.ReadOnly = true;
             this.etalon.Width = 68;
             // 
             // sostoyanie
@@ -507,6 +523,7 @@
             this.sostoyanie.HeaderText = "Состояние";
             this.sostoyanie.MinimumWidth = 6;
             this.sostoyanie.Name = "sostoyanie";
+            this.sostoyanie.ReadOnly = true;
             this.sostoyanie.Width = 86;
             // 
             // komplectacia
@@ -514,6 +531,7 @@
             this.komplectacia.HeaderText = "Комплектация";
             this.komplectacia.MinimumWidth = 6;
             this.komplectacia.Name = "komplectacia";
+            this.komplectacia.ReadOnly = true;
             this.komplectacia.Width = 106;
             // 
             // opisanie
@@ -521,23 +539,24 @@
             this.opisanie.HeaderText = "Описание";
             this.opisanie.MinimumWidth = 6;
             this.opisanie.Name = "opisanie";
+            this.opisanie.ReadOnly = true;
             this.opisanie.Width = 82;
             // 
             // prinadlejnost
             // 
+            this.prinadlejnost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.prinadlejnost.HeaderText = "Принадлежность";
             this.prinadlejnost.MinimumWidth = 6;
             this.prinadlejnost.Name = "prinadlejnost";
-            this.prinadlejnost.Width = 119;
+            this.prinadlejnost.ReadOnly = true;
             // 
-            // MeasuringInstrument
+            // MeasuringInstrumentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1240, 792);
+            this.ClientSize = new System.Drawing.Size(1669, 792);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EtalonStatusCheckBox);
@@ -564,7 +583,7 @@
             this.Controls.Add(this.nameBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "MeasuringInstrument";
+            this.Name = "MeasuringInstrumentForm";
             this.Text = "Средства измерения";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.measuringInstrument_FormClosing);
             this.Load += new System.EventHandler(this.Card_si_Load);

@@ -98,12 +98,14 @@
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
     <Compile Include="BD.cs" />
+    <Compile Include="Extensions\DGVExtension.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
-    <Compile Include="MeasuringInstrument.cs">
+    <Compile Include="Helpers\TableHelper.cs" />
+    <Compile Include="MeasuringInstrumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MeasuringInstrument.Designer.cs">
-      <DependentUpon>MeasuringInstrument.cs</DependentUpon>
+    <Compile Include="MeasuringInstrumentForm.Designer.cs">
+      <DependentUpon>MeasuringInstrumentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BelongTo.cs" />
     <Compile Include="Models\Conclusion.cs" />
@@ -130,11 +132,11 @@
     <Compile Include="ScheduleView.Designer.cs">
       <DependentUpon>ScheduleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Journal.cs">
+    <Compile Include="JournalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Journal.Designer.cs">
-      <DependentUpon>Journal.cs</DependentUpon>
+    <Compile Include="JournalForm.Designer.cs">
+      <DependentUpon>JournalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -162,8 +164,8 @@
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MeasuringInstrument.resx">
-      <DependentUpon>MeasuringInstrument.cs</DependentUpon>
+    <EmbeddedResource Include="MeasuringInstrumentForm.resx">
+      <DependentUpon>MeasuringInstrumentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
@@ -171,8 +173,8 @@
     <EmbeddedResource Include="ScheduleView.resx">
       <DependentUpon>ScheduleView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Journal.resx">
-      <DependentUpon>Journal.cs</DependentUpon>
+    <EmbeddedResource Include="JournalForm.resx">
+      <DependentUpon>JournalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

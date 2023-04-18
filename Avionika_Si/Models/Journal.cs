@@ -18,13 +18,9 @@ namespace Avionika_Si.Models
         public int MeasuringInstrumentReferenceId { get; set; }
         public int ConclusionReferenceId { get; set; }
         public int TypeWorkReferenceID { get; set; }
-        public string InventoryReference { get; set; }
-        public string FactoryReference { get; set; }
         public MeasuringInstrument MeasureInst { get; set; }
         public Conclusion Conclus { get; set; }
         public TypeWork Type { get; set; }
-        public MeasuringInstrument InventNumber { get; set; }
-        public MeasuringInstrument FactorNumber { get; set; }
 
         public Journal()
         {
@@ -38,22 +34,14 @@ namespace Avionika_Si.Models
             MeasuringInstrumentReferenceId = DB.DataConverter.Convert<int>(input["id_measuring_instrument"]);
             ConclusionReferenceId = DB.DataConverter.Convert<int>(input["id_conclusion"]);
             TypeWorkReferenceID = DB.DataConverter.Convert<int>(input["id_type_work"]);
-            InventoryReference = DB.DataConverter.Convert<string>(input["inventory_number"]);
-            FactoryReference = DB.DataConverter.Convert<string>(input["factory_number"]);
             Program.DbHelper.GetConclusionById(ConclusionReferenceId);
             Program.DbHelper.GetTypeWorkById(TypeWorkReferenceID);
-            Program.DbHelper.GetInventoryById(InventoryReference);
-            Program.DbHelper.GetFactoryById(FactoryReference);
         }
 
 
         public bool Create()
         {
             return Program.DbHelper.CreateJournal(this);
-        }
-        public bool InstrNum()
-        {
-            return Program.DbHelper.GetInventoryFactoryQuery(this);
         }
     }
 

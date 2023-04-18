@@ -82,7 +82,7 @@
             this.passportGridView.Name = "passportGridView";
             this.passportGridView.RowHeadersWidth = 51;
             this.passportGridView.RowTemplate.Height = 24;
-            this.passportGridView.Size = new System.Drawing.Size(619, 310);
+            this.passportGridView.Size = new System.Drawing.Size(1189, 310);
             this.passportGridView.TabIndex = 23;
             this.passportGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Pasport_GridView_CellContentClick);
             // 
@@ -168,7 +168,7 @@
             this.viewButton.Name = "viewButton";
             this.viewButton.Size = new System.Drawing.Size(154, 36);
             this.viewButton.TabIndex = 31;
-            this.viewButton.Text = "Просмотреть данные";
+            this.viewButton.Text = "Поиск";
             this.viewButton.UseVisualStyleBackColor = true;
             this.viewButton.Click += new System.EventHandler(this.Add_Button_Click);
             // 
@@ -190,7 +190,6 @@
             this.factoryBox.Name = "factoryBox";
             this.factoryBox.Size = new System.Drawing.Size(250, 22);
             this.factoryBox.TabIndex = 40;
-            this.factoryBox.Text = "0";
             // 
             // inventoryBox
             // 
@@ -200,7 +199,6 @@
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.Size = new System.Drawing.Size(250, 22);
             this.inventoryBox.TabIndex = 41;
-            this.inventoryBox.Text = "0";
             // 
             // groupBox1
             // 
@@ -222,7 +220,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(648, 513);
+            this.ClientSize = new System.Drawing.Size(1218, 513);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chooseLabel);
             this.Controls.Add(this.passportGridView);

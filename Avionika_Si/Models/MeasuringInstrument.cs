@@ -28,12 +28,11 @@ namespace Avionika_Si.Models
         public InstrumentName InstName { get; set; }
         public Condition Cond { get; set; }
         public BelongTo Belongs { get; set; }
-        public List<MeasuringInstrument> InstrumentList { get; set; }
 
 
         public MeasuringInstrument()
         {
-            InstrumentList = new List<MeasuringInstrument>();
+
         }
 
         public MeasuringInstrument(DataRow input)
@@ -51,9 +50,9 @@ namespace Avionika_Si.Models
             Description = DB.DataConverter.Convert<string>(input["description"]);
             BelongsToReferenceID = DB.DataConverter.Convert<int>(input["id_belong_to"]);
 
-            Program.DbHelper.GetInstrumentNameById(InstrumentNameReferenceID);
-            Program.DbHelper.GetConditionById(ConditionReferenceId);
-            Program.DbHelper.GetBelongToById(BelongsToReferenceID);
+            InstName = Program.DbHelper.GetInstrumentNameById(InstrumentNameReferenceID);
+            Cond = Program.DbHelper.GetConditionById(ConditionReferenceId);
+            Belongs = Program.DbHelper.GetBelongToById(BelongsToReferenceID);
         }
 
         public MeasuringInstrument(string login, DateTime date, DateTime startTime, DateTime endTime, string comment, int ownerProblemID, bool lunchBreakFlag)
