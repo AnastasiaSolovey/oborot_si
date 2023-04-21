@@ -19,8 +19,6 @@ namespace Oborot_SI
         public JournalForm()
         {
             InitializeComponent();
-            //Width = Screen.PrimaryScreen.Bounds.Width;
-            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
 
         private void InitTypeWorkBox()
@@ -38,12 +36,11 @@ namespace Oborot_SI
         }
 
 
-        private void Journal_Load(object sender, EventArgs e) //вывод на экран следующего номера в журнале
+        private void Journal_Load(object sender, EventArgs e) 
         {
 
             InitTypeWorkBox();
             InitConclusionBox();
-           // InitIdJournalBox();
 
 
         }
@@ -58,24 +55,7 @@ namespace Oborot_SI
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
-            // int nextId = Program.DbHelper.GetLastIdJournalQuery() + 1;
-            //idBox.Text = nextId.ToString();
-
-
-            if (string.IsNullOrEmpty(InventoryBox.Text))
-            {
-                MessageBox.Show("Не указан ивентарный номер");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(FactoryBox.Text))
-            {
-                MessageBox.Show("Не указан заводской номер");
-                return;
-            }
-
             int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
-
 
             if (refMeasuringInstrumentId!=0)
             {
@@ -91,12 +71,11 @@ namespace Oborot_SI
                 if (journal.Create())
                 {
                     MessageBox.Show("Запись добавлена");
-                    this.DialogResult = DialogResult.OK;
                 }
                 else
                 {
                     MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
-                    this.DialogResult = DialogResult.OK;
+
                 }
             }
             else
@@ -107,64 +86,6 @@ namespace Oborot_SI
             
         }
 
-        private void idLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void idBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void conclusionLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void conclusionBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void typeworkLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void typeworkBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateworkBox_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void factoryLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void factoryBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void inventoryBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void inventoryLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(passport));
             this.inventoryLabel = new System.Windows.Forms.Label();
-            this.passportGridView = new System.Windows.Forms.DataGridView();
+            this.PassportGridView = new System.Windows.Forms.DataGridView();
             this.naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firma = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +47,7 @@
             this.factoryBox = new System.Windows.Forms.TextBox();
             this.inventoryBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.passportGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PassportGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,13 +62,11 @@
             this.inventoryLabel.TabIndex = 8;
             this.inventoryLabel.Text = "Инвентарный номер";
             // 
-            // passportGridView
+            // PassportGridView
             // 
-            this.passportGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.passportGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.passportGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PassportGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.PassportGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PassportGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.naimenovanie,
             this.dataGridViewTextBoxColumn1,
             this.firma,
@@ -77,20 +76,30 @@
             this.Column1,
             this.Zakluch,
             this.Column2});
-            this.passportGridView.Location = new System.Drawing.Point(11, 182);
-            this.passportGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.passportGridView.Name = "passportGridView";
-            this.passportGridView.RowHeadersWidth = 51;
-            this.passportGridView.RowTemplate.Height = 24;
-            this.passportGridView.Size = new System.Drawing.Size(1189, 310);
-            this.passportGridView.TabIndex = 23;
-            this.passportGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Pasport_GridView_CellContentClick);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PassportGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.PassportGridView.Location = new System.Drawing.Point(11, 182);
+            this.PassportGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.PassportGridView.Name = "PassportGridView";
+            this.PassportGridView.ReadOnly = true;
+            this.PassportGridView.RowHeadersWidth = 51;
+            this.PassportGridView.RowTemplate.Height = 24;
+            this.PassportGridView.Size = new System.Drawing.Size(1189, 310);
+            this.PassportGridView.TabIndex = 23;
+            this.PassportGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Pasport_GridView_CellContentClick);
             // 
             // naimenovanie
             // 
             this.naimenovanie.HeaderText = "Наименование";
             this.naimenovanie.MinimumWidth = 6;
             this.naimenovanie.Name = "naimenovanie";
+            this.naimenovanie.ReadOnly = true;
             this.naimenovanie.Width = 125;
             // 
             // dataGridViewTextBoxColumn1
@@ -98,6 +107,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Тип";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // firma
@@ -105,6 +115,7 @@
             this.firma.HeaderText = "Фирма";
             this.firma.MinimumWidth = 6;
             this.firma.Name = "firma";
+            this.firma.ReadOnly = true;
             this.firma.Width = 125;
             // 
             // invent_nomer
@@ -112,6 +123,7 @@
             this.invent_nomer.HeaderText = "Инвентарный номер";
             this.invent_nomer.MinimumWidth = 6;
             this.invent_nomer.Name = "invent_nomer";
+            this.invent_nomer.ReadOnly = true;
             this.invent_nomer.Width = 125;
             // 
             // zavod_nomer
@@ -119,6 +131,7 @@
             this.zavod_nomer.HeaderText = "Заводской номер";
             this.zavod_nomer.MinimumWidth = 6;
             this.zavod_nomer.Name = "zavod_nomer";
+            this.zavod_nomer.ReadOnly = true;
             this.zavod_nomer.Width = 125;
             // 
             // prinadlejnost
@@ -126,6 +139,7 @@
             this.prinadlejnost.HeaderText = "Принадлежность";
             this.prinadlejnost.MinimumWidth = 6;
             this.prinadlejnost.Name = "prinadlejnost";
+            this.prinadlejnost.ReadOnly = true;
             this.prinadlejnost.Width = 125;
             // 
             // Column1
@@ -133,6 +147,7 @@
             this.Column1.HeaderText = "Дата";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 125;
             // 
             // Zakluch
@@ -140,14 +155,16 @@
             this.Zakluch.HeaderText = "Заключение";
             this.Zakluch.MinimumWidth = 6;
             this.Zakluch.Name = "Zakluch";
+            this.Zakluch.ReadOnly = true;
             this.Zakluch.Width = 125;
             // 
             // Column2
             // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "Вид работы";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.Column2.ReadOnly = true;
             // 
             // factoryLabel
             // 
@@ -223,14 +240,14 @@
             this.ClientSize = new System.Drawing.Size(1218, 513);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chooseLabel);
-            this.Controls.Add(this.passportGridView);
+            this.Controls.Add(this.PassportGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "passport";
             this.Text = "Заполнение папорта СИ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.passport_FormClosing);
             this.Load += new System.EventHandler(this.Pasport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.passportGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PassportGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -240,12 +257,13 @@
 
         #endregion
         private System.Windows.Forms.Label inventoryLabel;
-        private System.Windows.Forms.DataGridView passportGridView;
+        private System.Windows.Forms.DataGridView PassportGridView;
         private System.Windows.Forms.Label factoryLabel;
         private System.Windows.Forms.Button viewButton;
         private System.Windows.Forms.Label chooseLabel;
         private System.Windows.Forms.TextBox factoryBox;
         private System.Windows.Forms.TextBox inventoryBox;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn naimenovanie;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn firma;
@@ -255,6 +273,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Zakluch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

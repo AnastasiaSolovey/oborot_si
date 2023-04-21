@@ -85,29 +85,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Certificate.cs">
+    <Compile Include="CertificateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Certificate.Designer.cs">
-      <DependentUpon>Certificate.cs</DependentUpon>
+    <Compile Include="CertificateForm.Designer.cs">
+      <DependentUpon>CertificateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Authorization.cs">
+    <Compile Include="AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Authorization.Designer.cs">
-      <DependentUpon>Authorization.cs</DependentUpon>
+    <Compile Include="AuthorizationForm.Designer.cs">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BD.cs" />
     <Compile Include="Extensions\DGVExtension.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\TableHelper.cs" />
+    <Compile Include="MeasuringInstrumentDGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeasuringInstrumentDGV.Designer.cs">
+      <DependentUpon>MeasuringInstrumentDGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="MeasuringInstrumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MeasuringInstrumentForm.Designer.cs">
       <DependentUpon>MeasuringInstrumentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\BelongTo.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Conclusion.cs" />
     <Compile Include="Models\Condition.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -120,17 +126,17 @@
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\TypeWork.cs" />
     <Compile Include="Models\Venue.cs" />
-    <Compile Include="Schedule.cs">
+    <Compile Include="ScheduleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Schedule.Designer.cs">
-      <DependentUpon>Schedule.cs</DependentUpon>
+    <Compile Include="ScheduleForm.Designer.cs">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScheduleView.cs">
+    <Compile Include="ScheduleViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScheduleView.Designer.cs">
-      <DependentUpon>ScheduleView.cs</DependentUpon>
+    <Compile Include="ScheduleViewForm.Designer.cs">
+      <DependentUpon>ScheduleViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="JournalForm.cs">
       <SubType>Form</SubType>
@@ -144,34 +150,37 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Passport.cs">
+    <Compile Include="PassportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Passport.Designer.cs">
-      <DependentUpon>Passport.cs</DependentUpon>
+    <Compile Include="PassportForm.Designer.cs">
+      <DependentUpon>PassportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Protocol.cs">
+    <Compile Include="ProtocolForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Protocol.Designer.cs">
-      <DependentUpon>Protocol.cs</DependentUpon>
+    <Compile Include="ProtocolForm.Designer.cs">
+      <DependentUpon>ProtocolForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Certificate.resx">
-      <DependentUpon>Certificate.cs</DependentUpon>
+    <EmbeddedResource Include="CertificateForm.resx">
+      <DependentUpon>CertificateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Authorization.resx">
-      <DependentUpon>Authorization.cs</DependentUpon>
+    <EmbeddedResource Include="AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasuringInstrumentDGV.resx">
+      <DependentUpon>MeasuringInstrumentDGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeasuringInstrumentForm.resx">
       <DependentUpon>MeasuringInstrumentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Schedule.resx">
-      <DependentUpon>Schedule.cs</DependentUpon>
+    <EmbeddedResource Include="ScheduleForm.resx">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScheduleView.resx">
-      <DependentUpon>ScheduleView.cs</DependentUpon>
+    <EmbeddedResource Include="ScheduleViewForm.resx">
+      <DependentUpon>ScheduleViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JournalForm.resx">
       <DependentUpon>JournalForm.cs</DependentUpon>
@@ -179,8 +188,8 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Passport.resx">
-      <DependentUpon>Passport.cs</DependentUpon>
+    <EmbeddedResource Include="PassportForm.resx">
+      <DependentUpon>PassportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -191,8 +200,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Protocol.resx">
-      <DependentUpon>Protocol.cs</DependentUpon>
+    <EmbeddedResource Include="ProtocolForm.resx">
+      <DependentUpon>ProtocolForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

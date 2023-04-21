@@ -9,20 +9,20 @@ using DB = DatabaseAdapter;
 namespace Avionika_Si.Models
 {
 
-     public class BelongTo
+     public class Department
      {
             public int ID { get; set; }
-            public string Belongs { get; set; }
+            public string Departments { get; set; }
 
-            public BelongTo()
+            public Department()
             {
 
             }
 
-            public BelongTo(DataRow input)
+            public Department(DataRow input)
             {
-                ID = Convert.ToInt32(input["id_belong_to"]);
-                Belongs = DB.DataConverter.Convert<string>(input["belong_to"]);
+                ID = Convert.ToInt32(input["id_department"]);
+                Departments = DB.DataConverter.Convert<string>(input["department"]);
             }
      }
 }

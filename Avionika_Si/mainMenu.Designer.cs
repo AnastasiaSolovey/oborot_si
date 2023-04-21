@@ -56,7 +56,7 @@
             // 
             this.exitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(144, 242);
+            this.exitButton.Location = new System.Drawing.Point(148, 242);
             this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(159, 40);

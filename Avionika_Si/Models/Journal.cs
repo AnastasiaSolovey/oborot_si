@@ -22,6 +22,7 @@ namespace Avionika_Si.Models
         public Conclusion Conclus { get; set; }
         public TypeWork Type { get; set; }
 
+
         public Journal()
         {
 

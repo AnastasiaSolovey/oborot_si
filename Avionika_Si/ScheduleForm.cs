@@ -25,7 +25,7 @@ namespace Oborot_SI
         private void Grafic_Load(object sender, EventArgs e)
         {
 
-            DataTable old = new DataTable();
+           /* DataTable old = new DataTable();
             BD ConnDB2 = new BD();
             ConnDB2.openConnection();
             string request2 = "Select mesto_provedenia from mesto_provedenia Order by mesto_provedenia";
@@ -53,7 +53,7 @@ namespace Oborot_SI
                 newVenueBox.Items.Add(neew.Rows[i]["mesto_provedenia"].ToString());
 
             }
-
+           */
         }
 
         private void Search_Button_Click(object sender, EventArgs e)

@@ -18,8 +18,6 @@ namespace Oborot_SI
         public protocol()
         {
             InitializeComponent();
-            //Width = Screen.PrimaryScreen.Bounds.Width;
-            //Height = Screen.PrimaryScreen.Bounds.Height;
         }
 
         private void Back_Button_Click(object sender, EventArgs e)
@@ -30,14 +28,19 @@ namespace Oborot_SI
                 F.Show();
 
         }
-
+        private void InitEmployeeBox()
+        {
+            employeeBox.DataSource = Program.DbHelper.GetEmployee();
+            employeeBox.DisplayMember = "name" + "surname" + "patronymic";
+            employeeBox.ValueMember = "ID";
+        }
         private void Search_Button_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(factoryBox.Text) && !string.IsNullOrWhiteSpace(factoryBox.Text) &&
   !string.IsNullOrEmpty(inventoryBox.Text) && !string.IsNullOrWhiteSpace(inventoryBox.Text))
 
             {
-                BD ConnDB = new BD();
+              /*  BD ConnDB = new BD();
                 ConnDB.openConnection();
                 string request = "Select id_raboti from journals join si_card on journals.id_si=si_card.id_si where zavod_nomer='" + factoryBox.Text + "' and invent_nomer= '" + inventoryBox.Text + "' Order by id_raboti DESC";
                 MySqlCommand Poisk = new MySqlCommand(request, ConnDB.getConnection());
@@ -52,25 +55,13 @@ namespace Oborot_SI
                 else
 
                     MessageBox.Show("Такого средства измерения нет", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ConnDB.CloseConnection();
+                ConnDB.CloseConnection();*/
             }
         }
 
         private void Protocol_Load(object sender, EventArgs e)
         {
-            DataTable sotrudnik = new DataTable();
-            BD ConnDB2 = new BD();
-            ConnDB2.openConnection();
-            string request2 = "Select surname, name, patronymic from sotrudnik Order by surname";
-            MySqlCommand Nado2 = new MySqlCommand(request2, ConnDB2.getConnection());
-            ConnDB2.getConnection();
-            MySqlDataAdapter sqlData2 = new MySqlDataAdapter(Nado2);
-            sqlData2.Fill(sotrudnik);
-            for (int i = 0; i < sotrudnik.Rows.Count; i++)
-            {
-                employeeBox.Items.Add(sotrudnik.Rows[i]["surname"].ToString() +" "+ sotrudnik.Rows[i]["name"].ToString() + " " + sotrudnik.Rows[i]["patronymic"].ToString());
-
-            }
+            InitEmployeeBox();
 
         }
 
@@ -81,9 +72,7 @@ namespace Oborot_SI
                    &&
                    !string.IsNullOrEmpty(idProtocolBox.Text) && !string.IsNullOrWhiteSpace(idProtocolBox.Text))
             {
-               
-
-                    BD bb = new BD();
+                 /*   BD bb = new BD();
                 MySqlCommand Komand = new MySqlCommand("INSERT INTO protocol VALUES (@id_protocol, @id_si, @primechanie, (Select sotrudnik.id_sotrudnik from sotrudnik where CONCAT(surname, ' ',name, ' ',  patronymic) = @id_sotrudnik))", bb.getConnection());
                     Komand.Parameters.Add("@id_protocol", MySqlDbType.Int64).Value = idProtocolBox.Text;
                     BD ConnDB1 = new BD();
@@ -118,7 +107,7 @@ namespace Oborot_SI
                     MessageBox.Show("Запись не добавлена. В базу данных уже внесены данные об этом устройстве", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     bb.CloseConnection();
                 }
-                    
+                 */   
             }
             else
                 MessageBox.Show("Все обязательные поля должны быть заполнены!");

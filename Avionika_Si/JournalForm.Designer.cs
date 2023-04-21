@@ -55,7 +55,6 @@
             this.factoryLabel.Size = new System.Drawing.Size(144, 16);
             this.factoryLabel.TabIndex = 15;
             this.factoryLabel.Text = "Заводской номер СИ";
-            this.factoryLabel.Click += new System.EventHandler(this.factoryLabel_Click);
             // 
             // FactoryBox
             // 
@@ -66,7 +65,6 @@
             this.FactoryBox.Name = "FactoryBox";
             this.FactoryBox.Size = new System.Drawing.Size(269, 22);
             this.FactoryBox.TabIndex = 14;
-            this.FactoryBox.TextChanged += new System.EventHandler(this.factoryBox_TextChanged);
             // 
             // InventoryBox
             // 
@@ -77,7 +75,6 @@
             this.InventoryBox.Name = "InventoryBox";
             this.InventoryBox.Size = new System.Drawing.Size(269, 22);
             this.InventoryBox.TabIndex = 13;
-            this.InventoryBox.TextChanged += new System.EventHandler(this.inventoryBox_TextChanged);
             // 
             // inventoryLabel
             // 
@@ -90,7 +87,6 @@
             this.inventoryLabel.Size = new System.Drawing.Size(163, 16);
             this.inventoryLabel.TabIndex = 12;
             this.inventoryLabel.Text = "Инвентарный номер СИ";
-            this.inventoryLabel.Click += new System.EventHandler(this.inventoryLabel_Click);
             // 
             // DateworkBox
             // 
@@ -102,7 +98,6 @@
             this.DateworkBox.Name = "DateworkBox";
             this.DateworkBox.Size = new System.Drawing.Size(269, 22);
             this.DateworkBox.TabIndex = 17;
-            this.DateworkBox.ValueChanged += new System.EventHandler(this.dateworkBox_ValueChanged);
             // 
             // dateLabel
             // 
@@ -115,7 +110,6 @@
             this.dateLabel.Size = new System.Drawing.Size(90, 16);
             this.dateLabel.TabIndex = 18;
             this.dateLabel.Text = "Дата работы";
-            this.dateLabel.Click += new System.EventHandler(this.dateLabel_Click);
             // 
             // TypeworkBox
             // 
@@ -129,7 +123,6 @@
             this.TypeworkBox.Size = new System.Drawing.Size(270, 24);
             this.TypeworkBox.TabIndex = 19;
             this.TypeworkBox.ValueMember = "vid_rabot";
-            this.TypeworkBox.SelectedIndexChanged += new System.EventHandler(this.typeworkBox_SelectedIndexChanged);
             // 
             // typeworkLabel
             // 
@@ -142,7 +135,6 @@
             this.typeworkLabel.Size = new System.Drawing.Size(83, 16);
             this.typeworkLabel.TabIndex = 20;
             this.typeworkLabel.Text = "Вид работы";
-            this.typeworkLabel.Click += new System.EventHandler(this.typeworkLabel_Click);
             // 
             // ConclusionBox
             // 
@@ -156,7 +148,6 @@
             this.ConclusionBox.Size = new System.Drawing.Size(269, 24);
             this.ConclusionBox.TabIndex = 21;
             this.ConclusionBox.ValueMember = "zakluchenie";
-            this.ConclusionBox.SelectedIndexChanged += new System.EventHandler(this.conclusionBox_SelectedIndexChanged);
             // 
             // conclusionLabel
             // 
@@ -169,13 +160,12 @@
             this.conclusionLabel.Size = new System.Drawing.Size(89, 16);
             this.conclusionLabel.TabIndex = 22;
             this.conclusionLabel.Text = "Заключение";
-            this.conclusionLabel.Click += new System.EventHandler(this.conclusionLabel_Click);
             // 
             // addButton
             // 
             this.addButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(31, 380);
+            this.addButton.Location = new System.Drawing.Point(31, 372);
             this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(128, 40);
@@ -195,7 +185,6 @@
             this.idLabel.Size = new System.Drawing.Size(121, 16);
             this.idLabel.TabIndex = 33;
             this.idLabel.Text = "Номер в журнале";
-            this.idLabel.Click += new System.EventHandler(this.idLabel_Click);
             // 
             // NumBox
             // 
@@ -207,7 +196,6 @@
             this.NumBox.Name = "NumBox";
             this.NumBox.Size = new System.Drawing.Size(269, 22);
             this.NumBox.TabIndex = 34;
-            this.NumBox.TextChanged += new System.EventHandler(this.idBox_TextChanged);
             // 
             // JournalForm
             // 

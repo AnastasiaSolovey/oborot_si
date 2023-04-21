@@ -40,7 +40,6 @@
             this.newDateBox = new System.Windows.Forms.DateTimePicker();
             this.newDateLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.clearButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.sceduleViewLabel = new System.Windows.Forms.LinkLabel();
@@ -131,7 +130,7 @@
             this.oldVenueLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.oldVenueLabel.AutoSize = true;
             this.oldVenueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.oldVenueLabel.Location = new System.Drawing.Point(423, 33);
+            this.oldVenueLabel.Location = new System.Drawing.Point(428, 33);
             this.oldVenueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.oldVenueLabel.Name = "oldVenueLabel";
             this.oldVenueLabel.Size = new System.Drawing.Size(130, 16);
@@ -143,7 +142,7 @@
             this.newVenueLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newVenueLabel.AutoSize = true;
             this.newVenueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newVenueLabel.Location = new System.Drawing.Point(423, 86);
+            this.newVenueLabel.Location = new System.Drawing.Point(428, 86);
             this.newVenueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newVenueLabel.Name = "newVenueLabel";
             this.newVenueLabel.Size = new System.Drawing.Size(207, 16);
@@ -156,7 +155,7 @@
             this.newDateBox.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newDateBox.Enabled = false;
             this.newDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newDateBox.Location = new System.Drawing.Point(426, 165);
+            this.newDateBox.Location = new System.Drawing.Point(431, 165);
             this.newDateBox.Margin = new System.Windows.Forms.Padding(2);
             this.newDateBox.Name = "newDateBox";
             this.newDateBox.Size = new System.Drawing.Size(297, 22);
@@ -167,7 +166,7 @@
             this.newDateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newDateLabel.AutoSize = true;
             this.newDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newDateLabel.Location = new System.Drawing.Point(423, 147);
+            this.newDateLabel.Location = new System.Drawing.Point(428, 147);
             this.newDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newDateLabel.Name = "newDateLabel";
             this.newDateLabel.Size = new System.Drawing.Size(199, 16);
@@ -179,30 +178,17 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(14, 507);
+            this.label8.Location = new System.Drawing.Point(12, 497);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 21);
             this.label8.TabIndex = 54;
             // 
-            // clearButton
-            // 
-            this.clearButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearButton.Location = new System.Drawing.Point(426, 246);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(2);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(164, 34);
-            this.clearButton.TabIndex = 58;
-            this.clearButton.Text = "Очистить поля";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.Clear_button_Click);
-            // 
             // addButton
             // 
             this.addButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(426, 208);
+            this.addButton.Location = new System.Drawing.Point(431, 208);
             this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(164, 34);
@@ -229,7 +215,7 @@
             this.sceduleViewLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sceduleViewLabel.AutoSize = true;
             this.sceduleViewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sceduleViewLabel.Location = new System.Drawing.Point(422, 295);
+            this.sceduleViewLabel.Location = new System.Drawing.Point(427, 254);
             this.sceduleViewLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.sceduleViewLabel.Name = "sceduleViewLabel";
             this.sceduleViewLabel.Size = new System.Drawing.Size(250, 20);
@@ -244,7 +230,7 @@
             this.oldVenueBox.DisplayMember = "periodichnost";
             this.oldVenueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.oldVenueBox.FormattingEnabled = true;
-            this.oldVenueBox.Location = new System.Drawing.Point(426, 50);
+            this.oldVenueBox.Location = new System.Drawing.Point(431, 50);
             this.oldVenueBox.Margin = new System.Windows.Forms.Padding(2);
             this.oldVenueBox.Name = "oldVenueBox";
             this.oldVenueBox.Size = new System.Drawing.Size(297, 24);
@@ -258,7 +244,7 @@
             this.newVenueBox.DisplayMember = "periodichnost";
             this.newVenueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newVenueBox.FormattingEnabled = true;
-            this.newVenueBox.Location = new System.Drawing.Point(426, 103);
+            this.newVenueBox.Location = new System.Drawing.Point(431, 103);
             this.newVenueBox.Margin = new System.Windows.Forms.Padding(2);
             this.newVenueBox.Name = "newVenueBox";
             this.newVenueBox.Size = new System.Drawing.Size(297, 24);
@@ -287,12 +273,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(763, 352);
+            this.ClientSize = new System.Drawing.Size(763, 297);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.newVenueBox);
             this.Controls.Add(this.oldVenueBox);
             this.Controls.Add(this.sceduleViewLabel);
-            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.newDateLabel);
@@ -325,7 +310,6 @@
         private System.Windows.Forms.DateTimePicker newDateBox;
         private System.Windows.Forms.Label newDateLabel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.LinkLabel sceduleViewLabel;

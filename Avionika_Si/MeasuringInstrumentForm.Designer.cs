@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeasuringInstrumentForm));
             this.nameBox = new System.Windows.Forms.ComboBox();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -47,31 +46,20 @@
             this.descriptionBox = new System.Windows.Forms.RichTextBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.equipmentBox = new System.Windows.Forms.RichTextBox();
-            this.measuringsGridView = new System.Windows.Forms.DataGridView();
             this.addButton = new System.Windows.Forms.Button();
             this.manufacturerBox = new System.Windows.Forms.TextBox();
             this.manufacturerLabel = new System.Windows.Forms.Label();
             this.conditionBox = new System.Windows.Forms.ComboBox();
             this.conditionLabel = new System.Windows.Forms.Label();
             this.Search_Button = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.EtalonStatusCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diapazon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invent_nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zavod_nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.etalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sostoyanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.komplectacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opisanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prinadlejnost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.measuringsGridView)).BeginInit();
+            this.DGWMeasureViewLabel = new System.Windows.Forms.LinkLabel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // nameBox
@@ -82,7 +70,7 @@
             this.nameBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameBox.FormattingEnabled = true;
-            this.nameBox.Location = new System.Drawing.Point(13, 39);
+            this.nameBox.Location = new System.Drawing.Point(10, 91);
             this.nameBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(261, 23);
@@ -95,7 +83,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameLabel.Location = new System.Drawing.Point(11, 21);
+            this.nameLabel.Location = new System.Drawing.Point(8, 73);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(71, 16);
@@ -108,7 +96,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.typeLabel.AutoSize = true;
             this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.typeLabel.Location = new System.Drawing.Point(11, 78);
+            this.typeLabel.Location = new System.Drawing.Point(8, 130);
             this.typeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(32, 16);
@@ -121,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.rangeLabel.AutoSize = true;
             this.rangeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rangeLabel.Location = new System.Drawing.Point(10, 181);
+            this.rangeLabel.Location = new System.Drawing.Point(7, 233);
             this.rangeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rangeLabel.Name = "rangeLabel";
             this.rangeLabel.Size = new System.Drawing.Size(147, 16);
@@ -146,7 +134,7 @@
             this.typeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.typeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.typeBox.Location = new System.Drawing.Point(14, 96);
+            this.typeBox.Location = new System.Drawing.Point(11, 148);
             this.typeBox.Margin = new System.Windows.Forms.Padding(2);
             this.typeBox.Name = "typeBox";
             this.typeBox.Size = new System.Drawing.Size(261, 21);
@@ -157,7 +145,7 @@
             this.rangeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.rangeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rangeBox.Location = new System.Drawing.Point(13, 199);
+            this.rangeBox.Location = new System.Drawing.Point(10, 251);
             this.rangeBox.Margin = new System.Windows.Forms.Padding(2);
             this.rangeBox.Name = "rangeBox";
             this.rangeBox.Size = new System.Drawing.Size(261, 21);
@@ -204,7 +192,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.etalonLabel.AutoSize = true;
             this.etalonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.etalonLabel.Location = new System.Drawing.Point(11, 349);
+            this.etalonLabel.Location = new System.Drawing.Point(7, 420);
             this.etalonLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.etalonLabel.Name = "etalonLabel";
             this.etalonLabel.Size = new System.Drawing.Size(56, 16);
@@ -217,7 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.belongLabel.AutoSize = true;
             this.belongLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.belongLabel.Location = new System.Drawing.Point(17, 607);
+            this.belongLabel.Location = new System.Drawing.Point(15, 687);
             this.belongLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.belongLabel.Name = "belongLabel";
             this.belongLabel.Size = new System.Drawing.Size(0, 16);
@@ -231,7 +219,7 @@
             this.belongBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.belongBox.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.belongBox.FormattingEnabled = true;
-            this.belongBox.Location = new System.Drawing.Point(13, 625);
+            this.belongBox.Location = new System.Drawing.Point(11, 705);
             this.belongBox.Margin = new System.Windows.Forms.Padding(2);
             this.belongBox.Name = "belongBox";
             this.belongBox.Size = new System.Drawing.Size(261, 23);
@@ -244,7 +232,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.equipmentLabel.AutoSize = true;
             this.equipmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.equipmentLabel.Location = new System.Drawing.Point(10, 442);
+            this.equipmentLabel.Location = new System.Drawing.Point(8, 522);
             this.equipmentLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.equipmentLabel.Name = "equipmentLabel";
             this.equipmentLabel.Size = new System.Drawing.Size(101, 16);
@@ -253,7 +241,7 @@
             // 
             // descriptionBox
             // 
-            this.descriptionBox.Location = new System.Drawing.Point(13, 547);
+            this.descriptionBox.Location = new System.Drawing.Point(11, 627);
             this.descriptionBox.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.Size = new System.Drawing.Size(457, 47);
@@ -266,7 +254,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.descriptionLabel.Location = new System.Drawing.Point(10, 529);
+            this.descriptionLabel.Location = new System.Drawing.Point(8, 609);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(72, 16);
@@ -275,55 +263,18 @@
             // 
             // equipmentBox
             // 
-            this.equipmentBox.Location = new System.Drawing.Point(14, 460);
+            this.equipmentBox.Location = new System.Drawing.Point(12, 540);
             this.equipmentBox.Margin = new System.Windows.Forms.Padding(2);
             this.equipmentBox.Name = "equipmentBox";
             this.equipmentBox.Size = new System.Drawing.Size(457, 47);
             this.equipmentBox.TabIndex = 21;
             this.equipmentBox.Text = "";
             // 
-            // measuringsGridView
-            // 
-            this.measuringsGridView.AllowUserToAddRows = false;
-            this.measuringsGridView.AllowUserToDeleteRows = false;
-            this.measuringsGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.measuringsGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.measuringsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.measuringsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.naimenovanie,
-            this.tip,
-            this.firma,
-            this.Diapazon,
-            this.invent_nomer,
-            this.zavod_nomer,
-            this.etalon,
-            this.sostoyanie,
-            this.komplectacia,
-            this.opisanie,
-            this.prinadlejnost});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.measuringsGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.measuringsGridView.Location = new System.Drawing.Point(523, 39);
-            this.measuringsGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.measuringsGridView.Name = "measuringsGridView";
-            this.measuringsGridView.ReadOnly = true;
-            this.measuringsGridView.RowHeadersWidth = 51;
-            this.measuringsGridView.RowTemplate.Height = 24;
-            this.measuringsGridView.Size = new System.Drawing.Size(1123, 696);
-            this.measuringsGridView.TabIndex = 22;
-            // 
             // addButton
             // 
             this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(14, 689);
+            this.addButton.Location = new System.Drawing.Point(10, 755);
             this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(159, 46);
@@ -337,7 +288,7 @@
             this.manufacturerBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.manufacturerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.manufacturerBox.Location = new System.Drawing.Point(14, 146);
+            this.manufacturerBox.Location = new System.Drawing.Point(11, 198);
             this.manufacturerBox.Margin = new System.Windows.Forms.Padding(2);
             this.manufacturerBox.Name = "manufacturerBox";
             this.manufacturerBox.Size = new System.Drawing.Size(261, 21);
@@ -349,7 +300,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.manufacturerLabel.AutoSize = true;
             this.manufacturerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.manufacturerLabel.Location = new System.Drawing.Point(10, 128);
+            this.manufacturerLabel.Location = new System.Drawing.Point(7, 180);
             this.manufacturerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.manufacturerLabel.Name = "manufacturerLabel";
             this.manufacturerLabel.Size = new System.Drawing.Size(145, 16);
@@ -364,7 +315,7 @@
             this.conditionBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.conditionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.conditionBox.FormattingEnabled = true;
-            this.conditionBox.Location = new System.Drawing.Point(14, 400);
+            this.conditionBox.Location = new System.Drawing.Point(12, 480);
             this.conditionBox.Margin = new System.Windows.Forms.Padding(2);
             this.conditionBox.Name = "conditionBox";
             this.conditionBox.Size = new System.Drawing.Size(261, 23);
@@ -377,7 +328,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.conditionLabel.AutoSize = true;
             this.conditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.conditionLabel.Location = new System.Drawing.Point(11, 382);
+            this.conditionLabel.Location = new System.Drawing.Point(9, 462);
             this.conditionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.conditionLabel.Name = "conditionLabel";
             this.conditionLabel.Size = new System.Drawing.Size(119, 16);
@@ -396,24 +347,11 @@
             this.Search_Button.UseVisualStyleBackColor = true;
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
-            // clearButton
-            // 
-            this.clearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearButton.Location = new System.Drawing.Point(340, 689);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(2);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(159, 46);
-            this.clearButton.TabIndex = 31;
-            this.clearButton.Text = "Очистить поля";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.Clear_button_Click);
-            // 
             // updateButton
             // 
             this.updateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.updateButton.Location = new System.Drawing.Point(177, 689);
+            this.updateButton.Location = new System.Drawing.Point(189, 755);
             this.updateButton.Margin = new System.Windows.Forms.Padding(2);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(159, 46);
@@ -428,7 +366,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.EtalonStatusCheckBox.AutoSize = true;
             this.EtalonStatusCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EtalonStatusCheckBox.Location = new System.Drawing.Point(97, 349);
+            this.EtalonStatusCheckBox.Location = new System.Drawing.Point(93, 420);
             this.EtalonStatusCheckBox.Name = "EtalonStatusCheckBox";
             this.EtalonStatusCheckBox.Size = new System.Drawing.Size(42, 19);
             this.EtalonStatusCheckBox.TabIndex = 33;
@@ -441,7 +379,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(10, 607);
+            this.label1.Location = new System.Drawing.Point(8, 687);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 16);
@@ -455,100 +393,34 @@
             this.groupBox1.Controls.Add(this.inventoryLabel);
             this.groupBox1.Controls.Add(this.inventoryBox);
             this.groupBox1.Controls.Add(this.factoryLabel);
-            this.groupBox1.Location = new System.Drawing.Point(12, 228);
+            this.groupBox1.Location = new System.Drawing.Point(9, 280);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(387, 118);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // naimenovanie
+            // DGWMeasureViewLabel
             // 
-            this.naimenovanie.HeaderText = "Наименование";
-            this.naimenovanie.MinimumWidth = 6;
-            this.naimenovanie.Name = "naimenovanie";
-            this.naimenovanie.ReadOnly = true;
-            this.naimenovanie.Width = 108;
+            this.DGWMeasureViewLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DGWMeasureViewLabel.AutoSize = true;
+            this.DGWMeasureViewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DGWMeasureViewLabel.Location = new System.Drawing.Point(-1, 14);
+            this.DGWMeasureViewLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DGWMeasureViewLabel.Name = "DGWMeasureViewLabel";
+            this.DGWMeasureViewLabel.Size = new System.Drawing.Size(304, 20);
+            this.DGWMeasureViewLabel.TabIndex = 61;
+            this.DGWMeasureViewLabel.TabStop = true;
+            this.DGWMeasureViewLabel.Text = "Просмотреть все средства измерения";
+            this.DGWMeasureViewLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DGWMeasureViewLabel_LinkClicked);
             // 
-            // tip
+            // groupBox2
             // 
-            this.tip.HeaderText = "Тип";
-            this.tip.MinimumWidth = 6;
-            this.tip.Name = "tip";
-            this.tip.ReadOnly = true;
-            this.tip.Width = 51;
-            // 
-            // firma
-            // 
-            this.firma.HeaderText = "Фирма";
-            this.firma.MinimumWidth = 6;
-            this.firma.Name = "firma";
-            this.firma.ReadOnly = true;
-            this.firma.Width = 69;
-            // 
-            // Diapazon
-            // 
-            this.Diapazon.HeaderText = "Диапазон";
-            this.Diapazon.MinimumWidth = 6;
-            this.Diapazon.Name = "Diapazon";
-            this.Diapazon.ReadOnly = true;
-            this.Diapazon.Width = 83;
-            // 
-            // invent_nomer
-            // 
-            this.invent_nomer.HeaderText = "Инвентарный номер";
-            this.invent_nomer.MinimumWidth = 6;
-            this.invent_nomer.Name = "invent_nomer";
-            this.invent_nomer.ReadOnly = true;
-            this.invent_nomer.Width = 124;
-            // 
-            // zavod_nomer
-            // 
-            this.zavod_nomer.HeaderText = "Заводской номер";
-            this.zavod_nomer.MinimumWidth = 6;
-            this.zavod_nomer.Name = "zavod_nomer";
-            this.zavod_nomer.ReadOnly = true;
-            this.zavod_nomer.Width = 112;
-            // 
-            // etalon
-            // 
-            this.etalon.HeaderText = "Эталон";
-            this.etalon.MinimumWidth = 6;
-            this.etalon.Name = "etalon";
-            this.etalon.ReadOnly = true;
-            this.etalon.Width = 68;
-            // 
-            // sostoyanie
-            // 
-            this.sostoyanie.HeaderText = "Состояние";
-            this.sostoyanie.MinimumWidth = 6;
-            this.sostoyanie.Name = "sostoyanie";
-            this.sostoyanie.ReadOnly = true;
-            this.sostoyanie.Width = 86;
-            // 
-            // komplectacia
-            // 
-            this.komplectacia.HeaderText = "Комплектация";
-            this.komplectacia.MinimumWidth = 6;
-            this.komplectacia.Name = "komplectacia";
-            this.komplectacia.ReadOnly = true;
-            this.komplectacia.Width = 106;
-            // 
-            // opisanie
-            // 
-            this.opisanie.HeaderText = "Описание";
-            this.opisanie.MinimumWidth = 6;
-            this.opisanie.Name = "opisanie";
-            this.opisanie.ReadOnly = true;
-            this.opisanie.Width = 82;
-            // 
-            // prinadlejnost
-            // 
-            this.prinadlejnost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prinadlejnost.HeaderText = "Принадлежность";
-            this.prinadlejnost.MinimumWidth = 6;
-            this.prinadlejnost.Name = "prinadlejnost";
-            this.prinadlejnost.ReadOnly = true;
+            this.groupBox2.Controls.Add(this.DGWMeasureViewLabel);
+            this.groupBox2.Location = new System.Drawing.Point(9, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(387, 43);
+            this.groupBox2.TabIndex = 62;
+            this.groupBox2.TabStop = false;
             // 
             // MeasuringInstrumentForm
             // 
@@ -556,18 +428,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(1669, 792);
+            this.ClientSize = new System.Drawing.Size(521, 824);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EtalonStatusCheckBox);
             this.Controls.Add(this.updateButton);
-            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.conditionLabel);
             this.Controls.Add(this.conditionBox);
             this.Controls.Add(this.manufacturerLabel);
             this.Controls.Add(this.manufacturerBox);
             this.Controls.Add(this.addButton);
-            this.Controls.Add(this.measuringsGridView);
             this.Controls.Add(this.equipmentBox);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.descriptionBox);
@@ -587,9 +458,10 @@
             this.Text = "Средства измерения";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.measuringInstrument_FormClosing);
             this.Load += new System.EventHandler(this.Card_si_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.measuringsGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,28 +486,17 @@
         private System.Windows.Forms.RichTextBox descriptionBox;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.RichTextBox equipmentBox;
-        private System.Windows.Forms.DataGridView measuringsGridView;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.TextBox manufacturerBox;
         private System.Windows.Forms.Label manufacturerLabel;
         private System.Windows.Forms.ComboBox conditionBox;
         private System.Windows.Forms.Label conditionLabel;
         private System.Windows.Forms.Button Search_Button;
-        private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.CheckBox EtalonStatusCheckBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn naimenovanie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tip;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firma;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diapazon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invent_nomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zavod_nomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn etalon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sostoyanie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn komplectacia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opisanie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prinadlejnost;
+        private System.Windows.Forms.LinkLabel DGWMeasureViewLabel;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

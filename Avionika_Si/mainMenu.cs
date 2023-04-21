@@ -14,16 +14,16 @@ namespace Oborot_SI
 {
     public partial class MainMenu : Form
     {
+
         private void MainMenu_Load(object sender, EventArgs e)
         {
-
-
+                 
+            
         }
         public MainMenu()
         {
             InitializeComponent();
-            //Width = Screen.PrimaryScreen.Bounds.Width;
-            //Height = Screen.PrimaryScreen.Bounds.Height;
+
         }
 
         private void Card_Button_Click(object sender, EventArgs e)
@@ -74,16 +74,7 @@ namespace Oborot_SI
 
         private void mainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-           // DialogResult dialog = MessageBox.Show("Вы уверены, что хотите выйти из приложения?", "", MessageBoxButtons.YesNo);
-           //if (dialog == DialogResult.Yes)
-           // {
-
-                Environment.Exit(0);
-           // }
-           //else
-           // {
-           //    e.Cancel = true;
-           // }
+            Environment.Exit(0);
         }
 
         private void exitButton_Click(object sender, EventArgs e)

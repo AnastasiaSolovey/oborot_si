@@ -121,7 +121,7 @@
             this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateLabel.Location = new System.Drawing.Point(22, 383);
+            this.dateLabel.Location = new System.Drawing.Point(33, 383);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(90, 16);
@@ -135,7 +135,7 @@
             this.dateWork.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateWork.Enabled = false;
             this.dateWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateWork.Location = new System.Drawing.Point(25, 401);
+            this.dateWork.Location = new System.Drawing.Point(36, 401);
             this.dateWork.Margin = new System.Windows.Forms.Padding(2);
             this.dateWork.Name = "dateWork";
             this.dateWork.Size = new System.Drawing.Size(250, 22);
@@ -147,7 +147,7 @@
             this.belongLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.belongLabel.AutoSize = true;
             this.belongLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.belongLabel.Location = new System.Drawing.Point(22, 323);
+            this.belongLabel.Location = new System.Drawing.Point(33, 323);
             this.belongLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.belongLabel.Name = "belongLabel";
             this.belongLabel.Size = new System.Drawing.Size(119, 16);
@@ -162,7 +162,7 @@
             this.belongBox.Enabled = false;
             this.belongBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.belongBox.FormattingEnabled = true;
-            this.belongBox.Location = new System.Drawing.Point(25, 341);
+            this.belongBox.Location = new System.Drawing.Point(36, 341);
             this.belongBox.Margin = new System.Windows.Forms.Padding(2);
             this.belongBox.Name = "belongBox";
             this.belongBox.Size = new System.Drawing.Size(250, 24);
@@ -175,7 +175,7 @@
             this.newdateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newdateLabel.AutoSize = true;
             this.newdateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newdateLabel.Location = new System.Drawing.Point(22, 440);
+            this.newdateLabel.Location = new System.Drawing.Point(33, 440);
             this.newdateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newdateLabel.Name = "newdateLabel";
             this.newdateLabel.Size = new System.Drawing.Size(120, 16);
@@ -189,7 +189,7 @@
             this.newDate.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newDate.Enabled = false;
             this.newDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newDate.Location = new System.Drawing.Point(25, 458);
+            this.newDate.Location = new System.Drawing.Point(36, 458);
             this.newDate.Margin = new System.Windows.Forms.Padding(2);
             this.newDate.Name = "newDate";
             this.newDate.Size = new System.Drawing.Size(250, 22);
@@ -203,7 +203,7 @@
             this.employeeBox.Enabled = false;
             this.employeeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.employeeBox.FormattingEnabled = true;
-            this.employeeBox.Location = new System.Drawing.Point(25, 519);
+            this.employeeBox.Location = new System.Drawing.Point(36, 519);
             this.employeeBox.Margin = new System.Windows.Forms.Padding(2);
             this.employeeBox.Name = "employeeBox";
             this.employeeBox.Size = new System.Drawing.Size(250, 24);
@@ -216,7 +216,7 @@
             this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeLabel.AutoSize = true;
             this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.employeeLabel.Location = new System.Drawing.Point(22, 501);
+            this.employeeLabel.Location = new System.Drawing.Point(33, 501);
             this.employeeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.employeeLabel.Name = "employeeLabel";
             this.employeeLabel.Size = new System.Drawing.Size(110, 16);
@@ -228,7 +228,7 @@
             // 
             this.createButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.createButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.createButton.Location = new System.Drawing.Point(25, 562);
+            this.createButton.Location = new System.Drawing.Point(36, 561);
             this.createButton.Margin = new System.Windows.Forms.Padding(2);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(189, 46);
@@ -242,7 +242,7 @@
             this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameLabel.Location = new System.Drawing.Point(22, 265);
+            this.nameLabel.Location = new System.Drawing.Point(33, 265);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(128, 16);
@@ -257,7 +257,7 @@
             this.measuringBox.Enabled = false;
             this.measuringBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.measuringBox.FormattingEnabled = true;
-            this.measuringBox.Location = new System.Drawing.Point(25, 283);
+            this.measuringBox.Location = new System.Drawing.Point(36, 283);
             this.measuringBox.Margin = new System.Windows.Forms.Padding(2);
             this.measuringBox.Name = "measuringBox";
             this.measuringBox.Size = new System.Drawing.Size(250, 24);

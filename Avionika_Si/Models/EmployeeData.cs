@@ -36,7 +36,7 @@ namespace Avionika_Si.Models
             IsActive = DB.DataConverter.Convert<int>(input["is_active"]);
            
 
-            Program.DbHelper.GetEmployeeById(EmployeeReferenceID);
+            Program.DbHelper.GetEmployeeByID(EmployeeReferenceID);
             Program.DbHelper.GetRoleById(RoleReferenceID);
         }
     }

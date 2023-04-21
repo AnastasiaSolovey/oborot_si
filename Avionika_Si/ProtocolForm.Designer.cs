@@ -39,11 +39,10 @@
             this.descriptionBox = new System.Windows.Forms.RichTextBox();
             this.employeeLabel = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
             this.employeeBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,7 +152,7 @@
             // 
             this.addButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(21, 283);
+            this.addButton.Location = new System.Drawing.Point(21, 301);
             this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(173, 37);
@@ -161,19 +160,6 @@
             this.addButton.Text = "Добавить новую запись";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.Add_Button_Click);
-            // 
-            // clearButton
-            // 
-            this.clearButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearButton.Location = new System.Drawing.Point(22, 329);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(2);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(173, 34);
-            this.clearButton.TabIndex = 48;
-            this.clearButton.Text = "Очистить поля";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.Clear_button_Click);
             // 
             // employeeBox
             // 
@@ -204,16 +190,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Средство измерения";
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(9, 146);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 22);
-            this.textBox1.TabIndex = 51;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -226,6 +202,16 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Заводской номер";
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(9, 146);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(250, 22);
+            this.textBox1.TabIndex = 51;
+            // 
             // protocol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,7 +220,6 @@
             this.ClientSize = new System.Drawing.Size(632, 370);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.employeeBox);
-            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.employeeLabel);
             this.Controls.Add(this.descriptionBox);
@@ -265,7 +250,6 @@
         private System.Windows.Forms.RichTextBox descriptionBox;
         private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.ComboBox employeeBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
