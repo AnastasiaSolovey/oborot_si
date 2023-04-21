@@ -17,7 +17,7 @@ namespace Oborot_SI
 {
     public partial class MeasuringInstrumentForm : Form
     {
-        public int id { get; private set; }
+        /*public int id { get; private set; }
         public int name { get; set; }
         public string type { get; set; }
         public string manufacturer { get; set; }
@@ -28,7 +28,16 @@ namespace Oborot_SI
         public int idCondition { get; set; }
         public string equipment { get; set; }
         public string description { get; set; }
-        public int idBelongTo { get; set; }
+        public int idBelongTo { get; set; }*/
+
+        MeasuringInstrument inputInstrument = null;
+
+        /// <summary>
+        /// false - добавление
+        /// true - обновление
+        /// </summary>
+        private bool formType = false;
+
 
         private List<MeasuringInstrument> measuringInstruments = null;
 
@@ -36,10 +45,13 @@ namespace Oborot_SI
         {
             InitializeComponent();
         }
-        public MeasuringInstrumentForm(DataRow input)
+        public MeasuringInstrumentForm(MeasuringInstrument instrument)
         {
-         
+            inputInstrument = new MeasuringInstrument(instrument);
+            formType= true;
+            InitializeComponent();
         }
+
         public static int isEtalon = 0;
 
         private void InitNameBox()
@@ -69,6 +81,30 @@ namespace Oborot_SI
             InitConditionBox();
             InitBelongBox();
 
+
+            if(inputInstrument != null)
+            {
+                nameBox.SelectedValue = inputInstrument.InstrumentNameReferenceID;
+                typeBox.Text = inputInstrument.Type;
+                manufacturerBox.Text = inputInstrument.Manufacturer;
+                rangeBox.Text = inputInstrument.MeasuringRange;
+                inventoryBox.Text = inputInstrument.InventoryNumber;
+                factoryBox.Text = inputInstrument.FactoryNumber;
+                EtalonStatusCheckBox.Checked = inputInstrument.Etalon;
+                conditionBox.SelectedValue = inputInstrument.ConditionReferenceId;
+                equipmentBox.Text = inputInstrument.Equipment;
+                descriptionBox.Text = inputInstrument.Description;
+                belongBox.SelectedValue = inputInstrument.DepartmentsToReferenceID;
+            }
+
+            if(formType)
+            {
+                addButton.Text = "Обновить СИ";
+            }
+            else
+            {
+                addButton.Text = "Добавить СИ";
+            }
         
         }
 
@@ -76,7 +112,9 @@ namespace Oborot_SI
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(nameBox.Text) && !string.IsNullOrWhiteSpace(nameBox.Text) &&
+            if(!formType)
+            {
+                if (!string.IsNullOrEmpty(nameBox.Text) && !string.IsNullOrWhiteSpace(nameBox.Text) &&
                 !string.IsNullOrEmpty(typeBox.Text) && !string.IsNullOrWhiteSpace(typeBox.Text)
                 &&
                 !string.IsNullOrEmpty(manufacturerBox.Text) && !string.IsNullOrWhiteSpace(manufacturerBox.Text)
@@ -91,38 +129,83 @@ namespace Oborot_SI
                 &&
                 !string.IsNullOrEmpty(belongBox.Text) && !string.IsNullOrWhiteSpace(belongBox.Text))
 
-            {
-            Avionika_Si.Models.MeasuringInstrument AddInstrument = new Avionika_Si.Models.MeasuringInstrument()
-            {
-               
-                InstrumentNameReferenceID = Convert.ToInt32(nameBox.SelectedValue),
-                Type = typeBox.Text,
-                Manufacturer = manufacturerBox.Text,
-                MeasuringRange = rangeBox.Text,
-                InventoryNumber = inventoryBox.Text,
-                FactoryNumber = factoryBox.Text,
-                Etalon = EtalonStatusCheckBox.Checked,
-                ConditionReferenceId = Convert.ToInt32(conditionBox.SelectedValue),
-                Equipment = equipmentBox.Text,
-                Description = descriptionBox.Text,
-                DepartmentsToReferenceID = Convert.ToInt32(belongBox.SelectedValue)
+                {
+                    Avionika_Si.Models.MeasuringInstrument AddInstrument = new Avionika_Si.Models.MeasuringInstrument()
+                    {
 
-            };
+                        InstrumentNameReferenceID = Convert.ToInt32(nameBox.SelectedValue),
+                        Type = typeBox.Text,
+                        Manufacturer = manufacturerBox.Text,
+                        MeasuringRange = rangeBox.Text,
+                        InventoryNumber = inventoryBox.Text,
+                        FactoryNumber = factoryBox.Text,
+                        Etalon = EtalonStatusCheckBox.Checked,
+                        ConditionReferenceId = Convert.ToInt32(conditionBox.SelectedValue),
+                        Equipment = equipmentBox.Text,
+                        Description = descriptionBox.Text,
+                        DepartmentsToReferenceID = Convert.ToInt32(belongBox.SelectedValue)
 
-               
-            if (AddInstrument.Create())
-            {
-                MessageBox.Show("Средство измерения было добавлено в Базу данных");
+                    };
+
+
+                    if (AddInstrument.Create())
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка. Проверьте корректность введеных данных. Возможно, СИ с такими инвентарным и заводским номером уже есть в базе данных ");
+                    }
+                }
+                else
+                    MessageBox.Show("Все обязательные поля должны быть заполнены!");
             }
             else
             {
-                MessageBox.Show("Ошибка. Проверьте корректность введеных данных. Возможно, СИ с такими инвентарным и заводским номером уже есть в базе данных ");
-            }
-                 }
-            else
-                MessageBox.Show("Все обязательные поля должны быть заполнены!");
+                if (!string.IsNullOrEmpty(nameBox.Text) && !string.IsNullOrWhiteSpace(nameBox.Text) &&
+                    !string.IsNullOrEmpty(typeBox.Text) && !string.IsNullOrWhiteSpace(typeBox.Text)
+                    &&
+                    !string.IsNullOrEmpty(manufacturerBox.Text) && !string.IsNullOrWhiteSpace(manufacturerBox.Text)
+                    &&
+                    !string.IsNullOrEmpty(rangeBox.Text) && !string.IsNullOrWhiteSpace(rangeBox.Text)
+                    &&
+                    !string.IsNullOrEmpty(conditionBox.Text) && !string.IsNullOrWhiteSpace(conditionBox.Text)
+                    &&
+                    !string.IsNullOrEmpty(equipmentBox.Text) && !string.IsNullOrWhiteSpace(equipmentBox.Text)
+                    &&
+                    !string.IsNullOrEmpty(descriptionBox.Text) && !string.IsNullOrWhiteSpace(descriptionBox.Text)
+                    &&
+                    !string.IsNullOrEmpty(belongBox.Text) && !string.IsNullOrWhiteSpace(belongBox.Text))
+                {
 
+                    inputInstrument.InstrumentNameReferenceID = Convert.ToInt32(nameBox.SelectedValue);
+                    inputInstrument.Type = typeBox.Text;
+                    inputInstrument.Manufacturer = manufacturerBox.Text;
+                    inputInstrument.MeasuringRange = rangeBox.Text;
+                    inputInstrument.InventoryNumber = inventoryBox.Text;
+                    inputInstrument.FactoryNumber = factoryBox.Text;
+                    inputInstrument.Etalon = EtalonStatusCheckBox.Checked;
+                    inputInstrument.ConditionReferenceId = Convert.ToInt32(conditionBox.SelectedValue);
+                    inputInstrument.Equipment = equipmentBox.Text;
+                    inputInstrument.Description = descriptionBox.Text;
+                    inputInstrument.DepartmentsToReferenceID = Convert.ToInt32(belongBox.SelectedValue);
+
+
+                    if (inputInstrument.Update())
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
+                    }
+                }
+                else
+                    MessageBox.Show("Все обязательные поля должны быть заполнены!");
             }
+            
+
+        }
 
         private void Search_Button_Click(object sender, EventArgs e)
         {
@@ -175,59 +258,9 @@ namespace Oborot_SI
 
         }
 
-        private void measuringInstrument_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            MainMenu F = new MainMenu();
-            F.ShowDialog();
-            this.Show();
-        }
-
         private void updateButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(nameBox.Text) && !string.IsNullOrWhiteSpace(nameBox.Text) &&
-!string.IsNullOrEmpty(typeBox.Text) && !string.IsNullOrWhiteSpace(typeBox.Text)
-&&
-!string.IsNullOrEmpty(manufacturerBox.Text) && !string.IsNullOrWhiteSpace(manufacturerBox.Text)
-&&
-!string.IsNullOrEmpty(rangeBox.Text) && !string.IsNullOrWhiteSpace(rangeBox.Text)
-&&
-!string.IsNullOrEmpty(conditionBox.Text) && !string.IsNullOrWhiteSpace(conditionBox.Text)
-&&
-!string.IsNullOrEmpty(equipmentBox.Text) && !string.IsNullOrWhiteSpace(equipmentBox.Text)
-&&
-!string.IsNullOrEmpty(descriptionBox.Text) && !string.IsNullOrWhiteSpace(descriptionBox.Text)
-&&
-!string.IsNullOrEmpty(belongBox.Text) && !string.IsNullOrWhiteSpace(belongBox.Text))
-
-            {
-                Avionika_Si.Models.MeasuringInstrument UpdateInstrument = new Avionika_Si.Models.MeasuringInstrument()
-                {
-                    InstrumentNameReferenceID = Convert.ToInt32(nameBox.SelectedValue),
-                    Type = typeBox.Text,
-                    Manufacturer = manufacturerBox.Text,
-                    MeasuringRange = rangeBox.Text,
-                    InventoryNumber = inventoryBox.Text,
-                    FactoryNumber = factoryBox.Text,
-                    Etalon = EtalonStatusCheckBox.Checked,
-                    ConditionReferenceId = Convert.ToInt32(conditionBox.SelectedValue),
-                    Equipment = equipmentBox.Text,
-                    Description = descriptionBox.Text,
-                    DepartmentsToReferenceID = Convert.ToInt32(belongBox.SelectedValue)
-                };
-
-
-                if (UpdateInstrument.Update())
-                {
-                    MessageBox.Show("Средство измерения было изменено");
-                }
-                else
-                {
-                    MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
-                }
-            }
-            else
-                MessageBox.Show("Все обязательные поля должны быть заполнены!");
+            
 
         }
 
@@ -238,6 +271,16 @@ namespace Oborot_SI
             MeasuringInstrumentDGV F = new MeasuringInstrumentDGV();
             F.ShowDialog();
             this.Show();
+
+        }
+
+        private void inventoryLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inventoryBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

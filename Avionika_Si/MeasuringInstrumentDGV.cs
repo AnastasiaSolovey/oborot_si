@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Avionika_Si.Models;
 using DFLS.Adapters;
+using Oborot_SI;
 
 namespace Avionika_Si
 {
     public partial class MeasuringInstrumentDGV : Form
     {
         private List<MeasuringInstrument> measuringInstruments = null;
+        private MeasuringInstrument SelectedInstrument = null;
         public MeasuringInstrumentDGV()
         {
             InitializeComponent();
@@ -50,6 +52,97 @@ namespace Avionika_Si
 
         private void MeasuringInstrumentDGV_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void createMeasuringInstrumentButton_Click(object sender, EventArgs e)
+        {
+            MeasuringInstrumentForm form = new MeasuringInstrumentForm();
+
+            if(form.ShowDialog() == DialogResult.OK)
+            {
+                FillMesInstrumentsDataGrid();
+            }
+        }
+
+        private void updateMeasuringIstrumentButton_Click(object sender, EventArgs e)
+        {
+            if(SelectedInstrument!=null)
+            {
+                MeasuringInstrumentForm form = new MeasuringInstrumentForm(SelectedInstrument);
+
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    FillMesInstrumentsDataGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Средство измерения не выбрано");
+            }
+        }
+
+        private void measuringsGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (measuringsGridView.RowCount > 0)
+            {
+                if (measuringsGridView.SelectedRows.Count > 0)
+                {
+                    if (measuringsGridView.SelectedRows[0].Index >= 0)
+                    {
+                        try
+                        {
+                            updateMeasuringIstrumentButton.Enabled = true;
+                            int selectedId = Convert.ToInt32(measuringsGridView.SelectedRows[0].Tag);
+                            SelectedInstrument = measuringInstruments.Find(inst => inst.ID == selectedId);
+
+                            if(SelectedInstrument!= null)
+                            {
+                                mesInstrInvNumbLabel.Text = $"Выбранно СИ" +
+                                $"{Environment.NewLine}" +
+                                $"Инв. №:" +
+                                $"{Environment.NewLine}{SelectedInstrument.InventoryNumber}" +
+                                $"{Environment.NewLine}Зав. №:" +
+                                $"{Environment.NewLine}{SelectedInstrument.FactoryNumber}";
+                            }
+
+                        }
+                        catch
+                        {
+                            updateMeasuringIstrumentButton.Enabled = false;
+                            mesInstrInvNumbLabel.Text = "";
+                            SelectedInstrument = null;
+                        }
+
+                    }
+                    else
+                    {
+                        updateMeasuringIstrumentButton.Enabled = false;
+                        mesInstrInvNumbLabel.Text = "";
+                        SelectedInstrument = null;
+                    }
+                }
+                else
+                {
+                    updateMeasuringIstrumentButton.Enabled = false;
+                    mesInstrInvNumbLabel.Text = "";
+                    SelectedInstrument = null;
+                }
+            }
+            else
+            {
+                updateMeasuringIstrumentButton.Enabled = false;
+                mesInstrInvNumbLabel.Text = "";
+                SelectedInstrument = null;
+            }
+        }
+
+        private void measuringsGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(SelectedInstrument!= null)
+            {
+                updateMeasuringIstrumentButton_Click(null, null);
+            }
 
         }
     }

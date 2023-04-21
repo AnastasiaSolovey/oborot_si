@@ -55,6 +55,28 @@ namespace Avionika_Si.Models
             Departments = Program.DbHelper.GetBelongToById(DepartmentsToReferenceID);
         }
 
+        public MeasuringInstrument(MeasuringInstrument input)
+        {
+            ID = input.ID;
+            InstrumentNameReferenceID = input.InstrumentNameReferenceID;
+            Type = input.Type;
+            Manufacturer = input.Manufacturer;
+            MeasuringRange = input.MeasuringRange;
+            InventoryNumber = input.InventoryNumber;
+            FactoryNumber = input.FactoryNumber;
+            Etalon = input.Etalon;
+            ConditionReferenceId = input.ConditionReferenceId;
+            Equipment = input.Equipment;
+            Description = input.Description;
+            DepartmentsToReferenceID = input.DepartmentsToReferenceID;
+
+            InstName = new InstrumentName(input.InstName);
+            Cond = new Condition(input.Cond);
+            Departments = new Department(input.Departments);
+
+        }
+
+
         public MeasuringInstrument(string login, DateTime date, DateTime startTime, DateTime endTime, string comment, int ownerProblemID, bool lunchBreakFlag)
         {
           

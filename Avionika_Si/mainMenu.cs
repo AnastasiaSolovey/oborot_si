@@ -29,7 +29,7 @@ namespace Oborot_SI
         private void Card_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MeasuringInstrumentForm F = new MeasuringInstrumentForm();
+            MeasuringInstrumentDGV F = new MeasuringInstrumentDGV();
             F.ShowDialog();
             this.Show();
         }

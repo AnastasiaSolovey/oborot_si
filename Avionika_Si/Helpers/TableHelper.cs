@@ -47,6 +47,7 @@ namespace DFLS.Adapters
         public static void FillMeasuringInstrumentsTable(List<MeasuringInstrument> instruments, DataGridView measuringInstrumentsDGV)
         {
             DGVExtension DGV = new DGVExtension(measuringInstrumentsDGV);
+            DGV.InitCopyCellContextMenu();
             DGV.SuspendLayout();
             try
             {
@@ -71,6 +72,7 @@ namespace DFLS.Adapters
         public static void FillScheduleTable(List<Schedule> schedule, DataGridView scheduleDGV)
         {
             DGVExtension DGV = new DGVExtension(scheduleDGV);
+            DGV.InitCopyCellContextMenu();
             DGV.SuspendLayout();
             try
             {

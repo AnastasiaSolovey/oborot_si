@@ -24,8 +24,8 @@ namespace Oborot_SI
 
         private void FillMesInstrumentsDataGrid()
         {
-            schedule = Program.DbHelper.GetMeasuringInstrumentsList();
-            TableHelper.FillMeasuringInstrumentsTable(schedule, scheduleGridView);
+            //schedule = Program.DbHelper.GetMeasuringInstrumentsList();
+            //TableHelper.FillMeasuringInstrumentsTable(schedule, scheduleGridView);
         }
         
 

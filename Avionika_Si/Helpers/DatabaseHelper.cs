@@ -151,10 +151,10 @@ namespace Avionika_Si.Helpers
             if (UpdateInstrument.ID != 0)
             {
                 return DatabaseAdapter.ExecuteActionQuery
-                    ($"UPDATE `measuring_instrument` SET `id_name_instrument` = '{UpdateInstrument.InstrumentNameReferenceID}', `type` = '{UpdateInstrument.Type}', `manufacturer` = " +
+                    ($"UPDATE `measuring_instrument` SET `id_name_instrument` = {UpdateInstrument.InstrumentNameReferenceID}, `type` = '{UpdateInstrument.Type}', `manufacturer` = " +
                     $"'{UpdateInstrument.Manufacturer}',`measuring_range` = '{UpdateInstrument.MeasuringRange}', `inventory_number` = '{UpdateInstrument.InventoryNumber}', " +
-                    $"`factory_number` = '{UpdateInstrument.FactoryNumber}',`etalon` = '{UpdateInstrument.Etalon}', `id_condition` = '{UpdateInstrument.ConditionReferenceId}', " +
-                    $"`equipment` = '{UpdateInstrument.Equipment}', `description` = '{UpdateInstrument.Description}',`id_department` = '{UpdateInstrument.DepartmentsToReferenceID}' " +
+                    $"`factory_number` = '{UpdateInstrument.FactoryNumber}',`etalon` = {UpdateInstrument.Etalon}, `id_condition` = {UpdateInstrument.ConditionReferenceId}, " +
+                    $"`equipment` = '{UpdateInstrument.Equipment}', `description` = '{UpdateInstrument.Description}',`id_department` = {UpdateInstrument.DepartmentsToReferenceID} " +
                     $"WHERE `measuring_instrument`.`inventory_number` = '{UpdateInstrument.InventoryNumber}' " +
                     $"AND `measuring_instrument`.`factory_number` = '{UpdateInstrument.FactoryNumber}';");
             }

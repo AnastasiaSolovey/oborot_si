@@ -18,6 +18,12 @@ namespace Avionika_Si.Models
 
         }
 
+        public InstrumentName(InstrumentName input)
+        {
+            ID = input.ID;
+            Name = input.Name;
+        }
+
         public InstrumentName(DataRow input)
         {
             ID = Convert.ToInt32(input["id_name_instrument"]);

@@ -47,8 +47,13 @@
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.inventoryBox = new System.Windows.Forms.TextBox();
             this.factoryLabel = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.mesInstrInvNumbLabel = new System.Windows.Forms.Label();
+            this.updateMeasuringIstrumentButton = new System.Windows.Forms.Button();
+            this.createMeasuringInstrumentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.measuringsGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // measuringsGridView
@@ -81,12 +86,16 @@
             this.measuringsGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.measuringsGridView.Location = new System.Drawing.Point(11, 11);
             this.measuringsGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.measuringsGridView.MultiSelect = false;
             this.measuringsGridView.Name = "measuringsGridView";
             this.measuringsGridView.ReadOnly = true;
             this.measuringsGridView.RowHeadersWidth = 51;
             this.measuringsGridView.RowTemplate.Height = 24;
+            this.measuringsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.measuringsGridView.Size = new System.Drawing.Size(1093, 645);
             this.measuringsGridView.TabIndex = 23;
+            this.measuringsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.measuringsGridView_CellDoubleClick);
+            this.measuringsGridView.SelectionChanged += new System.EventHandler(this.measuringsGridView_SelectionChanged);
             // 
             // naimenovanie
             // 
@@ -188,15 +197,15 @@
             this.groupBox1.Size = new System.Drawing.Size(269, 191);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Средство измерения";
+            this.groupBox1.Text = "Фильтры";
             // 
             // Search_Button
             // 
             this.Search_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Search_Button.Location = new System.Drawing.Point(5, 139);
+            this.Search_Button.Location = new System.Drawing.Point(5, 144);
             this.Search_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Search_Button.Name = "Search_Button";
-            this.Search_Button.Size = new System.Drawing.Size(85, 42);
+            this.Search_Button.Size = new System.Drawing.Size(107, 32);
             this.Search_Button.TabIndex = 30;
             this.Search_Button.Text = "Поиск";
             this.Search_Button.UseVisualStyleBackColor = true;
@@ -210,7 +219,7 @@
             this.factoryBox.Location = new System.Drawing.Point(5, 106);
             this.factoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.factoryBox.Name = "factoryBox";
-            this.factoryBox.Size = new System.Drawing.Size(137, 21);
+            this.factoryBox.Size = new System.Drawing.Size(259, 21);
             this.factoryBox.TabIndex = 10;
             // 
             // inventoryLabel
@@ -234,7 +243,7 @@
             this.inventoryBox.Location = new System.Drawing.Point(5, 56);
             this.inventoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.inventoryBox.Name = "inventoryBox";
-            this.inventoryBox.Size = new System.Drawing.Size(138, 21);
+            this.inventoryBox.Size = new System.Drawing.Size(260, 21);
             this.inventoryBox.TabIndex = 9;
             // 
             // factoryLabel
@@ -250,11 +259,60 @@
             this.factoryLabel.TabIndex = 11;
             this.factoryLabel.Text = "Заводской номер";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.mesInstrInvNumbLabel);
+            this.groupBox2.Controls.Add(this.updateMeasuringIstrumentButton);
+            this.groupBox2.Controls.Add(this.createMeasuringInstrumentButton);
+            this.groupBox2.Location = new System.Drawing.Point(1109, 209);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(269, 269);
+            this.groupBox2.TabIndex = 37;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Управление";
+            // 
+            // mesInstrInvNumbLabel
+            // 
+            this.mesInstrInvNumbLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.mesInstrInvNumbLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mesInstrInvNumbLabel.Location = new System.Drawing.Point(10, 100);
+            this.mesInstrInvNumbLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.mesInstrInvNumbLabel.Name = "mesInstrInvNumbLabel";
+            this.mesInstrInvNumbLabel.Size = new System.Drawing.Size(248, 100);
+            this.mesInstrInvNumbLabel.TabIndex = 38;
+            this.mesInstrInvNumbLabel.Text = "mesInstrumentInvNum";
+            // 
+            // updateMeasuringIstrumentButton
+            // 
+            this.updateMeasuringIstrumentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.updateMeasuringIstrumentButton.Location = new System.Drawing.Point(10, 212);
+            this.updateMeasuringIstrumentButton.Margin = new System.Windows.Forms.Padding(2);
+            this.updateMeasuringIstrumentButton.Name = "updateMeasuringIstrumentButton";
+            this.updateMeasuringIstrumentButton.Size = new System.Drawing.Size(248, 42);
+            this.updateMeasuringIstrumentButton.TabIndex = 31;
+            this.updateMeasuringIstrumentButton.Text = "Обновить средство измерения";
+            this.updateMeasuringIstrumentButton.UseVisualStyleBackColor = true;
+            this.updateMeasuringIstrumentButton.Click += new System.EventHandler(this.updateMeasuringIstrumentButton_Click);
+            // 
+            // createMeasuringInstrumentButton
+            // 
+            this.createMeasuringInstrumentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createMeasuringInstrumentButton.Location = new System.Drawing.Point(10, 35);
+            this.createMeasuringInstrumentButton.Margin = new System.Windows.Forms.Padding(2);
+            this.createMeasuringInstrumentButton.Name = "createMeasuringInstrumentButton";
+            this.createMeasuringInstrumentButton.Size = new System.Drawing.Size(248, 42);
+            this.createMeasuringInstrumentButton.TabIndex = 30;
+            this.createMeasuringInstrumentButton.Text = "Добавить средство измерения";
+            this.createMeasuringInstrumentButton.UseVisualStyleBackColor = true;
+            this.createMeasuringInstrumentButton.Click += new System.EventHandler(this.createMeasuringInstrumentButton_Click);
+            // 
             // MeasuringInstrumentDGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 706);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.measuringsGridView);
             this.Name = "MeasuringInstrumentDGV";
@@ -263,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.measuringsGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -287,5 +346,9 @@
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.TextBox inventoryBox;
         private System.Windows.Forms.Label factoryLabel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button updateMeasuringIstrumentButton;
+        private System.Windows.Forms.Button createMeasuringInstrumentButton;
+        private System.Windows.Forms.Label mesInstrInvNumbLabel;
     }
 }
