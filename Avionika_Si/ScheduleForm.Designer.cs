@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class Schedule
+    partial class ScheduleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Schedule));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleForm));
             this.factoryLabel = new System.Windows.Forms.Label();
             this.factoryBox = new System.Windows.Forms.TextBox();
             this.inventoryBox = new System.Windows.Forms.TextBox();

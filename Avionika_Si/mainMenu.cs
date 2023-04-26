@@ -26,6 +26,13 @@ namespace Oborot_SI
 
         }
 
+        private void OpenFormAsDialog(Form form)
+        {
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
         private void Card_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -53,9 +60,11 @@ namespace Oborot_SI
 
         private void Journal_Button_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             JournalForm F = new JournalForm();
-            F.Show();
+            F.ShowDialog();
+            this.Show();*/
+            OpenFormAsDialog(new JournalForm());
         }
 
         private void Protocol_Button_Click(object sender, EventArgs e)

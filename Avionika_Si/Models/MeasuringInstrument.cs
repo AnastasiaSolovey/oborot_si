@@ -27,7 +27,7 @@ namespace Avionika_Si.Models
         public int DepartmentsToReferenceID { get; set; }
         public InstrumentName InstName { get; set; }
         public Condition Cond { get; set; }
-        public Department Departments { get; set; }
+        public Department Department { get; set; }
 
 
         public MeasuringInstrument()
@@ -50,9 +50,9 @@ namespace Avionika_Si.Models
             Description = DB.DataConverter.Convert<string>(input["description"]);
             DepartmentsToReferenceID = DB.DataConverter.Convert<int>(input["id_department"]);
 
-            InstName = Program.DbHelper.GetInstrumentNameById(InstrumentNameReferenceID);
-            Cond = Program.DbHelper.GetConditionById(ConditionReferenceId);
-            Departments = Program.DbHelper.GetBelongToById(DepartmentsToReferenceID);
+            InstName = Program.References.InstrumentNames[InstrumentNameReferenceID];
+            Cond = Program.References.Conditions[ConditionReferenceId];
+            Department = Program.References.Departments[DepartmentsToReferenceID];
         }
 
         public MeasuringInstrument(MeasuringInstrument input)
@@ -72,7 +72,7 @@ namespace Avionika_Si.Models
 
             InstName = new InstrumentName(input.InstName);
             Cond = new Condition(input.Cond);
-            Departments = new Department(input.Departments);
+            Department = new Department(input.Department);
 
         }
 

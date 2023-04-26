@@ -14,9 +14,9 @@ using System.Globalization;
 
 namespace Oborot_SI
 {
-    public partial class Schedule : Form
+    public partial class ScheduleForm : Form
     {
-        public Schedule()
+        public ScheduleForm()
         {
             InitializeComponent();
             //Width = Screen.PrimaryScreen.Bounds.Width;

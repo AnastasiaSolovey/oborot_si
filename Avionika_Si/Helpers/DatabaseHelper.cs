@@ -66,7 +66,9 @@ namespace Avionika_Si.Helpers
                 $"ON `journal`.`id_conclusion` = `conclusion`.`id_conclusion`" +
                 $"JOIN  `oborot_si`.`type_of_work`" +
                 $"ON `journal`.`id_type_work` = `type_of_work`.`id_type_work`" +
-                $"WHERE `schedule`.`next_date`>= '"+DateTime.Now+"' ORDER BY `schedule`.`next_date`;");
+                $"WHERE `schedule`.`next_date`>= '{DateTime.Now.Date.ToString("yyyy-MM-dd")}'" +
+                $"GROUP BY (`schedule`.`id_schedule`)" +
+                $"ORDER BY `schedule`.`next_date`;");
         }
 
         public List<Models.Passport> GetPassportList(string inventoryNumber, string factoryNumber)
@@ -132,7 +134,7 @@ namespace Avionika_Si.Helpers
                 $"FROM `oborot_si`.`name_instrument`;");
         }
 
-        public List<Condition> GetCondition()
+        public List<Condition> GetConditions()
         {
             return DatabaseAdapter.GetListDataByQuery<Condition>
                 ($"SELECT `condition`.`id_condition`," +
@@ -140,7 +142,7 @@ namespace Avionika_Si.Helpers
                 $"FROM `oborot_si`.`condition`");
         }
 
-        public List<Department> GetBelongTo()
+        public List<Department> GetDepartments()
         {
             return DatabaseAdapter.GetListDataByQuery<Department>
                 ($"SELECT `department`.`id_department`," +
@@ -279,7 +281,7 @@ namespace Avionika_Si.Helpers
             return DatabaseAdapter.ExecuteActionQuery
                 ($"INSERT INTO `oborot_si`.`journal`" +
                 $"( num_journal,`date`,id_measuring_instrument,id_conclusion,id_type_work) " +
-                $"VALUES ({journal.NumJournal},(DATE_FORMAT('{journal.DateWork}', '%Y-%m-%d')), {journal.MeasuringInstrumentReferenceId}, {journal.ConclusionReferenceId}, {journal.TypeWorkReferenceID});");
+                $"VALUES ({journal.NumJournal},'{journal.DateWork.ToString("yyyy-MM-dd")}', {journal.MeasuringInstrumentReferenceId}, {journal.ConclusionReferenceId}, {journal.TypeWorkReferenceID});");
         }
 
         public List<Models.EmployeeData> GetEmployeeDataList()

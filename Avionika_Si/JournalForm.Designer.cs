@@ -41,7 +41,8 @@
             this.conclusionLabel = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
             this.idLabel = new System.Windows.Forms.Label();
-            this.NumBox = new System.Windows.Forms.TextBox();
+            this.JournalNumberUpDown = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.JournalNumberUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // factoryLabel
@@ -187,17 +188,28 @@
             this.idLabel.TabIndex = 33;
             this.idLabel.Text = "Номер в журнале";
             // 
-            // NumBox
+            // JournalNumberUpDown
             // 
-            this.NumBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NumBox.BackColor = System.Drawing.SystemColors.Window;
-            this.NumBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NumBox.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.NumBox.Location = new System.Drawing.Point(31, 40);
-            this.NumBox.Margin = new System.Windows.Forms.Padding(2);
-            this.NumBox.Name = "NumBox";
-            this.NumBox.Size = new System.Drawing.Size(269, 22);
-            this.NumBox.TabIndex = 34;
+            this.JournalNumberUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JournalNumberUpDown.Location = new System.Drawing.Point(31, 43);
+            this.JournalNumberUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.JournalNumberUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.JournalNumberUpDown.Name = "JournalNumberUpDown";
+            this.JournalNumberUpDown.Size = new System.Drawing.Size(269, 22);
+            this.JournalNumberUpDown.TabIndex = 35;
+            this.JournalNumberUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // JournalForm
             // 
@@ -205,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(370, 435);
-            this.Controls.Add(this.NumBox);
+            this.Controls.Add(this.JournalNumberUpDown);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.conclusionLabel);
@@ -225,6 +237,7 @@
             this.Name = "JournalForm";
             this.Text = "Заполнение журнала";
             this.Load += new System.EventHandler(this.Journal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.JournalNumberUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,6 +257,6 @@
         private System.Windows.Forms.Label conclusionLabel;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Label idLabel;
-        private System.Windows.Forms.TextBox NumBox;
+        private System.Windows.Forms.NumericUpDown JournalNumberUpDown;
     }
 }

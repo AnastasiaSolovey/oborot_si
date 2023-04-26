@@ -11,7 +11,6 @@ using Avionika_Si;
 using MySql.Data.MySqlClient;
 using Avionika_Si.Models;
 using DFLS.Adapters;
-using Oborot_SI;
 
 
 namespace Oborot_SI
@@ -28,8 +27,8 @@ namespace Oborot_SI
 
         private void FillScheduleDataGrid()
         {
-           //schedules = Program.DbHelper.GetScheduleList();
-           //TableHelper.FillScheduleTable(schedules, scheduleGridView);
+           schedules = Program.DbHelper.GetScheduleList();
+           TableHelper.FillScheduleTable(schedules, scheduleGridView);
         }
         
 

@@ -63,14 +63,14 @@ namespace Oborot_SI
 
         private void InitConditionBox()
         {
-            conditionBox.DataSource = Program.DbHelper.GetCondition();
+            conditionBox.DataSource = Program.DbHelper.GetConditions();
             conditionBox.DisplayMember = "ConditionName";
             conditionBox.ValueMember = "ID";
         }
 
         private void InitBelongBox()
         {
-            belongBox.DataSource = Program.DbHelper.GetBelongTo();
+            belongBox.DataSource = Program.DbHelper.GetDepartments();
             belongBox.DisplayMember = "Departments";
             belongBox.ValueMember = "ID";
         }

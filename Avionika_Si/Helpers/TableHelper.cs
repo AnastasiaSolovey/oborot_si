@@ -57,7 +57,7 @@ namespace DFLS.Adapters
                 {
                     int id = DGV.BaseDGV.Rows.Add(instruments[i].InstName.Name, instruments[i].Type, instruments[i].Manufacturer, instruments[i].MeasuringRange,
                         instruments[i].InventoryNumber, instruments[i].FactoryNumber, instruments[i].Etalon, instruments[i].Cond?.ConditionName, instruments[i].Equipment,
-                        instruments[i].Description, instruments[i].Departments?.Departments);
+                        instruments[i].Description, instruments[i].Department?.Departments);
                     DGV.BaseDGV.Rows[id].Tag = instruments[i].ID;
 
                 }

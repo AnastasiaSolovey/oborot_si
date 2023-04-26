@@ -46,29 +46,23 @@ namespace Oborot_SI
             DateworkBox.CustomFormat = "yyyy-MM-dd";
         }
 
-        private void Back_Button_Click(object sender, EventArgs e)
-        {
 
-                this.Hide();
-                MainMenu F = new MainMenu();
-                F.Show();
-        }
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
 
             int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
-            DateworkBox.Format = DateTimePickerFormat.Custom;
-            DateworkBox.CustomFormat = "yyyy-MM-dd";
-            string DateString = DateworkBox.Value.ToString("yyyy-MM-dd");
-            DateTime DateValue = DateTime.ParseExact(DateString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            //DateworkBox.Format = DateTimePickerFormat.Custom;
+            //DateworkBox.CustomFormat = "yyyy-MM-dd";
+            //string DateString = DateworkBox.Value.ToString("yyyy-MM-dd");
+            //DateTime DateValue = DateTime.ParseExact(DateString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             if (refMeasuringInstrumentId!=0)
             {
                 Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
                 {            
-                    NumJournal = Convert.ToInt32(NumBox.Text),
-                    DateWork = DateValue,
+                    NumJournal = Convert.ToInt32(JournalNumberUpDown.Value),
+                    DateWork = DateworkBox.Value,
                     MeasuringInstrumentReferenceId = refMeasuringInstrumentId,
                     ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
                     TypeWorkReferenceID = Convert.ToInt32(TypeworkBox.SelectedValue),
