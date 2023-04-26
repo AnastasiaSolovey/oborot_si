@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using MySql.Data.MySqlClient;
 using Avionika_Si;
+using System.Globalization;
 
 namespace Oborot_SI
 {
@@ -20,7 +21,7 @@ namespace Oborot_SI
         {
             InitializeComponent();
         }
-
+        private JournalForm LastNum = null;
         private void InitTypeWorkBox()
         {
             TypeworkBox.DataSource = Program.DbHelper.GetTypeWork();
@@ -41,8 +42,8 @@ namespace Oborot_SI
 
             InitTypeWorkBox();
             InitConclusionBox();
-
-
+            DateworkBox.Format = DateTimePickerFormat.Custom;
+            DateworkBox.CustomFormat = "yyyy-MM-dd";
         }
 
         private void Back_Button_Click(object sender, EventArgs e)
@@ -55,14 +56,19 @@ namespace Oborot_SI
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
+
             int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
+            DateworkBox.Format = DateTimePickerFormat.Custom;
+            DateworkBox.CustomFormat = "yyyy-MM-dd";
+            string DateString = DateworkBox.Value.ToString("yyyy-MM-dd");
+            DateTime DateValue = DateTime.ParseExact(DateString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             if (refMeasuringInstrumentId!=0)
             {
                 Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
-                {
+                {            
                     NumJournal = Convert.ToInt32(NumBox.Text),
-                    Date = DateworkBox.Value,
+                    DateWork = DateValue,
                     MeasuringInstrumentReferenceId = refMeasuringInstrumentId,
                     ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
                     TypeWorkReferenceID = Convert.ToInt32(TypeworkBox.SelectedValue),
@@ -75,17 +81,12 @@ namespace Oborot_SI
                 else
                 {
                     MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
-
                 }
             }
             else
             {
                 MessageBox.Show("Ошибка. СИ с таким инвентарным и заводским номером не найдено.");
             }
-
-            
         }
-
-     
     }
 }

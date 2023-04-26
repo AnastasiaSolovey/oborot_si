@@ -93,6 +93,7 @@
             this.DateworkBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DateworkBox.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DateworkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateworkBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateworkBox.Location = new System.Drawing.Point(31, 212);
             this.DateworkBox.Margin = new System.Windows.Forms.Padding(2);
             this.DateworkBox.Name = "DateworkBox";
@@ -191,6 +192,7 @@
             this.NumBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NumBox.BackColor = System.Drawing.SystemColors.Window;
             this.NumBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NumBox.ForeColor = System.Drawing.SystemColors.InfoText;
             this.NumBox.Location = new System.Drawing.Point(31, 40);
             this.NumBox.Margin = new System.Windows.Forms.Padding(2);
             this.NumBox.Name = "NumBox";

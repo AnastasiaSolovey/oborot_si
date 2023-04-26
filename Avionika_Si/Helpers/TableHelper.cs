@@ -93,5 +93,29 @@ namespace DFLS.Adapters
             }
             DGV.ResumeLayout();
         }
+
+        public static void FillPassportTable(List<Passport> passport, DataGridView passportDGV)
+        {
+            DGVExtension DGV = new DGVExtension(passportDGV);
+            DGV.InitCopyCellContextMenu();
+            DGV.SuspendLayout();
+            try
+            {
+                DGV.BaseDGV.Rows.Clear();
+                DGV.BaseDGV.Columns[0].ValueType = typeof(string);
+                for (int i = 0; i < passport.Count; i++)
+                {
+                    int id = DGV.BaseDGV.Rows.Add(passport[i].InstName.Name, passport[i].Type.Type, passport[i].Manufacturer.Manufacturer, passport[i].Inventory.InventoryNumber,
+                        passport[i].Factory.FactoryNumber, passport[i].Department?.Departments, passport[i].DateWork.DateWork, passport[i].Conclusion.ConclusionName,
+                        passport[i].TypeWork?.Type);
+                        DGV.BaseDGV.Rows[id].Tag = passport[i].ID;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
+            }
+            DGV.ResumeLayout();
+        }
     }
 }

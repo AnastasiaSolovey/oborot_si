@@ -147,7 +147,6 @@ namespace Oborot_SI
 
                     };
 
-
                     if (AddInstrument.Create())
                     {
                         DialogResult = DialogResult.OK;

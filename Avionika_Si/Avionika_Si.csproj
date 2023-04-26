@@ -121,6 +121,7 @@
     <Compile Include="Models\InstrumentName.cs" />
     <Compile Include="Models\Journal.cs" />
     <Compile Include="Models\MeasuringInstrument.cs" />
+    <Compile Include="Models\Passport.cs" />
     <Compile Include="Models\Protocol.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Schedule.cs" />

@@ -7,25 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Avionika_Si;
+using MySql.Data.MySqlClient;
 using Avionika_Si.Models;
 using DFLS.Adapters;
-using Avionika_Si;
+using Oborot_SI;
+
 
 namespace Oborot_SI
 {
     public partial class ScheduleView : Form
     {
-        private List<Schedule> schedule = null;
+        private List<Schedule> schedules = null;
+        private Schedule SelectedInstrument = null;
         public ScheduleView()
         {
             InitializeComponent();
-            FillMesInstrumentsDataGrid();
+            FillScheduleDataGrid();
         }
 
-        private void FillMesInstrumentsDataGrid()
+        private void FillScheduleDataGrid()
         {
-            //schedule = Program.DbHelper.GetMeasuringInstrumentsList();
-            //TableHelper.FillMeasuringInstrumentsTable(schedule, scheduleGridView);
+           //schedules = Program.DbHelper.GetScheduleList();
+           //TableHelper.FillScheduleTable(schedules, scheduleGridView);
         }
         
 
@@ -34,13 +38,10 @@ namespace Oborot_SI
             
         }
 
-        private void scheduleView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            MainMenu F = new MainMenu();
-            F.Show();
-        }
 
- 
+        private void ScheduleView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

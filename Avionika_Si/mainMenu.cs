@@ -38,7 +38,7 @@ namespace Oborot_SI
         private void toPasp_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            passport F = new passport();
+            PassportForm F = new PassportForm();
             F.Show();
         }
 
@@ -46,8 +46,9 @@ namespace Oborot_SI
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Schedule F = new Schedule();
-            F.Show();
+            ScheduleView F = new ScheduleView();
+            F.ShowDialog();
+            this.Show();
         }
 
         private void Journal_Button_Click(object sender, EventArgs e)
@@ -60,8 +61,9 @@ namespace Oborot_SI
         private void Protocol_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            protocol F = new protocol();
-            F.Show();
+            ProtocolForm F = new ProtocolForm();
+            F.ShowDialog();
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -29,27 +29,6 @@ namespace Avionika_Si
             TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
         }
 
-        private void Search_Button_Click(object sender, EventArgs e)
-        {
-
-            int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
-            if (refMeasuringInstrumentId != 0)
-            {
-                Avionika_Si.Models.MeasuringInstrument measuring = new Avionika_Si.Models.MeasuringInstrument()
-                {
-
-                };
-                measuringInstruments = Program.DbHelper.GetInstrumentByFactoryInventory(inventoryBox.Text, factoryBox.Text);
-                TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
-
-
-            }
-            else
-            {
-                MessageBox.Show("Ошибка. СИ с таким инвентарным и заводским номером не найдено.");
-            }
-        }
-
         private void MeasuringInstrumentDGV_Load(object sender, EventArgs e)
         {
 
@@ -144,6 +123,44 @@ namespace Avionika_Si
                 updateMeasuringIstrumentButton_Click(null, null);
             }
 
+        }
+
+        private void inventoryBox_TextChanged(object sender, EventArgs e)
+        {
+            int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
+            if (refMeasuringInstrumentId != 0)
+            {
+                Avionika_Si.Models.MeasuringInstrument measuring = new Avionika_Si.Models.MeasuringInstrument()
+                {
+
+                };
+                measuringInstruments = Program.DbHelper.GetInstrumentByFactoryInventory(inventoryBox.Text, factoryBox.Text);
+                TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
+            }
+            else
+            {
+                measuringInstruments = Program.DbHelper.GetMeasuringInstrumentsList();
+                TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
+            }
+        }
+
+        private void factoryBox_TextChanged(object sender, EventArgs e)
+        {
+            int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
+            if (refMeasuringInstrumentId != 0)
+            {
+                Avionika_Si.Models.MeasuringInstrument measuring = new Avionika_Si.Models.MeasuringInstrument()
+                {
+
+                };
+                measuringInstruments = Program.DbHelper.GetInstrumentByFactoryInventory(inventoryBox.Text, factoryBox.Text);
+                TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
+            }
+            else
+            {
+                measuringInstruments = Program.DbHelper.GetMeasuringInstrumentsList();
+                TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
+            }
         }
     }
 }

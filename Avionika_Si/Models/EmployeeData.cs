@@ -28,10 +28,10 @@ namespace Avionika_Si.Models
         {
             ID = DB.DataConverter.Convert<int>(input["id_employee_data"]);
             EmployeeReferenceID = DB.DataConverter.Convert<int>(input["id_employee"]);
-            DateCertification = DB.DataConverter.Convert<DateTime>(input["id_employee"]);
+            DateCertification = DB.DataConverter.Convert<DateTime>(input["date_of_certification"]);
             Login = DB.DataConverter.Convert<string>(input["login"]);
-            Salt = DB.DataConverter.Convert<string>(input["salt"]);
-            PasswordHash = DB.DataConverter.Convert<string>(input["password_hash"]);
+            Salt = DB.DataConverter.Convert<string>(input["password_hash"]);
+            PasswordHash = DB.DataConverter.Convert<string>(input["salt"]);
             RoleReferenceID = DB.DataConverter.Convert<int>(input["id_role"]);
             IsActive = DB.DataConverter.Convert<int>(input["is_active"]);
            

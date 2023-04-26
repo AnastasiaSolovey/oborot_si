@@ -6,6 +6,7 @@ using DatabaseAdapter;
 using System.Threading.Tasks;
 using System.Data;
 using System.Xml.Linq;
+using System.Globalization;
 using DB = DatabaseAdapter;
 
 namespace Avionika_Si.Models
@@ -14,7 +15,7 @@ namespace Avionika_Si.Models
     {
         public int ID { get; set; }
         public int NumJournal { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime DateWork { get; set; }
         public int MeasuringInstrumentReferenceId { get; set; }
         public int ConclusionReferenceId { get; set; }
         public int TypeWorkReferenceID { get; set; }
@@ -31,7 +32,7 @@ namespace Avionika_Si.Models
         {
             ID = DB.DataConverter.Convert<int>(input["id_journal"]);
             NumJournal = DB.DataConverter.Convert<int>(input["num_journal"]);
-            Date = DB.DataConverter.Convert<DateTime>(input["date"]);
+            DateWork = DateTime.ParseExact(input["date"].ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
             MeasuringInstrumentReferenceId = DB.DataConverter.Convert<int>(input["id_measuring_instrument"]);
             ConclusionReferenceId = DB.DataConverter.Convert<int>(input["id_conclusion"]);
             TypeWorkReferenceID = DB.DataConverter.Convert<int>(input["id_type_work"]);

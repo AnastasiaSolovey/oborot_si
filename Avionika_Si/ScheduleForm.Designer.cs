@@ -40,9 +40,8 @@
             this.newDateBox = new System.Windows.Forms.DateTimePicker();
             this.newDateLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.addButton = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.sceduleViewLabel = new System.Windows.Forms.LinkLabel();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.CalculateDateButton = new System.Windows.Forms.Button();
             this.oldVenueBox = new System.Windows.Forms.ComboBox();
             this.newVenueBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -130,7 +129,7 @@
             this.oldVenueLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.oldVenueLabel.AutoSize = true;
             this.oldVenueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.oldVenueLabel.Location = new System.Drawing.Point(428, 33);
+            this.oldVenueLabel.Location = new System.Drawing.Point(428, 32);
             this.oldVenueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.oldVenueLabel.Name = "oldVenueLabel";
             this.oldVenueLabel.Size = new System.Drawing.Size(130, 16);
@@ -142,7 +141,7 @@
             this.newVenueLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newVenueLabel.AutoSize = true;
             this.newVenueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newVenueLabel.Location = new System.Drawing.Point(428, 86);
+            this.newVenueLabel.Location = new System.Drawing.Point(428, 85);
             this.newVenueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newVenueLabel.Name = "newVenueLabel";
             this.newVenueLabel.Size = new System.Drawing.Size(207, 16);
@@ -154,11 +153,11 @@
             this.newDateBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newDateBox.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newDateBox.Enabled = false;
-            this.newDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newDateBox.Location = new System.Drawing.Point(431, 165);
+            this.newDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.newDateBox.Location = new System.Drawing.Point(431, 163);
             this.newDateBox.Margin = new System.Windows.Forms.Padding(2);
             this.newDateBox.Name = "newDateBox";
-            this.newDateBox.Size = new System.Drawing.Size(297, 22);
+            this.newDateBox.Size = new System.Drawing.Size(297, 24);
             this.newDateBox.TabIndex = 52;
             // 
             // newDateLabel
@@ -166,7 +165,7 @@
             this.newDateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newDateLabel.AutoSize = true;
             this.newDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newDateLabel.Location = new System.Drawing.Point(428, 147);
+            this.newDateLabel.Location = new System.Drawing.Point(428, 145);
             this.newDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newDateLabel.Name = "newDateLabel";
             this.newDateLabel.Size = new System.Drawing.Size(199, 16);
@@ -178,51 +177,37 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(12, 497);
+            this.label8.Location = new System.Drawing.Point(12, 478);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 21);
             this.label8.TabIndex = 54;
             // 
-            // addButton
+            // AddButton
             // 
-            this.addButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(431, 208);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(164, 34);
-            this.addButton.TabIndex = 57;
-            this.addButton.Text = "Добавить запись";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.Add_Button_Click);
+            this.AddButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddButton.Location = new System.Drawing.Point(431, 196);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(164, 34);
+            this.AddButton.TabIndex = 57;
+            this.AddButton.Text = "Добавить запись";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.Add_Button_Click);
             // 
-            // searchButton
+            // CalculateDateButton
             // 
-            this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchButton.Location = new System.Drawing.Point(19, 184);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(106, 34);
-            this.searchButton.TabIndex = 59;
-            this.searchButton.Text = "Поиск";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.Search_Button_Click);
-            // 
-            // sceduleViewLabel
-            // 
-            this.sceduleViewLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sceduleViewLabel.AutoSize = true;
-            this.sceduleViewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sceduleViewLabel.Location = new System.Drawing.Point(427, 254);
-            this.sceduleViewLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.sceduleViewLabel.Name = "sceduleViewLabel";
-            this.sceduleViewLabel.Size = new System.Drawing.Size(250, 20);
-            this.sceduleViewLabel.TabIndex = 60;
-            this.sceduleViewLabel.TabStop = true;
-            this.sceduleViewLabel.Text = "Перейти к просмотру графиков";
-            this.sceduleViewLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.CalculateDateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CalculateDateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CalculateDateButton.Location = new System.Drawing.Point(19, 184);
+            this.CalculateDateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CalculateDateButton.Name = "CalculateDateButton";
+            this.CalculateDateButton.Size = new System.Drawing.Size(106, 34);
+            this.CalculateDateButton.TabIndex = 59;
+            this.CalculateDateButton.Text = "Рассчитать";
+            this.CalculateDateButton.UseVisualStyleBackColor = true;
+            this.CalculateDateButton.Click += new System.EventHandler(this.Search_Button_Click);
             // 
             // oldVenueBox
             // 
@@ -258,7 +243,7 @@
             this.groupBox1.Controls.Add(this.inventoryBox);
             this.groupBox1.Controls.Add(this.factoryLabel);
             this.groupBox1.Controls.Add(this.factoryBox);
-            this.groupBox1.Controls.Add(this.searchButton);
+            this.groupBox1.Controls.Add(this.CalculateDateButton);
             this.groupBox1.Controls.Add(this.frequencyLabel);
             this.groupBox1.Controls.Add(this.frequencyBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -273,12 +258,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(763, 297);
+            this.ClientSize = new System.Drawing.Size(763, 258);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.newVenueBox);
             this.Controls.Add(this.oldVenueBox);
-            this.Controls.Add(this.sceduleViewLabel);
-            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.newDateLabel);
             this.Controls.Add(this.newDateBox);
@@ -310,9 +294,8 @@
         private System.Windows.Forms.DateTimePicker newDateBox;
         private System.Windows.Forms.Label newDateLabel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.LinkLabel sceduleViewLabel;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button CalculateDateButton;
         private System.Windows.Forms.ComboBox oldVenueBox;
         private System.Windows.Forms.ComboBox newVenueBox;
         private System.Windows.Forms.GroupBox groupBox1;

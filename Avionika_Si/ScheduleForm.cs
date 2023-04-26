@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Avionika_Si;
+using System.Globalization;
 
 namespace Oborot_SI
 {
@@ -24,69 +25,43 @@ namespace Oborot_SI
 
         private void Grafic_Load(object sender, EventArgs e)
         {
-
-           /* DataTable old = new DataTable();
-            BD ConnDB2 = new BD();
-            ConnDB2.openConnection();
-            string request2 = "Select mesto_provedenia from mesto_provedenia Order by mesto_provedenia";
-            MySqlCommand Nado2 = new MySqlCommand(request2, ConnDB2.getConnection());
-            ConnDB2.getConnection();
-            MySqlDataAdapter sqlData2 = new MySqlDataAdapter(Nado2);
-            sqlData2.Fill(old);
-            for (int i = 0; i < old.Rows.Count; i++)
-            {
-                oldVenueBox.Items.Add(old.Rows[i]["mesto_provedenia"].ToString());
-
-            }
-
-
-            DataTable neew = new DataTable();
-            BD ConnDB3 = new BD();
-            ConnDB3.openConnection();
-            string request3 = "Select mesto_provedenia from mesto_provedenia Order by mesto_provedenia";
-            MySqlCommand Nado3 = new MySqlCommand(request3, ConnDB3.getConnection());
-            ConnDB3.getConnection();
-            MySqlDataAdapter sqlData3 = new MySqlDataAdapter(Nado3);
-            sqlData3.Fill(neew);
-            for (int i = 0; i < neew.Rows.Count; i++)
-            {
-                newVenueBox.Items.Add(neew.Rows[i]["mesto_provedenia"].ToString());
-
-            }
-           */
+            oldVenueBox.Visible = false;
+            newVenueBox.Visible = false;
         }
 
         private void Search_Button_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(factoryBox.Text) && !string.IsNullOrWhiteSpace(factoryBox.Text) &&
-  !string.IsNullOrEmpty(inventoryBox.Text) && !string.IsNullOrWhiteSpace(inventoryBox.Text))
-
+            int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
+            if (refMeasuringInstrumentId != 0)
             {
-                BD ConnDB = new BD();
-                ConnDB.openConnection();
-                string request = "Select data from journals join si_card on journals.id_si=si_card.id_si where zavod_nomer='" + factoryBox.Text + "' and invent_nomer= '" + inventoryBox.Text + "' order by data DESC LIMIT 1";
-                MySqlCommand Poisk = new MySqlCommand(request, ConnDB.getConnection());
-                MySqlDataReader sqlDataReader = Poisk.ExecuteReader();
-                sqlDataReader.Read();
-                if (sqlDataReader.HasRows)
+                Avionika_Si.Models.Schedule schedule = new Avionika_Si.Models.Schedule()
                 {
-                    var newdata = DateTime.Parse(sqlDataReader[0].ToString());
+
+
+                };
+                string GetDate = Program.DbHelper.GetDateWorkByFactoryInventory(inventoryBox.Text, factoryBox.Text);
+                if (GetDate != null)
+                {
+                    DateTime NewDate = DateTime.Parse(GetDate);
                     if (!string.IsNullOrEmpty(frequencyBox.Text) && !string.IsNullOrWhiteSpace(frequencyBox.Text))
                     {
-                        Authorization.periodichnost = Convert.ToInt32(frequencyBox.Text);
-                        newdata= newdata.AddMonths(Authorization.periodichnost);
-                        newdata = newdata.AddDays(-1);
-                        newDateBox.Text = newdata.ToString();
+                        int frequency = Convert.ToInt32(frequencyBox.Text);
+                        NewDate = NewDate.AddMonths(frequency);
+                        NewDate = NewDate.AddDays(-1);
+                        newDateBox.Text = NewDate.ToString();
                         oldVenueBox.Visible = true;
                         newVenueBox.Visible = true;
                     }
-                    
                 }
-
                 else
+                {
 
-                    MessageBox.Show("Такого средства измерения нет. Проверьте, есть ли запись о данном СИ в журнале", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ConnDB.CloseConnection();
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Ошибка. СИ с таким инвентарным и заводским номером не найдено.");
             }
 
 

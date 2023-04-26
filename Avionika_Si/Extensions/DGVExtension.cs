@@ -235,7 +235,7 @@ namespace Oborot_SI.Extensions
                 if (DGV.Rows.Count > rowIndex)
                 {
                     DGV.Rows[rowIndex].Selected = true;
-                    DGV.FirstDisplayedScrollingRowIndex = scrollIndex;
+                  DGV.FirstDisplayedScrollingRowIndex = scrollIndex;
                 }
                 else if (DGV.Rows.Count > 0)
                 {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.measuringsGridView = new System.Windows.Forms.DataGridView();
             this.naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +42,6 @@
             this.opisanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prinadlejnost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Search_Button = new System.Windows.Forms.Button();
             this.factoryBox = new System.Windows.Forms.TextBox();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.inventoryBox = new System.Windows.Forms.TextBox();
@@ -76,14 +75,14 @@
             this.komplectacia,
             this.opisanie,
             this.prinadlejnost});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.measuringsGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.measuringsGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.measuringsGridView.Location = new System.Drawing.Point(11, 11);
             this.measuringsGridView.Margin = new System.Windows.Forms.Padding(2);
             this.measuringsGridView.MultiSelect = false;
@@ -187,29 +186,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Search_Button);
             this.groupBox1.Controls.Add(this.factoryBox);
             this.groupBox1.Controls.Add(this.inventoryLabel);
             this.groupBox1.Controls.Add(this.inventoryBox);
             this.groupBox1.Controls.Add(this.factoryLabel);
             this.groupBox1.Location = new System.Drawing.Point(1109, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(269, 191);
+            this.groupBox1.Size = new System.Drawing.Size(269, 155);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтры";
-            // 
-            // Search_Button
-            // 
-            this.Search_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Search_Button.Location = new System.Drawing.Point(5, 144);
-            this.Search_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Search_Button.Name = "Search_Button";
-            this.Search_Button.Size = new System.Drawing.Size(107, 32);
-            this.Search_Button.TabIndex = 30;
-            this.Search_Button.Text = "Поиск";
-            this.Search_Button.UseVisualStyleBackColor = true;
-            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
             // factoryBox
             // 
@@ -221,6 +207,7 @@
             this.factoryBox.Name = "factoryBox";
             this.factoryBox.Size = new System.Drawing.Size(259, 21);
             this.factoryBox.TabIndex = 10;
+            this.factoryBox.TextChanged += new System.EventHandler(this.factoryBox_TextChanged);
             // 
             // inventoryLabel
             // 
@@ -245,6 +232,7 @@
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.Size = new System.Drawing.Size(260, 21);
             this.inventoryBox.TabIndex = 9;
+            this.inventoryBox.TextChanged += new System.EventHandler(this.inventoryBox_TextChanged);
             // 
             // factoryLabel
             // 
@@ -341,7 +329,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn opisanie;
         private System.Windows.Forms.DataGridViewTextBoxColumn prinadlejnost;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Search_Button;
         private System.Windows.Forms.TextBox factoryBox;
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.TextBox inventoryBox;
