@@ -71,6 +71,12 @@ namespace Avionika_Si.Helpers
                 $"ORDER BY `schedule`.`next_date`;");
         }
 
+        public DataTable GetScheduleList(DateTime nextDate)
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+
         public List<Models.Passport> GetPassportList(string inventoryNumber, string factoryNumber)
         {
             return DatabaseAdapter.GetListDataByQuery<Models.Passport>

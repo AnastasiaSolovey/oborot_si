@@ -172,5 +172,15 @@ namespace Oborot_SI
                 }
             }
         }
+
+        private void PickMesInstrButton_Click(object sender, EventArgs e)
+        {
+            MeasuringInstrumentDGV form = new MeasuringInstrumentDGV(true);
+            if(form.ShowDialog() == DialogResult.OK)
+            {
+                inventoryBox.Text = form.PickedMeasuringInstrument.InventoryNumber;
+                factoryBox.Text = form.PickedMeasuringInstrument.FactoryNumber;
+            }
+        }
     }
 }

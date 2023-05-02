@@ -26,8 +26,8 @@ namespace Oborot_SI
 
         private void FillScheduleDataGrid()
         {
-           schedules = Program.DbHelper.GetScheduleList();
-           TableHelper.FillScheduleTable(schedules, scheduleGridView);
+           //schedules = Program.DbHelper.GetScheduleList();
+           TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleList(DateTime.Today.Date), scheduleGridView);
         }
         
 
@@ -40,6 +40,12 @@ namespace Oborot_SI
         private void ScheduleView_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddScheduleButton_Click(object sender, EventArgs e)
+        {
+            ScheduleForm form = new ScheduleForm();
+            form.Show();
         }
     }
 }

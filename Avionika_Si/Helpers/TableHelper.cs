@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Avionika_Si;
+using System.Data;
+using DB = DatabaseAdapter;
 
 namespace DFLS.Adapters
 {
@@ -69,9 +71,9 @@ namespace DFLS.Adapters
             DGV.ResumeLayout();
         }
 
-        public static void FillScheduleTable(List<Schedule> schedule, DataGridView scheduleDGV)
+        /*public static void FillScheduleTable(List<Schedule> schedule, DataGridView scheduleDGV)
         {
-           /* DGVExtension DGV = new DGVExtension(scheduleDGV);
+            DGVExtension DGV = new DGVExtension(scheduleDGV);
             DGV.InitCopyCellContextMenu();
             DGV.SuspendLayout();
             try
@@ -91,7 +93,35 @@ namespace DFLS.Adapters
             {
                 MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
             }
-            DGV.ResumeLayout();*/
+            DGV.ResumeLayout();
+        }*/
+
+        public static void FillScheduleTable(DataTable scheduleDataTable, DataGridView scheduleDGV)
+        {
+            //scheduleDGV.AutoGenerateColumns = false;
+            //scheduleDGV.DataSource = scheduleDataTable;
+
+
+            DGVExtension DGV = new DGVExtension(scheduleDGV);
+            DGV.InitCopyCellContextMenu();
+            DGV.SuspendLayout();
+            try
+            {
+                DGV.BaseDGV.Rows.Clear();
+                DGV.BaseDGV.Columns[0].ValueType = typeof(string);
+
+                foreach(DataRow row in scheduleDataTable.Rows)
+                {
+                    int id = DGV.BaseDGV.Rows.Add(row["name_instrument"], row["type"], row["inventory_number"], row["factory_number"], row["frequency"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"),
+                        row["old_ven"], DB.DataConverter.Convert<DateTime>(row["next_date"]).ToString("dd.MM.yyyy"), row["new_ven"], row["conclusion"], row["type_of_work"]);
+                    DGV.BaseDGV.Rows[id].Tag = row["id_schedule"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
+            }
+            DGV.ResumeLayout();
         }
 
         public static void FillJournalTable(List<Passport> passport, DataGridView passportDGV)

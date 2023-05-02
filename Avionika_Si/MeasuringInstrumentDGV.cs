@@ -17,10 +17,12 @@ namespace Avionika_Si
     {
         private List<MeasuringInstrument> measuringInstruments = null;
         private MeasuringInstrument SelectedInstrument = null;
-        public MeasuringInstrumentDGV()
+        private bool _pickingMode = false;
+        public MeasuringInstrument PickedMeasuringInstrument { get; private set; }
+        public MeasuringInstrumentDGV(bool pickingMode = false)
         {
             InitializeComponent();
-            FillMesInstrumentsDataGrid();
+            _pickingMode = pickingMode;
         }
 
         private void FillMesInstrumentsDataGrid()
@@ -31,7 +33,18 @@ namespace Avionika_Si
 
         private void MeasuringInstrumentDGV_Load(object sender, EventArgs e)
         {
+            if(_pickingMode)
+            {
+                groupBox2.Enabled=false;
+                groupBox2.Visible=false;
+                groupBox3.Enabled = false;
+                groupBox3.Visible = false;
 
+                measuringsGridView.CellDoubleClick -= measuringsGridView_CellDoubleClick;
+                measuringsGridView.CellDoubleClick += measuringsGridView_CellDoubleClick_PickingMode;
+            }
+
+            FillMesInstrumentsDataGrid();
         }
 
         private void createMeasuringInstrumentButton_Click(object sender, EventArgs e)
@@ -113,6 +126,15 @@ namespace Avionika_Si
                 updateMeasuringIstrumentButton.Enabled = false;
                 mesInstrInvNumbLabel.Text = "";
                 SelectedInstrument = null;
+            }
+        }
+
+        private void measuringsGridView_CellDoubleClick_PickingMode(object sender, DataGridViewCellEventArgs e)
+        {
+            if(SelectedInstrument!=null)
+            {
+                PickedMeasuringInstrument = SelectedInstrument;
+                this.DialogResult = DialogResult.OK;
             }
         }
 

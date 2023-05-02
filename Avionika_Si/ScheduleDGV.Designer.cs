@@ -47,6 +47,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Zakluch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddScheduleButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGridView)).BeginInit();
             this.SuspendLayout();
@@ -227,12 +228,23 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
+            // AddScheduleButton
+            // 
+            this.AddScheduleButton.Location = new System.Drawing.Point(512, 13);
+            this.AddScheduleButton.Name = "AddScheduleButton";
+            this.AddScheduleButton.Size = new System.Drawing.Size(108, 47);
+            this.AddScheduleButton.TabIndex = 52;
+            this.AddScheduleButton.Text = "Добавить график";
+            this.AddScheduleButton.UseVisualStyleBackColor = true;
+            this.AddScheduleButton.Click += new System.EventHandler(this.AddScheduleButton_Click);
+            // 
             // ScheduleDGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1434, 533);
+            this.Controls.Add(this.AddScheduleButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.scheduleGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -266,5 +278,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Zakluch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button AddScheduleButton;
     }
 }
