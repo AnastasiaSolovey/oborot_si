@@ -12,7 +12,7 @@ namespace Avionika_Si.Models
      public class Department
      {
         public int ID { get; set; }
-        public string Departments { get; set; }
+        public string DepartmentName { get; set; }
 
         public Department()
         {
@@ -22,13 +22,13 @@ namespace Avionika_Si.Models
         public Department(Department input)
         {
             ID = input.ID;
-            Departments = input.Departments;
+            DepartmentName = input.DepartmentName;
         }
 
         public Department(DataRow input)
         {
             ID = Convert.ToInt32(input["id_department"]);
-            Departments = DB.DataConverter.Convert<string>(input["department"]);
+            DepartmentName = DB.DataConverter.Convert<string>(input["department"]);
         }
      }
 }

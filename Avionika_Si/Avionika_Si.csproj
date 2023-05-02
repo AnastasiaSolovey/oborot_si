@@ -134,11 +134,11 @@
     <Compile Include="ScheduleForm.Designer.cs">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScheduleViewForm.cs">
+    <Compile Include="ScheduleDGV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScheduleViewForm.Designer.cs">
-      <DependentUpon>ScheduleViewForm.cs</DependentUpon>
+    <Compile Include="ScheduleDGV.Designer.cs">
+      <DependentUpon>ScheduleDGV.cs</DependentUpon>
     </Compile>
     <Compile Include="JournalForm.cs">
       <SubType>Form</SubType>
@@ -152,11 +152,11 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="PassportForm.cs">
+    <Compile Include="JournalDGV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PassportForm.Designer.cs">
-      <DependentUpon>PassportForm.cs</DependentUpon>
+    <Compile Include="JournalDGV.Designer.cs">
+      <DependentUpon>JournalDGV.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,8 +181,8 @@
     <EmbeddedResource Include="ScheduleForm.resx">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScheduleViewForm.resx">
-      <DependentUpon>ScheduleViewForm.cs</DependentUpon>
+    <EmbeddedResource Include="ScheduleDGV.resx">
+      <DependentUpon>ScheduleDGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JournalForm.resx">
       <DependentUpon>JournalForm.cs</DependentUpon>
@@ -190,8 +190,8 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PassportForm.resx">
-      <DependentUpon>PassportForm.cs</DependentUpon>
+    <EmbeddedResource Include="JournalDGV.resx">
+      <DependentUpon>JournalDGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

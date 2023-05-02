@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class ScheduleView
+    partial class ScheduleDGV
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleDGV));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.invent_Box = new System.Windows.Forms.TextBox();
             this.factoryLabel = new System.Windows.Forms.Label();
             this.zavod_Box = new System.Windows.Forms.TextBox();
-            this.viewButton = new System.Windows.Forms.Button();
             this.scheduleGridView = new System.Windows.Forms.DataGridView();
             this.naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,12 +47,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Zakluch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.mesInstrInvNumbLabel = new System.Windows.Forms.Label();
-            this.createMeasuringInstrumentButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGridView)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -62,13 +57,12 @@
             this.groupBox1.Controls.Add(this.invent_Box);
             this.groupBox1.Controls.Add(this.factoryLabel);
             this.groupBox1.Controls.Add(this.zavod_Box);
-            this.groupBox1.Controls.Add(this.viewButton);
-            this.groupBox1.Location = new System.Drawing.Point(26, 31);
+            this.groupBox1.Location = new System.Drawing.Point(26, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(403, 149);
+            this.groupBox1.Size = new System.Drawing.Size(403, 107);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Фильтры";
+            this.groupBox1.Text = "Фильтр по номеру";
             // 
             // inventoryLabel
             // 
@@ -110,18 +104,6 @@
             this.zavod_Box.Size = new System.Drawing.Size(177, 22);
             this.zavod_Box.TabIndex = 49;
             // 
-            // viewButton
-            // 
-            this.viewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.viewButton.Location = new System.Drawing.Point(187, 100);
-            this.viewButton.Margin = new System.Windows.Forms.Padding(2);
-            this.viewButton.Name = "viewButton";
-            this.viewButton.Size = new System.Drawing.Size(132, 40);
-            this.viewButton.TabIndex = 46;
-            this.viewButton.Text = "Просмотреть данные";
-            this.viewButton.UseVisualStyleBackColor = true;
-            this.viewButton.Click += new System.EventHandler(this.Add_Button_Click);
-            // 
             // scheduleGridView
             // 
             this.scheduleGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -148,13 +130,13 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.scheduleGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.scheduleGridView.Location = new System.Drawing.Point(26, 197);
+            this.scheduleGridView.Location = new System.Drawing.Point(26, 124);
             this.scheduleGridView.Margin = new System.Windows.Forms.Padding(2);
             this.scheduleGridView.Name = "scheduleGridView";
             this.scheduleGridView.ReadOnly = true;
             this.scheduleGridView.RowHeadersWidth = 51;
             this.scheduleGridView.RowTemplate.Height = 24;
-            this.scheduleGridView.Size = new System.Drawing.Size(1113, 325);
+            this.scheduleGridView.Size = new System.Drawing.Size(1387, 398);
             this.scheduleGridView.TabIndex = 44;
             // 
             // naimenovanie
@@ -245,58 +227,22 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.mesInstrInvNumbLabel);
-            this.groupBox3.Controls.Add(this.createMeasuringInstrumentButton);
-            this.groupBox3.Location = new System.Drawing.Point(496, 31);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(269, 149);
-            this.groupBox3.TabIndex = 53;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Управление";
-            // 
-            // mesInstrInvNumbLabel
-            // 
-            this.mesInstrInvNumbLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.mesInstrInvNumbLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mesInstrInvNumbLabel.Location = new System.Drawing.Point(5, 74);
-            this.mesInstrInvNumbLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.mesInstrInvNumbLabel.Name = "mesInstrInvNumbLabel";
-            this.mesInstrInvNumbLabel.Size = new System.Drawing.Size(248, 37);
-            this.mesInstrInvNumbLabel.TabIndex = 38;
-            this.mesInstrInvNumbLabel.Text = "mesInstrumentInvNum";
-            // 
-            // createMeasuringInstrumentButton
-            // 
-            this.createMeasuringInstrumentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.createMeasuringInstrumentButton.Location = new System.Drawing.Point(8, 26);
-            this.createMeasuringInstrumentButton.Margin = new System.Windows.Forms.Padding(2);
-            this.createMeasuringInstrumentButton.Name = "createMeasuringInstrumentButton";
-            this.createMeasuringInstrumentButton.Size = new System.Drawing.Size(248, 42);
-            this.createMeasuringInstrumentButton.TabIndex = 30;
-            this.createMeasuringInstrumentButton.Text = "Добавить информацию в график";
-            this.createMeasuringInstrumentButton.UseVisualStyleBackColor = true;
-            // 
-            // ScheduleView
+            // ScheduleDGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(1160, 533);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(1434, 533);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.scheduleGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ScheduleView";
+            this.Name = "ScheduleDGV";
             this.Text = "Просмотр графика";
             this.Load += new System.EventHandler(this.ScheduleView_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleGridView)).EndInit();
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -308,7 +254,6 @@
         private System.Windows.Forms.TextBox invent_Box;
         private System.Windows.Forms.Label factoryLabel;
         private System.Windows.Forms.TextBox zavod_Box;
-        private System.Windows.Forms.Button viewButton;
         private System.Windows.Forms.DataGridView scheduleGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn naimenovanie;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -321,8 +266,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Zakluch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label mesInstrInvNumbLabel;
-        private System.Windows.Forms.Button createMeasuringInstrumentButton;
     }
 }

@@ -70,8 +70,8 @@ namespace Oborot_SI
 
         private void InitBelongBox()
         {
-            belongBox.DataSource = Program.DbHelper.GetDepartments();
-            belongBox.DisplayMember = "Departments";
+            belongBox.DataSource = Program.DbHelper.GetDepartment();
+            belongBox.DisplayMember = "DepartmentName";
             belongBox.ValueMember = "ID";
         }
 
@@ -94,7 +94,7 @@ namespace Oborot_SI
                 conditionBox.SelectedValue = inputInstrument.ConditionReferenceId;
                 equipmentBox.Text = inputInstrument.Equipment;
                 descriptionBox.Text = inputInstrument.Description;
-                belongBox.SelectedValue = inputInstrument.DepartmentsToReferenceID;
+                belongBox.SelectedValue = inputInstrument.DepartmentToReferenceID;
             }
 
             if(formType)
@@ -143,7 +143,7 @@ namespace Oborot_SI
                         ConditionReferenceId = Convert.ToInt32(conditionBox.SelectedValue),
                         Equipment = equipmentBox.Text,
                         Description = descriptionBox.Text,
-                        DepartmentsToReferenceID = Convert.ToInt32(belongBox.SelectedValue)
+                        DepartmentToReferenceID = Convert.ToInt32(belongBox.SelectedValue)
 
                     };
 
@@ -187,7 +187,7 @@ namespace Oborot_SI
                     inputInstrument.ConditionReferenceId = Convert.ToInt32(conditionBox.SelectedValue);
                     inputInstrument.Equipment = equipmentBox.Text;
                     inputInstrument.Description = descriptionBox.Text;
-                    inputInstrument.DepartmentsToReferenceID = Convert.ToInt32(belongBox.SelectedValue);
+                    inputInstrument.DepartmentToReferenceID = Convert.ToInt32(belongBox.SelectedValue);
 
 
                     if (inputInstrument.Update())

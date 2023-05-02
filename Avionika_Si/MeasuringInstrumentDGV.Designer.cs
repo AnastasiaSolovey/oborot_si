@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.measuringsGridView = new System.Windows.Forms.DataGridView();
             this.naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +50,15 @@
             this.mesInstrInvNumbLabel = new System.Windows.Forms.Label();
             this.updateMeasuringIstrumentButton = new System.Windows.Forms.Button();
             this.createMeasuringInstrumentButton = new System.Windows.Forms.Button();
+            this.createProtocolButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.createJournalButton = new System.Windows.Forms.Button();
+            this.createScheduleButton = new System.Windows.Forms.Button();
+            this.createCertificateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.measuringsGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // measuringsGridView
@@ -76,14 +82,14 @@
             this.komplectacia,
             this.opisanie,
             this.prinadlejnost});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.measuringsGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.measuringsGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.measuringsGridView.Location = new System.Drawing.Point(11, 11);
             this.measuringsGridView.Margin = new System.Windows.Forms.Padding(2);
             this.measuringsGridView.MultiSelect = false;
@@ -298,11 +304,74 @@
             this.createMeasuringInstrumentButton.UseVisualStyleBackColor = true;
             this.createMeasuringInstrumentButton.Click += new System.EventHandler(this.createMeasuringInstrumentButton_Click);
             // 
+            // createProtocolButton
+            // 
+            this.createProtocolButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createProtocolButton.Location = new System.Drawing.Point(5, 68);
+            this.createProtocolButton.Margin = new System.Windows.Forms.Padding(2);
+            this.createProtocolButton.Name = "createProtocolButton";
+            this.createProtocolButton.Size = new System.Drawing.Size(248, 42);
+            this.createProtocolButton.TabIndex = 38;
+            this.createProtocolButton.Text = "Добавить данные в протокол";
+            this.createProtocolButton.UseVisualStyleBackColor = true;
+            this.createProtocolButton.Click += new System.EventHandler(this.createProtocolButton_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.createCertificateButton);
+            this.groupBox3.Controls.Add(this.createScheduleButton);
+            this.groupBox3.Controls.Add(this.createJournalButton);
+            this.groupBox3.Controls.Add(this.createProtocolButton);
+            this.groupBox3.Location = new System.Drawing.Point(1109, 486);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(269, 211);
+            this.groupBox3.TabIndex = 39;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Панель управления";
+            // 
+            // createJournalButton
+            // 
+            this.createJournalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createJournalButton.Location = new System.Drawing.Point(5, 22);
+            this.createJournalButton.Margin = new System.Windows.Forms.Padding(2);
+            this.createJournalButton.Name = "createJournalButton";
+            this.createJournalButton.Size = new System.Drawing.Size(248, 42);
+            this.createJournalButton.TabIndex = 30;
+            this.createJournalButton.Text = "Добавить данные в журнал";
+            this.createJournalButton.UseVisualStyleBackColor = true;
+            this.createJournalButton.Click += new System.EventHandler(this.createJournalButton_Click);
+            // 
+            // createScheduleButton
+            // 
+            this.createScheduleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createScheduleButton.Location = new System.Drawing.Point(5, 114);
+            this.createScheduleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.createScheduleButton.Name = "createScheduleButton";
+            this.createScheduleButton.Size = new System.Drawing.Size(248, 42);
+            this.createScheduleButton.TabIndex = 39;
+            this.createScheduleButton.Text = "Добавить данные в график";
+            this.createScheduleButton.UseVisualStyleBackColor = true;
+            this.createScheduleButton.Click += new System.EventHandler(this.createScheduleButton_Click);
+            // 
+            // createCertificateButton
+            // 
+            this.createCertificateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createCertificateButton.Location = new System.Drawing.Point(5, 160);
+            this.createCertificateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.createCertificateButton.Name = "createCertificateButton";
+            this.createCertificateButton.Size = new System.Drawing.Size(248, 42);
+            this.createCertificateButton.TabIndex = 40;
+            this.createCertificateButton.Text = "Перейти к созданию аттестата";
+            this.createCertificateButton.UseVisualStyleBackColor = true;
+            this.createCertificateButton.Click += new System.EventHandler(this.createCertificateButton_Click);
+            // 
             // MeasuringInstrumentDGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 706);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.measuringsGridView);
@@ -313,6 +382,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -340,5 +410,10 @@
         private System.Windows.Forms.Button updateMeasuringIstrumentButton;
         private System.Windows.Forms.Button createMeasuringInstrumentButton;
         private System.Windows.Forms.Label mesInstrInvNumbLabel;
+        private System.Windows.Forms.Button createProtocolButton;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button createJournalButton;
+        private System.Windows.Forms.Button createCertificateButton;
+        private System.Windows.Forms.Button createScheduleButton;
     }
 }

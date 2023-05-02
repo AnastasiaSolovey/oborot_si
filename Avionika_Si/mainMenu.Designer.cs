@@ -29,34 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            this.measuringButton = new System.Windows.Forms.Button();
+            this.ShowFormMeasuringInstrumentDGV = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.mainmenuLabel = new System.Windows.Forms.Label();
-            this.passportButton = new System.Windows.Forms.Button();
-            this.protocolButton = new System.Windows.Forms.Button();
-            this.journalButton = new System.Windows.Forms.Button();
-            this.scheduleButton = new System.Windows.Forms.Button();
-            this.certificateButton = new System.Windows.Forms.Button();
+            this.ShowFormJournalDGV = new System.Windows.Forms.Button();
+            this.ShowFormScheduleDGV = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // measuringButton
+            // ShowFormMeasuringInstrumentDGV
             // 
-            this.measuringButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.measuringButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.measuringButton.Location = new System.Drawing.Point(46, 72);
-            this.measuringButton.Margin = new System.Windows.Forms.Padding(2);
-            this.measuringButton.Name = "measuringButton";
-            this.measuringButton.Size = new System.Drawing.Size(159, 38);
-            this.measuringButton.TabIndex = 1;
-            this.measuringButton.Text = "Средство измерения";
-            this.measuringButton.UseVisualStyleBackColor = true;
-            this.measuringButton.Click += new System.EventHandler(this.Card_Button_Click);
+            this.ShowFormMeasuringInstrumentDGV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ShowFormMeasuringInstrumentDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowFormMeasuringInstrumentDGV.Location = new System.Drawing.Point(38, 63);
+            this.ShowFormMeasuringInstrumentDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowFormMeasuringInstrumentDGV.Name = "ShowFormMeasuringInstrumentDGV";
+            this.ShowFormMeasuringInstrumentDGV.Size = new System.Drawing.Size(159, 53);
+            this.ShowFormMeasuringInstrumentDGV.TabIndex = 1;
+            this.ShowFormMeasuringInstrumentDGV.Text = "Просмотр средств измерений";
+            this.ShowFormMeasuringInstrumentDGV.UseVisualStyleBackColor = true;
+            this.ShowFormMeasuringInstrumentDGV.Click += new System.EventHandler(this.MeasuringInstrumentDGV_Button_Click);
             // 
             // exitButton
             // 
             this.exitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(148, 242);
+            this.exitButton.Location = new System.Drawing.Point(38, 259);
             this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(159, 40);
@@ -70,92 +67,50 @@
             this.mainmenuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mainmenuLabel.AutoSize = true;
             this.mainmenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mainmenuLabel.Location = new System.Drawing.Point(151, 30);
+            this.mainmenuLabel.Location = new System.Drawing.Point(46, 30);
             this.mainmenuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mainmenuLabel.Name = "mainmenuLabel";
             this.mainmenuLabel.Size = new System.Drawing.Size(141, 20);
             this.mainmenuLabel.TabIndex = 3;
             this.mainmenuLabel.Text = "ГЛАВНОЕ МЕНЮ";
             // 
-            // passportButton
+            // ShowFormJournalDGV
             // 
-            this.passportButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passportButton.Location = new System.Drawing.Point(240, 125);
-            this.passportButton.Margin = new System.Windows.Forms.Padding(2);
-            this.passportButton.Name = "passportButton";
-            this.passportButton.Size = new System.Drawing.Size(159, 38);
-            this.passportButton.TabIndex = 4;
-            this.passportButton.Text = "Паспорт";
-            this.passportButton.UseVisualStyleBackColor = true;
-            this.passportButton.Click += new System.EventHandler(this.toPasp_Button_Click);
+            this.ShowFormJournalDGV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ShowFormJournalDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowFormJournalDGV.Location = new System.Drawing.Point(38, 120);
+            this.ShowFormJournalDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowFormJournalDGV.Name = "ShowFormJournalDGV";
+            this.ShowFormJournalDGV.Size = new System.Drawing.Size(159, 53);
+            this.ShowFormJournalDGV.TabIndex = 4;
+            this.ShowFormJournalDGV.Text = "Просмотр журнала работ";
+            this.ShowFormJournalDGV.UseVisualStyleBackColor = true;
+            this.ShowFormJournalDGV.Click += new System.EventHandler(this.JournalDGV_Button_Click);
             // 
-            // protocolButton
+            // ShowFormScheduleDGV
             // 
-            this.protocolButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.protocolButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.protocolButton.Location = new System.Drawing.Point(46, 180);
-            this.protocolButton.Margin = new System.Windows.Forms.Padding(2);
-            this.protocolButton.Name = "protocolButton";
-            this.protocolButton.Size = new System.Drawing.Size(159, 38);
-            this.protocolButton.TabIndex = 5;
-            this.protocolButton.Text = "Протокол";
-            this.protocolButton.UseVisualStyleBackColor = true;
-            this.protocolButton.Click += new System.EventHandler(this.Protocol_Button_Click);
-            // 
-            // journalButton
-            // 
-            this.journalButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.journalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.journalButton.Location = new System.Drawing.Point(46, 125);
-            this.journalButton.Margin = new System.Windows.Forms.Padding(2);
-            this.journalButton.Name = "journalButton";
-            this.journalButton.Size = new System.Drawing.Size(159, 38);
-            this.journalButton.TabIndex = 6;
-            this.journalButton.Text = "Журнал";
-            this.journalButton.UseVisualStyleBackColor = true;
-            this.journalButton.Click += new System.EventHandler(this.Journal_Button_Click);
-            // 
-            // scheduleButton
-            // 
-            this.scheduleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.scheduleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.scheduleButton.Location = new System.Drawing.Point(240, 72);
-            this.scheduleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.scheduleButton.Name = "scheduleButton";
-            this.scheduleButton.Size = new System.Drawing.Size(159, 38);
-            this.scheduleButton.TabIndex = 7;
-            this.scheduleButton.Text = "График";
-            this.scheduleButton.UseVisualStyleBackColor = true;
-            this.scheduleButton.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // certificateButton
-            // 
-            this.certificateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.certificateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.certificateButton.Location = new System.Drawing.Point(240, 180);
-            this.certificateButton.Margin = new System.Windows.Forms.Padding(2);
-            this.certificateButton.Name = "certificateButton";
-            this.certificateButton.Size = new System.Drawing.Size(159, 38);
-            this.certificateButton.TabIndex = 8;
-            this.certificateButton.Text = "Аттестат";
-            this.certificateButton.UseVisualStyleBackColor = true;
-            this.certificateButton.Click += new System.EventHandler(this.button2_Click);
+            this.ShowFormScheduleDGV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ShowFormScheduleDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowFormScheduleDGV.Location = new System.Drawing.Point(38, 177);
+            this.ShowFormScheduleDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowFormScheduleDGV.Name = "ShowFormScheduleDGV";
+            this.ShowFormScheduleDGV.Size = new System.Drawing.Size(159, 53);
+            this.ShowFormScheduleDGV.TabIndex = 7;
+            this.ShowFormScheduleDGV.Text = "Просмотр графика работ";
+            this.ShowFormScheduleDGV.UseVisualStyleBackColor = true;
+            this.ShowFormScheduleDGV.Click += new System.EventHandler(this.ScheduleDGV_Button_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(459, 322);
-            this.Controls.Add(this.certificateButton);
-            this.Controls.Add(this.scheduleButton);
-            this.Controls.Add(this.journalButton);
-            this.Controls.Add(this.protocolButton);
-            this.Controls.Add(this.passportButton);
+            this.ClientSize = new System.Drawing.Size(251, 322);
+            this.Controls.Add(this.ShowFormScheduleDGV);
+            this.Controls.Add(this.ShowFormJournalDGV);
             this.Controls.Add(this.mainmenuLabel);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.measuringButton);
+            this.Controls.Add(this.ShowFormMeasuringInstrumentDGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -171,13 +126,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button measuringButton;
+        private System.Windows.Forms.Button ShowFormMeasuringInstrumentDGV;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label mainmenuLabel;
-        private System.Windows.Forms.Button passportButton;
-        private System.Windows.Forms.Button protocolButton;
-        private System.Windows.Forms.Button journalButton;
-        private System.Windows.Forms.Button scheduleButton;
-        private System.Windows.Forms.Button certificateButton;
+        private System.Windows.Forms.Button ShowFormJournalDGV;
+        private System.Windows.Forms.Button ShowFormScheduleDGV;
     }
 }

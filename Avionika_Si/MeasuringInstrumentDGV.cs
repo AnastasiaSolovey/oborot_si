@@ -162,5 +162,30 @@ namespace Avionika_Si
                 TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
             }
         }
+
+        private void createJournalButton_Click(object sender, EventArgs e)
+        {
+            JournalForm form = new JournalForm();
+            form.Show();
+         
+        }
+
+        private void createProtocolButton_Click(object sender, EventArgs e)
+        {
+            ProtocolForm form = new ProtocolForm();
+            form.Show();
+        }
+
+        private void createScheduleButton_Click(object sender, EventArgs e)
+        {
+            ScheduleForm form = new ScheduleForm();
+            form.Show();
+        }
+
+        private void createCertificateButton_Click(object sender, EventArgs e)
+        {
+            CertificateForm form = new CertificateForm();
+            form.Show();
+        }
     }
 }

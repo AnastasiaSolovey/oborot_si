@@ -15,11 +15,10 @@ using DFLS.Adapters;
 
 namespace Oborot_SI
 {
-    public partial class ScheduleView : Form
+    public partial class ScheduleDGV : Form
     {
         private List<Schedule> schedules = null;
-        private Schedule SelectedInstrument = null;
-        public ScheduleView()
+        public ScheduleDGV()
         {
             InitializeComponent();
             FillScheduleDataGrid();

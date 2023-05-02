@@ -63,7 +63,7 @@
             this.nameBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameBox.FormattingEnabled = true;
-            this.nameBox.Location = new System.Drawing.Point(11, 23);
+            this.nameBox.Location = new System.Drawing.Point(11, 28);
             this.nameBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(261, 23);
@@ -76,7 +76,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameLabel.Location = new System.Drawing.Point(9, 5);
+            this.nameLabel.Location = new System.Drawing.Point(9, 10);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(71, 16);
@@ -389,7 +389,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MeasuringInstrumentForm";
-            this.Text = "Средства измерения";
+            this.Text = "Средство измерения";
             this.Load += new System.EventHandler(this.Card_si_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

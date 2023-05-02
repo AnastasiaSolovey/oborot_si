@@ -16,14 +16,14 @@ using Avionika_Si;
 
 namespace Oborot_SI
 {
-    public partial class Certificate : Form
+    public partial class CertificateForm : Form
     {
 
         public Word.Application wordApp = new Word.Application();
         Word.Document document2;
         Object typeTrue = true;
 
-        public Certificate()
+        public CertificateForm()
         {
             InitializeComponent();
            // Width = Screen.PrimaryScreen.Bounds.Width;

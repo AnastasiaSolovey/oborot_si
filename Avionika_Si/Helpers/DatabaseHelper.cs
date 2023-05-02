@@ -49,7 +49,7 @@ namespace Avionika_Si.Helpers
                 $"`measuring_instrument`.`inventory_number`," +
                 $"`measuring_instrument`.`factory_number`," +
                 $"`schedule`.`frequency`," +
-                $"`journal`.`date`," +
+                $"`schedule`.`old_date`," +
                 $"`schedule`.`old_venue`," +
                 $"`schedule`.`next_date`," +
                 $"`schedule`.`new_venue`," +
@@ -133,6 +133,13 @@ namespace Avionika_Si.Helpers
                 $"`name_instrument`.`name_instrument` " +
                 $"FROM `oborot_si`.`name_instrument`;");
         }
+        public List<Venue> GetVenue()
+        {
+            return DatabaseAdapter.GetListDataByQuery<Venue>
+                ($"SELECT `venue`.`id_venue`," +
+                $"`venue`.`venue` " +
+                $"FROM `oborot_si`.`venue`;");
+        }
 
         public List<Condition> GetConditions()
         {
@@ -142,7 +149,7 @@ namespace Avionika_Si.Helpers
                 $"FROM `oborot_si`.`condition`");
         }
 
-        public List<Department> GetDepartments()
+        public List<Department> GetDepartment()
         {
             return DatabaseAdapter.GetListDataByQuery<Department>
                 ($"SELECT `department`.`id_department`," +
@@ -170,29 +177,24 @@ namespace Avionika_Si.Helpers
                 $"AND `measuring_instrument`.`factory_number` like '%{factoryNumber}%' ");
         }
 
-        public string GetDateWorkByFactoryInventory(string inventoryNumber, string factoryNumber)
-        {
-            return DatabaseAdapter.GetScalarQuery<string>
-               ($"SELECT `journal`.`date`" +
-                $"FROM `oborot_si`.`journal`" +
-                $"JOIN `measuring_instrument`" +
-                $"ON `journal`.id_measuring_instrument=`measuring_instrument`.id_measuring_instrument" +
-                $"WHERE `measuring_instrument`.`inventory_number` = '{inventoryNumber}' " +
-                $"AND `measuring_instrument`.`factory_number` = '{factoryNumber}' " +
-                $"ORDER BY `journal`.`date` DESC LIMIT 1 ");
-        }
         public bool CreateMeasuringInstrument(Models.MeasuringInstrument instrument)
         {
             return DatabaseAdapter.ExecuteActionQuery
                 ($"INSERT INTO `measuring_instrument` " +
                 $"(`id_name_instrument`, `type`, `manufacturer`, `measuring_range`, `inventory_number`, `factory_number`,`etalon`," +
                 $" `id_condition`, `equipment`, `description`, `id_department`)" +
-                $" VALUES ('{instrument.InstrumentNameReferenceID}', '{instrument.Type}', '{instrument.Manufacturer}', '{instrument.MeasuringRange}', '{instrument.InventoryNumber}'," +
-                $" '{instrument.FactoryNumber}', {instrument.Etalon}, '{instrument.ConditionReferenceId}', '{instrument.Equipment}', '{instrument.Description}', " +
-                $"'{instrument.DepartmentsToReferenceID}');");
+                $" VALUES ('{instrument.InstrumentNameReferenceID}', '{instrument.Type}', '{instrument.Manufacturer}', '{instrument.MeasuringRange}',"+
+                $"'{instrument.InventoryNumber}','{instrument.FactoryNumber}', {instrument.Etalon}, '{instrument.ConditionReferenceId}', " +
+                $"'{instrument.Equipment}', '{instrument.Description}','{instrument.DepartmentToReferenceID}');");
         }
-
-
+        public bool CreateSchedule (Models.Schedule schedule)
+        {
+            return DatabaseAdapter.ExecuteActionQuery
+                ($"INSERT INTO `oborot_si`.`schedule`(`id_measuring_instrument`,`old_date`,`frequency`," +
+                $"`old_venue`,`next_date`,`new_venue`)" +
+                $" VALUES ({schedule.MeasuringInstrumentReferenceId}, '{schedule.OldWorkDate.ToString("yyyy-MM-dd")}', {schedule.Frequency}, {schedule.OldVenueReferenceID}," +
+                $" '{schedule.NextWorkDate.ToString("yyyy-MM-dd")}',{schedule.NewVenueReferenceID});");
+        }
 
         public bool UpdateInstrument(Models.MeasuringInstrument UpdateInstrument)
         {
@@ -202,7 +204,7 @@ namespace Avionika_Si.Helpers
                     ($"UPDATE `measuring_instrument` SET `id_name_instrument` = {UpdateInstrument.InstrumentNameReferenceID}, `type` = '{UpdateInstrument.Type}', `manufacturer` = " +
                     $"'{UpdateInstrument.Manufacturer}',`measuring_range` = '{UpdateInstrument.MeasuringRange}', `inventory_number` = '{UpdateInstrument.InventoryNumber}', " +
                     $"`factory_number` = '{UpdateInstrument.FactoryNumber}',`etalon` = {UpdateInstrument.Etalon}, `id_condition` = {UpdateInstrument.ConditionReferenceId}, " +
-                    $"`equipment` = '{UpdateInstrument.Equipment}', `description` = '{UpdateInstrument.Description}',`id_department` = {UpdateInstrument.DepartmentsToReferenceID} " +
+                    $"`equipment` = '{UpdateInstrument.Equipment}', `description` = '{UpdateInstrument.Description}',`id_department` = {UpdateInstrument.DepartmentToReferenceID} " +
                     $"WHERE `measuring_instrument`.`inventory_number` = '{UpdateInstrument.InventoryNumber}' " +
                     $"AND `measuring_instrument`.`factory_number` = '{UpdateInstrument.FactoryNumber}';");
             }
@@ -226,19 +228,26 @@ namespace Avionika_Si.Helpers
         {
             return DatabaseAdapter.GetListDataByQuery<Models.Journal>
                 ($"SELECT `journal`.`id_journal`," +
-                $"`journal`.`date`," +
+                $"`journal`.`num_journal`," +
                 $"`journal`.`id_measuring_instrument`," +
                 $"`journal`.`id_conclusion`," +
                 $"`journal`.`id_type_work " +
                 $"FROM `oborot_si`.`journal`; ");
         }
 
-        public int GetLastIdJournalQuery()
+        public int GetLastNumJournalQuery()
         {
             return DatabaseAdapter.GetScalarQuery<int>
-            ($"SELECT `journal`.`id_journal` " +
+            ($"SELECT `journal`.`num_journal` " +
             $"FROM `journal` " +
             $"ORDER BY `id_journal` DESC LIMIT 1");
+        }
+        public int GetLastNumProtocolQuery()
+        {
+            return DatabaseAdapter.GetScalarQuery<int>
+            ($"SELECT `protocol`.`num_protocol` " +
+            $"FROM `protocol` " +
+            $"ORDER BY `id_protocol` DESC LIMIT 1");
         }
 
         public TypeWork GetTypeWorkById(int id_type_work)
@@ -258,8 +267,6 @@ namespace Avionika_Si.Helpers
                 $"FROM `oborot_si`.`conclusion` " +
                 $"WHERE `conclusion`.`id_conclusion` = {id_conclusion};");
         }
-
-
         public List<TypeWork> GetTypeWork()
         {
             return DatabaseAdapter.GetListDataByQuery<TypeWork>
@@ -280,8 +287,8 @@ namespace Avionika_Si.Helpers
         {
             return DatabaseAdapter.ExecuteActionQuery
                 ($"INSERT INTO `oborot_si`.`journal`" +
-                $"( num_journal,`date`,id_measuring_instrument,id_conclusion,id_type_work) " +
-                $"VALUES ({journal.NumJournal},'{journal.DateWork.ToString("yyyy-MM-dd")}', {journal.MeasuringInstrumentReferenceId}, {journal.ConclusionReferenceId}, {journal.TypeWorkReferenceID});");
+                $"( num_journal,id_measuring_instrument,id_conclusion,id_type_work) " +
+                $"VALUES ({journal.NumJournal}, {journal.MeasuringInstrumentReferenceId}, {journal.ConclusionReferenceId}, {journal.TypeWorkReferenceID});");
         }
 
         public List<Models.EmployeeData> GetEmployeeDataList()
@@ -326,7 +333,7 @@ namespace Avionika_Si.Helpers
         {
             return DatabaseAdapter.GetObjectDataByQuery<Role>
                 ($"SELECT `role`.`id_role`," +
-                $"FROM `oborot_si`.`condition`  " +
+                $"FROM `oborot_si`.`role`  " +
                 $"WHERE `role`.`id_role` = {id_role};");
         }
         public List<Role> GetRole()

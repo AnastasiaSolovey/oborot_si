@@ -42,8 +42,9 @@ namespace Oborot_SI
 
             InitTypeWorkBox();
             InitConclusionBox();
-            DateworkBox.Format = DateTimePickerFormat.Custom;
-            DateworkBox.CustomFormat = "yyyy-MM-dd";
+
+            LastNumLabel.Text = "Последний номер в журнале " + Program.DbHelper.GetLastNumJournalQuery();
+
         }
 
 
@@ -52,34 +53,37 @@ namespace Oborot_SI
         {
 
             int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
-            //DateworkBox.Format = DateTimePickerFormat.Custom;
-            //DateworkBox.CustomFormat = "yyyy-MM-dd";
-            //string DateString = DateworkBox.Value.ToString("yyyy-MM-dd");
-            //DateTime DateValue = DateTime.ParseExact(DateString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             if (refMeasuringInstrumentId!=0)
             {
-                Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
-                {            
-                    NumJournal = Convert.ToInt32(JournalNumberUpDown.Value),
-                    DateWork = DateworkBox.Value,
-                    MeasuringInstrumentReferenceId = refMeasuringInstrumentId,
-                    ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
-                    TypeWorkReferenceID = Convert.ToInt32(TypeworkBox.SelectedValue),
-                };
+              
+                    Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
+                    {
+                        NumJournal = Convert.ToInt32(JournalNumberUpDown.Value),
+                        MeasuringInstrumentReferenceId = refMeasuringInstrumentId,
+                        ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
+                        TypeWorkReferenceID = Convert.ToInt32(TypeworkBox.SelectedValue),
+                    };
 
-                if (journal.Create())
-                {
-                    MessageBox.Show("Запись добавлена");
-                }
-                else
-                {
-                    MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
-                }
+                    if (journal.Create())
+                    {
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
+                    }
             }
             else
             {
                 MessageBox.Show("Ошибка. СИ с таким инвентарным и заводским номером не найдено.");
+            }
+        }
+        private void JournalForm_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Minimized;
             }
         }
     }

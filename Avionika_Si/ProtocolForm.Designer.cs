@@ -42,8 +42,10 @@
             this.employeeBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.NumProtocol = new System.Windows.Forms.TextBox();
+            this.LastNumLabel = new System.Windows.Forms.Label();
+            this.ProtocolNumberUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProtocolNumberUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // idProtocolBox
@@ -74,7 +76,7 @@
             this.factoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.factoryLabel.AutoSize = true;
             this.factoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.factoryLabel.Location = new System.Drawing.Point(6, 77);
+            this.factoryLabel.Location = new System.Drawing.Point(6, 86);
             this.factoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.factoryLabel.Name = "factoryLabel";
             this.factoryLabel.Size = new System.Drawing.Size(141, 16);
@@ -85,7 +87,7 @@
             // 
             this.factoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.factoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.factoryBox.Location = new System.Drawing.Point(8, 146);
+            this.factoryBox.Location = new System.Drawing.Point(8, 155);
             this.factoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.factoryBox.Name = "factoryBox";
             this.factoryBox.Size = new System.Drawing.Size(250, 22);
@@ -95,7 +97,7 @@
             // 
             this.inventoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inventoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventoryBox.Location = new System.Drawing.Point(9, 95);
+            this.inventoryBox.Location = new System.Drawing.Point(9, 104);
             this.inventoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.Size = new System.Drawing.Size(250, 22);
@@ -118,7 +120,7 @@
             this.descriptionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.descriptionLabel.Location = new System.Drawing.Point(313, 17);
+            this.descriptionLabel.Location = new System.Drawing.Point(313, 19);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(95, 16);
@@ -176,8 +178,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LastNumLabel);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.NumProtocol);
+            this.groupBox1.Controls.Add(this.ProtocolNumberUpDown);
             this.groupBox1.Controls.Add(this.factoryBox);
             this.groupBox1.Controls.Add(this.inventoryLabel);
             this.groupBox1.Controls.Add(this.inventoryBox);
@@ -194,22 +197,48 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 128);
+            this.label1.Location = new System.Drawing.Point(6, 137);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 16);
             this.label1.TabIndex = 52;
             this.label1.Text = "Заводской номер";
             // 
-            // NumProtocol
+            // LastNumLabel
             // 
-            this.NumProtocol.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NumProtocol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NumProtocol.Location = new System.Drawing.Point(8, 42);
-            this.NumProtocol.Margin = new System.Windows.Forms.Padding(2);
-            this.NumProtocol.Name = "NumProtocol";
-            this.NumProtocol.Size = new System.Drawing.Size(250, 22);
-            this.NumProtocol.TabIndex = 51;
+            this.LastNumLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LastNumLabel.AutoSize = true;
+            this.LastNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LastNumLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LastNumLabel.Location = new System.Drawing.Point(6, 66);
+            this.LastNumLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LastNumLabel.Name = "LastNumLabel";
+            this.LastNumLabel.Size = new System.Drawing.Size(97, 13);
+            this.LastNumLabel.TabIndex = 52;
+            this.LastNumLabel.Text = "LastNumInProtocol";
+            // 
+            // ProtocolNumberUpDown
+            // 
+            this.ProtocolNumberUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProtocolNumberUpDown.Location = new System.Drawing.Point(9, 41);
+            this.ProtocolNumberUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.ProtocolNumberUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ProtocolNumberUpDown.Name = "ProtocolNumberUpDown";
+            this.ProtocolNumberUpDown.Size = new System.Drawing.Size(250, 22);
+            this.ProtocolNumberUpDown.TabIndex = 51;
+            this.ProtocolNumberUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // ProtocolForm
             // 
@@ -232,6 +261,7 @@
             this.Load += new System.EventHandler(this.Protocol_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProtocolNumberUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,6 +281,7 @@
         private System.Windows.Forms.ComboBox employeeBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox NumProtocol;
+        private System.Windows.Forms.Label LastNumLabel;
+        private System.Windows.Forms.NumericUpDown ProtocolNumberUpDown;
     }
 }

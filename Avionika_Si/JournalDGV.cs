@@ -13,11 +13,11 @@ using Avionika_Si;
 
 namespace Oborot_SI
 {
-    public partial class PassportForm : Form
+    public partial class JournalDGV : Form
     {
 
-        private List<PassportForm> passports = null;
-        public PassportForm()
+        private List<JournalDGV> passports = null;
+        public JournalDGV()
         {
             InitializeComponent();
             FillPassportDataGrid();

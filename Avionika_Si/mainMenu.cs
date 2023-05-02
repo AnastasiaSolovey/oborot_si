@@ -16,14 +16,12 @@ namespace Oborot_SI
     {
 
         private void MainMenu_Load(object sender, EventArgs e)
-        {
-                 
+        {   
             
         }
         public MainMenu()
         {
             InitializeComponent();
-
         }
 
         private void OpenFormAsDialog(Form form)
@@ -33,55 +31,23 @@ namespace Oborot_SI
             this.Show();
         }
 
-        private void Card_Button_Click(object sender, EventArgs e)
+        private void MeasuringInstrumentDGV_Button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MeasuringInstrumentDGV F = new MeasuringInstrumentDGV();
-            F.ShowDialog();
-            this.Show();
+            OpenFormAsDialog(new MeasuringInstrumentDGV());
         }
 
 
-        private void toPasp_Button_Click(object sender, EventArgs e)
+        private void JournalDGV_Button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            PassportForm F = new PassportForm();
-            F.Show();
+            OpenFormAsDialog(new JournalDGV());
         }
 
      
-        private void button5_Click(object sender, EventArgs e)
+        private void ScheduleDGV_Button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ScheduleView F = new ScheduleView();
-            F.ShowDialog();
-            this.Show();
+            OpenFormAsDialog(new ScheduleDGV());
         }
 
-        private void Journal_Button_Click(object sender, EventArgs e)
-        {
-            /*this.Hide();
-            JournalForm F = new JournalForm();
-            F.ShowDialog();
-            this.Show();*/
-            OpenFormAsDialog(new JournalForm());
-        }
-
-        private void Protocol_Button_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ProtocolForm F = new ProtocolForm();
-            F.ShowDialog();
-            this.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            this.Hide();
-            Certificate F = new Certificate();
-            F.Show();
-        }
 
         private void mainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {

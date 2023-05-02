@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class Certificate
+    partial class CertificateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Certificate));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CertificateForm));
             this.searchButton = new System.Windows.Forms.Button();
             this.factoryLabel = new System.Windows.Forms.Label();
             this.factoryBox = new System.Windows.Forms.TextBox();
@@ -305,7 +305,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Средство измерения";
             // 
-            // Certificate
+            // CertificateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -325,9 +325,8 @@
             this.Controls.Add(this.dateWork);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Certificate";
+            this.Name = "CertificateForm";
             this.Text = "Создание аттестата";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.certificate_FormClosing);
             this.Load += new System.EventHandler(this.Attestat_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

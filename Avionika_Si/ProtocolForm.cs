@@ -38,21 +38,20 @@ namespace Oborot_SI
         private void Protocol_Load(object sender, EventArgs e)
         {
             InitEmployeeBox();
-
+            LastNumLabel.Text = "Последний номер в протоколе " + Program.DbHelper.GetLastNumProtocolQuery();
         }
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(inventoryBox.Text) && !string.IsNullOrWhiteSpace(inventoryBox.Text) &&
-                !string.IsNullOrEmpty(factoryBox.Text) && !string.IsNullOrWhiteSpace(factoryBox.Text) &&
-                !string.IsNullOrEmpty(NumProtocol.Text) && !string.IsNullOrWhiteSpace(NumProtocol.Text))
+                !string.IsNullOrEmpty(factoryBox.Text) && !string.IsNullOrWhiteSpace(factoryBox.Text))
             {
                 int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
                 if (refMeasuringInstrumentId != 0)
                 {
                     Avionika_Si.Models.Protocol AddProtocol = new Avionika_Si.Models.Protocol()
                     {
-                        NumProtocol = Convert.ToInt32(NumProtocol.Text),
+                        NumProtocol = Convert.ToInt32(ProtocolNumberUpDown.Value),
                         InstrumentNameReferenceID = refMeasuringInstrumentId,
                         Note = Convert.ToString(NoteBox.Text),
                         EmployeeReferenceID = Convert.ToInt32(employeeBox.SelectedValue),
@@ -60,10 +59,7 @@ namespace Oborot_SI
 
                     if (AddProtocol.Create())
                     {
-                        inventoryBox.Clear();
-                        factoryBox.Clear();
-                        NumProtocol.Clear();
-                        NoteBox.Clear();
+                        this.Hide();
                     }
                     else
                     {

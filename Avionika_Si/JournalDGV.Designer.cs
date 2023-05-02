@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class PassportForm
+    partial class JournalDGV
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PassportForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JournalDGV));
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.PassportGridView = new System.Windows.Forms.DataGridView();
             this.naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,7 +218,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выберите средство измерения";
             // 
-            // PassportForm
+            // JournalDGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,9 +230,8 @@
             this.Controls.Add(this.PassportGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "PassportForm";
-            this.Text = "Заполнение папорта СИ";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.passport_FormClosing);
+            this.Name = "JournalDGV";
+            this.Text = "Просмотр журнала СИ";
             this.Load += new System.EventHandler(this.Pasport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PassportGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

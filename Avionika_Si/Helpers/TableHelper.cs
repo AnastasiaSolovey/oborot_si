@@ -57,7 +57,7 @@ namespace DFLS.Adapters
                 {
                     int id = DGV.BaseDGV.Rows.Add(instruments[i].InstName.Name, instruments[i].Type, instruments[i].Manufacturer, instruments[i].MeasuringRange,
                         instruments[i].InventoryNumber, instruments[i].FactoryNumber, instruments[i].Etalon, instruments[i].Cond?.ConditionName, instruments[i].Equipment,
-                        instruments[i].Description, instruments[i].Department?.Departments);
+                        instruments[i].Description, instruments[i].Department?.DepartmentName);
                     DGV.BaseDGV.Rows[id].Tag = instruments[i].ID;
 
                 }
@@ -71,7 +71,7 @@ namespace DFLS.Adapters
 
         public static void FillScheduleTable(List<Schedule> schedule, DataGridView scheduleDGV)
         {
-            DGVExtension DGV = new DGVExtension(scheduleDGV);
+           /* DGVExtension DGV = new DGVExtension(scheduleDGV);
             DGV.InitCopyCellContextMenu();
             DGV.SuspendLayout();
             try
@@ -91,12 +91,12 @@ namespace DFLS.Adapters
             {
                 MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
             }
-            DGV.ResumeLayout();
+            DGV.ResumeLayout();*/
         }
 
-        public static void FillPassportTable(List<Passport> passport, DataGridView passportDGV)
+        public static void FillJournalTable(List<Passport> passport, DataGridView passportDGV)
         {
-            DGVExtension DGV = new DGVExtension(passportDGV);
+           /* DGVExtension DGV = new DGVExtension(passportDGV);
             DGV.InitCopyCellContextMenu();
             DGV.SuspendLayout();
             try
@@ -115,7 +115,7 @@ namespace DFLS.Adapters
             {
                 MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
             }
-            DGV.ResumeLayout();
+            DGV.ResumeLayout();*/
         }
     }
 }
