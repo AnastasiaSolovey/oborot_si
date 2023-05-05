@@ -29,6 +29,7 @@ namespace Avionika_Si.Models
         public Venue VenueOldName { get; set; }
         public Venue VenueNewName { get; set; }
 
+
         public Schedule()
         {
 

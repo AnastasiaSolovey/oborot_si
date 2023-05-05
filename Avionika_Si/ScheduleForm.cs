@@ -16,6 +16,8 @@ namespace Oborot_SI
 {
     public partial class ScheduleForm : Form
     {
+        public string SelectedInventoryNumSchedule { get; set; }
+        public string SelectedFactoryNumSchedule { get; set; }
         public ScheduleForm()
         {
             InitializeComponent();
@@ -32,11 +34,19 @@ namespace Oborot_SI
             newVenueBox.DisplayMember = "VenueName";
             newVenueBox.ValueMember = "ID";
         }
-
+        private void InitTypeWork()
+        {
+            TypeWorkBox.DataSource = Program.DbHelper.GetTypeWork();
+            TypeWorkBox.DisplayMember = "Type";
+            TypeWorkBox.ValueMember = "ID";
+        }
         private void Grafic_Load(object sender, EventArgs e)
         {
             InitOldVenueBox();
             InitNewVenueBox();
+            InitTypeWork();
+            inventoryBox.Text = SelectedInventoryNumSchedule;
+            factoryBox.Text = SelectedFactoryNumSchedule;
         }
 
         private void Add_Button_Click(object sender, EventArgs e)
@@ -64,6 +74,7 @@ namespace Oborot_SI
                             OldVenueReferenceID = Convert.ToInt32(oldVenueBox.SelectedValue),
                             NextWorkDate = newDateBox.Value,
                             NewVenueReferenceID = Convert.ToInt32(newVenueBox.SelectedValue),
+                            TypeWorkReferenceID = Convert.ToInt32(TypeWorkBox.SelectedValue),
                         };
 
                         if (schedule.Create())
@@ -181,6 +192,12 @@ namespace Oborot_SI
                 inventoryBox.Text = form.PickedMeasuringInstrument.InventoryNumber;
                 factoryBox.Text = form.PickedMeasuringInstrument.FactoryNumber;
             }
+        }
+
+        private void ScheduleForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show("Закончите заполнение всех данных");
+            e.Cancel = true;
         }
     }
 }

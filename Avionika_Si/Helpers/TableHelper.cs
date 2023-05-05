@@ -71,31 +71,6 @@ namespace DFLS.Adapters
             DGV.ResumeLayout();
         }
 
-        /*public static void FillScheduleTable(List<Schedule> schedule, DataGridView scheduleDGV)
-        {
-            DGVExtension DGV = new DGVExtension(scheduleDGV);
-            DGV.InitCopyCellContextMenu();
-            DGV.SuspendLayout();
-            try
-            {
-                DGV.BaseDGV.Rows.Clear();
-                DGV.BaseDGV.Columns[0].ValueType = typeof(string);
-                for (int i = 0; i < schedule.Count; i++)
-                {
-                    int id = DGV.BaseDGV.Rows.Add(schedule[i].InstName.Name, schedule[i].TypeInstr.Type, schedule[i].Inventory.InventoryNumber, schedule[i].Factory.FactoryNumber,
-                        schedule[i].Frequency, schedule[i].WorkDate, schedule[i].OldVenue?.VenueName, schedule[i].NextDate, schedule[i].NewVenue?.VenueName,
-                        schedule[i].Conclus.ConclusionName, schedule[i].Type?.Type); 
-                    DGV.BaseDGV.Rows[id].Tag = schedule[i].ID;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
-            }
-            DGV.ResumeLayout();
-        }*/
-
         public static void FillScheduleTable(DataTable scheduleDataTable, DataGridView scheduleDGV)
         {
             //scheduleDGV.AutoGenerateColumns = false;
@@ -112,8 +87,9 @@ namespace DFLS.Adapters
 
                 foreach(DataRow row in scheduleDataTable.Rows)
                 {
-                    int id = DGV.BaseDGV.Rows.Add(row["name_instrument"], row["type"], row["inventory_number"], row["factory_number"], row["frequency"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"),
-                        row["old_ven"], DB.DataConverter.Convert<DateTime>(row["next_date"]).ToString("dd.MM.yyyy"), row["new_ven"], row["conclusion"], row["type_of_work"]);
+                    int id = DGV.BaseDGV.Rows.Add(row["name_instrument"], row["type"], row["inventory_number"], 
+                        row["factory_number"], row["frequency"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"),
+                        row["old_ven"], DB.DataConverter.Convert<DateTime>(row["next_date"]).ToString("dd.MM.yyyy"), row["new_ven"], row["type_of_work"]);
                     DGV.BaseDGV.Rows[id].Tag = row["id_schedule"];
                 }
             }
@@ -124,28 +100,33 @@ namespace DFLS.Adapters
             DGV.ResumeLayout();
         }
 
-        public static void FillJournalTable(List<Passport> passport, DataGridView passportDGV)
+        public static void FillJournalTable(DataTable journalDataTable, DataGridView journalDGV)
         {
-           /* DGVExtension DGV = new DGVExtension(passportDGV);
+            //scheduleDGV.AutoGenerateColumns = false;
+            //scheduleDGV.DataSource = scheduleDataTable;
+
+
+            DGVExtension DGV = new DGVExtension(journalDGV);
             DGV.InitCopyCellContextMenu();
             DGV.SuspendLayout();
             try
             {
                 DGV.BaseDGV.Rows.Clear();
                 DGV.BaseDGV.Columns[0].ValueType = typeof(string);
-                for (int i = 0; i < passport.Count; i++)
+
+                foreach (DataRow row in journalDataTable.Rows)
                 {
-                    int id = DGV.BaseDGV.Rows.Add(passport[i].InstName.Name, passport[i].Type.Type, passport[i].Manufacturer.Manufacturer, passport[i].Inventory.InventoryNumber,
-                        passport[i].Factory.FactoryNumber, passport[i].Department?.Departments, passport[i].DateWork.DateWork, passport[i].Conclusion.ConclusionName,
-                        passport[i].TypeWork?.Type);
-                        DGV.BaseDGV.Rows[id].Tag = passport[i].ID;
+                    int id = DGV.BaseDGV.Rows.Add(row["num_journal"], row["name_instrument"], row["type"], row["manufacturer"], row["inventory_number"],
+                        row["factory_number"], row["department"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"),
+                        row["conclusion"],row["type_of_work"]);
+                    DGV.BaseDGV.Rows[id].Tag = row["id_journal"];
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
             }
-            DGV.ResumeLayout();*/
+            DGV.ResumeLayout();
         }
     }
 }

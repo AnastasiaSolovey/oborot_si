@@ -17,17 +17,13 @@ namespace Oborot_SI
 {
     public partial class JournalForm : Form
     {
+        public string SelectedInventoryNumJournal { get; set; }
+        public string SelectedFactoryNumJournal { get; set; }
         public JournalForm()
         {
             InitializeComponent();
         }
         private JournalForm LastNum = null;
-        private void InitTypeWorkBox()
-        {
-            TypeworkBox.DataSource = Program.DbHelper.GetTypeWork();
-            TypeworkBox.DisplayMember = "Type";
-            TypeworkBox.ValueMember = "ID";
-        }
 
         private void InitConclusionBox()
         {
@@ -40,7 +36,6 @@ namespace Oborot_SI
         private void Journal_Load(object sender, EventArgs e) 
         {
 
-            InitTypeWorkBox();
             InitConclusionBox();
 
             LastNumLabel.Text = "Последний номер в журнале " + Program.DbHelper.GetLastNumJournalQuery();
@@ -62,12 +57,15 @@ namespace Oborot_SI
                         NumJournal = Convert.ToInt32(JournalNumberUpDown.Value),
                         MeasuringInstrumentReferenceId = refMeasuringInstrumentId,
                         ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
-                        TypeWorkReferenceID = Convert.ToInt32(TypeworkBox.SelectedValue),
                     };
 
                     if (journal.Create())
                     {
                         this.Hide();
+                        ProtocolForm form = new ProtocolForm();
+                        form.SelectedInventoryNumProtocol = InventoryBox.Text;
+                        form.SelectedFactoryNumProtocol = FactoryBox.Text;
+                        form.Show();
                     }
                     else
                     {
@@ -84,6 +82,20 @@ namespace Oborot_SI
             if (this.WindowState == FormWindowState.Minimized)
             {
                 this.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+        private void ChoseMeasuringInstrumentButton_Click(object sender, EventArgs e)
+        {
+            SelectedInventoryNumJournal = null;
+            SelectedFactoryNumJournal = null;
+            MeasuringInstrumentDGV form = new MeasuringInstrumentDGV(true);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                InventoryBox.Text = form.PickedMeasuringInstrument.InventoryNumber;
+                FactoryBox.Text = form.PickedMeasuringInstrument.FactoryNumber;
+                SelectedInventoryNumJournal = InventoryBox.Text;
+                SelectedFactoryNumJournal = FactoryBox.Text;
             }
         }
     }

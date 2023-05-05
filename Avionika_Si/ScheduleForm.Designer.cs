@@ -45,7 +45,8 @@
             this.oldDateBox = new System.Windows.Forms.DateTimePicker();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.PickMesInstrButton = new System.Windows.Forms.Button();
+            this.TypeWorkBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // oldVenueLabel
@@ -53,7 +54,7 @@
             this.oldVenueLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.oldVenueLabel.AutoSize = true;
             this.oldVenueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.oldVenueLabel.Location = new System.Drawing.Point(8, 284);
+            this.oldVenueLabel.Location = new System.Drawing.Point(8, 282);
             this.oldVenueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.oldVenueLabel.Name = "oldVenueLabel";
             this.oldVenueLabel.Size = new System.Drawing.Size(130, 16);
@@ -65,7 +66,7 @@
             this.newVenueLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newVenueLabel.AutoSize = true;
             this.newVenueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newVenueLabel.Location = new System.Drawing.Point(8, 337);
+            this.newVenueLabel.Location = new System.Drawing.Point(8, 335);
             this.newVenueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newVenueLabel.Name = "newVenueLabel";
             this.newVenueLabel.Size = new System.Drawing.Size(207, 16);
@@ -78,7 +79,7 @@
             this.newDateBox.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newDateBox.Enabled = false;
             this.newDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newDateBox.Location = new System.Drawing.Point(11, 411);
+            this.newDateBox.Location = new System.Drawing.Point(11, 409);
             this.newDateBox.Margin = new System.Windows.Forms.Padding(2);
             this.newDateBox.Name = "newDateBox";
             this.newDateBox.Size = new System.Drawing.Size(297, 24);
@@ -89,7 +90,7 @@
             this.newDateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newDateLabel.AutoSize = true;
             this.newDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newDateLabel.Location = new System.Drawing.Point(8, 393);
+            this.newDateLabel.Location = new System.Drawing.Point(8, 391);
             this.newDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newDateLabel.Name = "newDateLabel";
             this.newDateLabel.Size = new System.Drawing.Size(199, 16);
@@ -101,7 +102,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(27, 679);
+            this.label8.Location = new System.Drawing.Point(27, 677);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 21);
@@ -111,7 +112,7 @@
             // 
             this.AddButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddButton.Location = new System.Drawing.Point(11, 462);
+            this.AddButton.Location = new System.Drawing.Point(11, 460);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(164, 34);
@@ -126,7 +127,7 @@
             this.oldVenueBox.DisplayMember = "periodichnost";
             this.oldVenueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.oldVenueBox.FormattingEnabled = true;
-            this.oldVenueBox.Location = new System.Drawing.Point(11, 302);
+            this.oldVenueBox.Location = new System.Drawing.Point(11, 300);
             this.oldVenueBox.Margin = new System.Windows.Forms.Padding(2);
             this.oldVenueBox.Name = "oldVenueBox";
             this.oldVenueBox.Size = new System.Drawing.Size(297, 24);
@@ -139,7 +140,7 @@
             this.newVenueBox.DisplayMember = "periodichnost";
             this.newVenueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newVenueBox.FormattingEnabled = true;
-            this.newVenueBox.Location = new System.Drawing.Point(11, 355);
+            this.newVenueBox.Location = new System.Drawing.Point(11, 353);
             this.newVenueBox.Margin = new System.Windows.Forms.Padding(2);
             this.newVenueBox.Name = "newVenueBox";
             this.newVenueBox.Size = new System.Drawing.Size(297, 24);
@@ -159,7 +160,7 @@
             "36",
             "48",
             "6"});
-            this.frequencyBox.Location = new System.Drawing.Point(11, 247);
+            this.frequencyBox.Location = new System.Drawing.Point(11, 245);
             this.frequencyBox.Margin = new System.Windows.Forms.Padding(2);
             this.frequencyBox.Name = "frequencyBox";
             this.frequencyBox.Size = new System.Drawing.Size(297, 24);
@@ -172,7 +173,7 @@
             this.frequencyLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.frequencyLabel.AutoSize = true;
             this.frequencyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.frequencyLabel.Location = new System.Drawing.Point(8, 229);
+            this.frequencyLabel.Location = new System.Drawing.Point(8, 227);
             this.frequencyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.frequencyLabel.Name = "frequencyLabel";
             this.frequencyLabel.Size = new System.Drawing.Size(159, 16);
@@ -183,7 +184,7 @@
             // 
             this.factoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.factoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.factoryBox.Location = new System.Drawing.Point(11, 89);
+            this.factoryBox.Location = new System.Drawing.Point(11, 87);
             this.factoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.factoryBox.Name = "factoryBox";
             this.factoryBox.ReadOnly = true;
@@ -195,7 +196,7 @@
             this.factoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.factoryLabel.AutoSize = true;
             this.factoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.factoryLabel.Location = new System.Drawing.Point(8, 71);
+            this.factoryLabel.Location = new System.Drawing.Point(8, 69);
             this.factoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.factoryLabel.Name = "factoryLabel";
             this.factoryLabel.Size = new System.Drawing.Size(122, 16);
@@ -206,7 +207,7 @@
             // 
             this.inventoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inventoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventoryBox.Location = new System.Drawing.Point(11, 36);
+            this.inventoryBox.Location = new System.Drawing.Point(11, 34);
             this.inventoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.ReadOnly = true;
@@ -218,7 +219,7 @@
             this.oldDateBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.oldDateBox.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.oldDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.oldDateBox.Location = new System.Drawing.Point(11, 196);
+            this.oldDateBox.Location = new System.Drawing.Point(11, 194);
             this.oldDateBox.Margin = new System.Windows.Forms.Padding(2);
             this.oldDateBox.Name = "oldDateBox";
             this.oldDateBox.Size = new System.Drawing.Size(297, 24);
@@ -230,7 +231,7 @@
             this.inventoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inventoryLabel.AutoSize = true;
             this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventoryLabel.Location = new System.Drawing.Point(8, 18);
+            this.inventoryLabel.Location = new System.Drawing.Point(8, 16);
             this.inventoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.inventoryLabel.Name = "inventoryLabel";
             this.inventoryLabel.Size = new System.Drawing.Size(141, 16);
@@ -242,33 +243,46 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(8, 178);
+            this.label1.Location = new System.Drawing.Point(8, 176);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 16);
             this.label1.TabIndex = 65;
             this.label1.Text = "Дата текущей работы с СИ";
             // 
-            // PickMesInstrButton
+            // TypeWorkBox
             // 
-            this.PickMesInstrButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PickMesInstrButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PickMesInstrButton.Location = new System.Drawing.Point(11, 129);
-            this.PickMesInstrButton.Margin = new System.Windows.Forms.Padding(2);
-            this.PickMesInstrButton.Name = "PickMesInstrButton";
-            this.PickMesInstrButton.Size = new System.Drawing.Size(164, 34);
-            this.PickMesInstrButton.TabIndex = 66;
-            this.PickMesInstrButton.Text = "Выбрать СИ";
-            this.PickMesInstrButton.UseVisualStyleBackColor = true;
-            this.PickMesInstrButton.Click += new System.EventHandler(this.PickMesInstrButton_Click);
+            this.TypeWorkBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TypeWorkBox.DisplayMember = "periodichnost";
+            this.TypeWorkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TypeWorkBox.FormattingEnabled = true;
+            this.TypeWorkBox.Location = new System.Drawing.Point(11, 147);
+            this.TypeWorkBox.Margin = new System.Windows.Forms.Padding(2);
+            this.TypeWorkBox.Name = "TypeWorkBox";
+            this.TypeWorkBox.Size = new System.Drawing.Size(297, 24);
+            this.TypeWorkBox.TabIndex = 67;
+            this.TypeWorkBox.ValueMember = "periodichnost";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(8, 129);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 16);
+            this.label2.TabIndex = 68;
+            this.label2.Text = "Вид работы с СИ";
             // 
             // ScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(365, 562);
-            this.Controls.Add(this.PickMesInstrButton);
+            this.ClientSize = new System.Drawing.Size(365, 509);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TypeWorkBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inventoryLabel);
             this.Controls.Add(this.newVenueBox);
@@ -289,6 +303,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ScheduleForm";
             this.Text = "Заполнение графика СИ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScheduleForm_FormClosing);
             this.Load += new System.EventHandler(this.Grafic_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -312,6 +327,7 @@
         private System.Windows.Forms.DateTimePicker oldDateBox;
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button PickMesInstrButton;
+        private System.Windows.Forms.ComboBox TypeWorkBox;
+        private System.Windows.Forms.Label label2;
     }
 }

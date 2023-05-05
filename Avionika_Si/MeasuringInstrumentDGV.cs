@@ -37,8 +37,6 @@ namespace Avionika_Si
             {
                 groupBox2.Enabled=false;
                 groupBox2.Visible=false;
-                groupBox3.Enabled = false;
-                groupBox3.Visible = false;
 
                 measuringsGridView.CellDoubleClick -= measuringsGridView_CellDoubleClick;
                 measuringsGridView.CellDoubleClick += measuringsGridView_CellDoubleClick_PickingMode;
@@ -183,31 +181,6 @@ namespace Avionika_Si
                 measuringInstruments = Program.DbHelper.GetMeasuringInstrumentsList();
                 TableHelper.FillMeasuringInstrumentsTable(measuringInstruments, measuringsGridView);
             }
-        }
-
-        private void createJournalButton_Click(object sender, EventArgs e)
-        {
-            JournalForm form = new JournalForm();
-            form.Show();
-         
-        }
-
-        private void createProtocolButton_Click(object sender, EventArgs e)
-        {
-            ProtocolForm form = new ProtocolForm();
-            form.Show();
-        }
-
-        private void createScheduleButton_Click(object sender, EventArgs e)
-        {
-            ScheduleForm form = new ScheduleForm();
-            form.Show();
-        }
-
-        private void createCertificateButton_Click(object sender, EventArgs e)
-        {
-            CertificateForm form = new CertificateForm();
-            form.Show();
         }
     }
 }

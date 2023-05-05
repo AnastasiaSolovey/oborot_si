@@ -98,6 +98,12 @@
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BD.cs" />
+    <Compile Include="CreatingCertificate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatingCertificate.Designer.cs">
+      <DependentUpon>CreatingCertificate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\DGVExtension.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\TableHelper.cs" />
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatingCertificate.resx">
+      <DependentUpon>CreatingCertificate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeasuringInstrumentDGV.resx">
       <DependentUpon>MeasuringInstrumentDGV.cs</DependentUpon>

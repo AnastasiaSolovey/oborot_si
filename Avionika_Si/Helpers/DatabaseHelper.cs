@@ -74,9 +74,45 @@ namespace Avionika_Si.Helpers
         public DataTable GetScheduleList(DateTime nextDate)
         {
             return DatabaseAdapter.GetDataTableQuery
-                ($"CALL `oborot_si`.`GetScheduleData`('{nextDate.ToString("yyyy-MM-dd")}');");
+                ($"CALL `oborot_si`.`GetScheduleByData`('{nextDate.ToString("yyyy-MM-dd")}');");
         }
 
+        public DataTable GetScheduleListByInventoryFactoryNumbers(DateTime nextDate, string inventory_num, string factory_num)
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleDataByInventoryFactoryNumbers`('{nextDate.ToString("yyyy-MM-dd")}', '{inventory_num}', '{factory_num}');");
+        }
+
+        public DataTable GetJournalByInventoryFactoryNumbers(string inventory_num, string factory_num)
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetJournalDGVByInventoryFactory`('{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetScheduleArchiveByInventoryFactory(string inventory_num, string factory_num)
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleArchiveByInventoryFactory`('{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetJournalDGV()
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetJournalDGV`;");
+        }
+        public DataTable GetScheduleArchive()
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleArchive`;");
+        }
+        public DataTable GetScheduleByNextDataFilter(DateTime nextDate)
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleByNextDataFilter`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleArchiveByData(DateTime nextDate)
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleArchiveByData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
         public List<Models.Passport> GetPassportList(string inventoryNumber, string factoryNumber)
         {
             return DatabaseAdapter.GetListDataByQuery<Models.Passport>
@@ -197,9 +233,9 @@ namespace Avionika_Si.Helpers
         {
             return DatabaseAdapter.ExecuteActionQuery
                 ($"INSERT INTO `oborot_si`.`schedule`(`id_measuring_instrument`,`old_date`,`frequency`," +
-                $"`old_venue`,`next_date`,`new_venue`)" +
+                $"`old_venue`,`next_date`,`new_venue`, `id_type_work`)" +
                 $" VALUES ({schedule.MeasuringInstrumentReferenceId}, '{schedule.OldWorkDate.ToString("yyyy-MM-dd")}', {schedule.Frequency}, {schedule.OldVenueReferenceID}," +
-                $" '{schedule.NextWorkDate.ToString("yyyy-MM-dd")}',{schedule.NewVenueReferenceID});");
+                $" '{schedule.NextWorkDate.ToString("yyyy-MM-dd")}',{schedule.NewVenueReferenceID}, {schedule.TypeWorkReferenceID});");
         }
 
         public bool UpdateInstrument(Models.MeasuringInstrument UpdateInstrument)
@@ -293,8 +329,8 @@ namespace Avionika_Si.Helpers
         {
             return DatabaseAdapter.ExecuteActionQuery
                 ($"INSERT INTO `oborot_si`.`journal`" +
-                $"( num_journal,id_measuring_instrument,id_conclusion,id_type_work) " +
-                $"VALUES ({journal.NumJournal}, {journal.MeasuringInstrumentReferenceId}, {journal.ConclusionReferenceId}, {journal.TypeWorkReferenceID});");
+                $"(num_journal,id_measuring_instrument,id_conclusion) " +
+                $"VALUES ({journal.NumJournal}, {journal.MeasuringInstrumentReferenceId}, {journal.ConclusionReferenceId});");
         }
 
         public List<Models.EmployeeData> GetEmployeeDataList()
@@ -325,6 +361,14 @@ namespace Avionika_Si.Helpers
                 $"`employee`.`patronymic` " +
                 $"FROM `oborot_si`.`employee` " +
                 $"WHERE `employee`.`id_employee` = {id_employee};");
+        }
+        public Employee GetEmployeeAbbreviationByID(int id_employee)//
+        {
+            return DatabaseAdapter.GetObjectDataByQuery<Employee>
+                ($"SELECT CONCAT (`employee`.`surname`,' '," +
+                $"(SELECT LEFT(`employee`.`name`,1)),'.'," +
+                $"(SELECT LEFT(`employee`.`patronymic`,1)),'.') " +
+                $"FROM `employee` where `employee`.`id_employee`{id_employee};");
         }
         public List<Models.Employee> GetEmployee()
         {

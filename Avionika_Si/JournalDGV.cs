@@ -7,33 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Avionika_Si;
+using MySql.Data.MySqlClient;
 using Avionika_Si.Models;
 using DFLS.Adapters;
-using Avionika_Si;
 
 namespace Oborot_SI
 {
     public partial class JournalDGV : Form
     {
-
-        private List<JournalDGV> passports = null;
         public JournalDGV()
         {
             InitializeComponent();
-            FillPassportDataGrid();
+            FillJournalDataGrid();
         }
 
-        private void FillPassportDataGrid()
+        private void FillJournalDataGrid()
         {
-            //passports = Program.DbHelper.GetPassportList(inventoryBox.Text, factoryBox.Text);
-            //TableHelper.FillMeasuringInstrumentsTable(passports, PassportGridView);
+            //schedules = Program.DbHelper.GetScheduleList();
+            TableHelper.FillJournalTable(Program.DbHelper.GetJournalDGV(), JournalGridView);
         }
         private void Pasport_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void Pasport_Load(object sender, EventArgs e)
+        private void JournalDGV_Load(object sender, EventArgs e)
         {
           
 
@@ -54,30 +53,32 @@ namespace Oborot_SI
             
         }
 
-        private void passport_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            MainMenu F = new MainMenu();
-            F.Show();
-        }
-
         private void inventoryBox_TextChanged(object sender, EventArgs e)
         {
-           /* int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
+            int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
             if (refMeasuringInstrumentId != 0)
             {
-                Avionika_Si.Models.MeasuringInstrument measuring = new Avionika_Si.Models.MeasuringInstrument()
-                {
 
-                };
-                passports = Program.DbHelper.GetInstrumentByFactoryInventory(inventoryBox.Text, factoryBox.Text);
-                TableHelper.FillMeasuringInstrumentsTable(passports, PassportGridView);
+                TableHelper.FillJournalTable(Program.DbHelper.GetJournalByInventoryFactoryNumbers(inventoryBox.Text, factoryBox.Text), JournalGridView);
             }
             else
             {
-                passports = Program.DbHelper.GetPassportList();
-                TableHelper.FillMeasuringInstrumentsTable(passports, PassportGridView);
-            }*/
+                TableHelper.FillJournalTable(Program.DbHelper.GetJournalDGV(), JournalGridView);
+            }
+        }
+
+        private void factoryBox_TextChanged(object sender, EventArgs e)
+        {
+            int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
+            if (refMeasuringInstrumentId != 0)
+            {
+
+                TableHelper.FillJournalTable(Program.DbHelper.GetJournalByInventoryFactoryNumbers(inventoryBox.Text, factoryBox.Text), JournalGridView);
+            }
+            else
+            {
+                TableHelper.FillJournalTable(Program.DbHelper.GetJournalDGV(), JournalGridView);
+            }
         }
     }
 }

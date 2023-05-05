@@ -75,7 +75,6 @@ namespace Avionika_Si.Models
             Department = new Department(input.Department);
         }
 
-
         public MeasuringInstrument(string login, DateTime date, DateTime startTime, DateTime endTime, string comment, int ownerProblemID, bool lunchBreakFlag)
         {
           

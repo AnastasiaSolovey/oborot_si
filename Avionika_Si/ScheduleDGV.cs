@@ -39,13 +39,119 @@ namespace Oborot_SI
 
         private void ScheduleView_Load(object sender, EventArgs e)
         {
+            InventoryFactoryNumbersFilterRadioButton.Checked = true;
 
         }
 
         private void AddScheduleButton_Click(object sender, EventArgs e)
         {
-            ScheduleForm form = new ScheduleForm();
+            JournalForm form = new JournalForm();
             form.Show();
+        }
+
+        private void InventoryBox_TextChanged(object sender, EventArgs e)
+        {
+            if (ShowArchiveCheck.Checked)
+            {
+                int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
+                if (refMeasuringInstrumentId != 0)
+                {
+
+                    TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleArchiveByInventoryFactory(InventoryBox.Text, FactoryBox.Text), scheduleGridView);
+                }
+                else
+                {
+                    TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleList(DateTime.Today.Date), scheduleGridView);
+                }
+            }
+            
+            else
+            {
+                int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
+                if (refMeasuringInstrumentId != 0)
+                {
+
+                    TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleListByInventoryFactoryNumbers(DateTime.Today.Date, InventoryBox.Text, FactoryBox.Text), scheduleGridView);
+                }
+                else
+                {
+                    TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleList(DateTime.Today.Date), scheduleGridView);
+                }
+            }
+            
+        }
+
+        private void FactoryBox_TextChanged(object sender, EventArgs e)
+        {
+            if (ShowArchiveCheck.Checked)
+            {
+                int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
+                if (refMeasuringInstrumentId != 0)
+                {
+
+                    TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleArchiveByInventoryFactory(InventoryBox.Text, FactoryBox.Text), scheduleGridView);
+                }
+                else
+                {
+                    TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleList(DateTime.Today.Date), scheduleGridView);
+                }
+            }
+
+            else
+            {
+                int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
+                if (refMeasuringInstrumentId != 0)
+                {
+
+                    TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleListByInventoryFactoryNumbers(DateTime.Today.Date, InventoryBox.Text, FactoryBox.Text), scheduleGridView);
+                }
+                else
+                {
+                    TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleList(DateTime.Today.Date), scheduleGridView);
+                }
+            }
+        }
+
+        private void InventoryFactoryNumbersFilterRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (InventoryFactoryNumbersFilterRadioButton.Checked)
+            {
+                DateFilterGroupBox.Enabled = false;
+                InventoryFactoryNumbersFilterGroupBox.Enabled = true;
+            }
+        }
+
+        private void DateFilterRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DateFilterRadioButton.Checked)
+            {
+                DateFilterGroupBox.Enabled = true; 
+                InventoryFactoryNumbersFilterGroupBox.Enabled = false;
+            }
+        }
+
+        private void NextDateWorkBox_ValueChanged(object sender, EventArgs e)
+        {
+            if (ShowArchiveCheck.Checked)
+            {
+                TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleArchiveByData(NextDateWorkBox.Value), scheduleGridView);
+            }
+            else
+            {
+                TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleByNextDataFilter(NextDateWorkBox.Value), scheduleGridView);
+            }
+        }
+
+        private void ShowArchiveCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShowArchiveCheck.Checked)
+            {
+                TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleArchive(), scheduleGridView);
+            }
+            else
+            {
+                TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleList(DateTime.Today.Date), scheduleGridView);
+            }
         }
     }
 }
