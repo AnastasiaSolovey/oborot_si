@@ -389,7 +389,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MeasuringInstrumentForm";
-            this.Text = "Средство измерения";
+            this.Text = "Метрология - средство измерения";
             this.Load += new System.EventHandler(this.Card_si_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

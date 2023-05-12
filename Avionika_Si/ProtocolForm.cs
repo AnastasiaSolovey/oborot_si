@@ -40,56 +40,24 @@ namespace Oborot_SI
         private void Protocol_Load(object sender, EventArgs e)
         {
             InitEmployeeBox();
-            LastNumLabel.Text = "Последний номер в протоколе " + Program.DbHelper.GetLastNumProtocolQuery();
-            inventoryBox.Text = SelectedInventoryNumProtocol;
-            factoryBox.Text = SelectedFactoryNumProtocol;
-
         }
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(inventoryBox.Text) && !string.IsNullOrWhiteSpace(inventoryBox.Text) &&
-                !string.IsNullOrEmpty(factoryBox.Text) && !string.IsNullOrWhiteSpace(factoryBox.Text))
+            Avionika_Si.Models.Protocol AddProtocol = new Avionika_Si.Models.Protocol()
             {
-                int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
-                if (refMeasuringInstrumentId != 0)
-                {
-                    Avionika_Si.Models.Protocol AddProtocol = new Avionika_Si.Models.Protocol()
-                    {
-                        NumProtocol = Convert.ToInt32(ProtocolNumberUpDown.Value),
-                        InstrumentNameReferenceID = refMeasuringInstrumentId,
-                        Note = Convert.ToString(NoteBox.Text),
-                        EmployeeReferenceID = Convert.ToInt32(employeeBox.SelectedValue),
-                    };
+            Note = Convert.ToString(NoteBox.Text),
+            EmployeeReferenceID = Convert.ToInt32(employeeBox.SelectedValue),
+             };
 
-                    if (AddProtocol.Create())
-                    {
-                        this.Hide();
-                        ScheduleForm form = new ScheduleForm();
-                        form.SelectedInventoryNumSchedule = inventoryBox.Text;
-                        form.SelectedFactoryNumSchedule = factoryBox.Text;
-                        form.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
-                    }
-                }
-
-            }
-            else
-                MessageBox.Show("Все обязательные поля должны быть заполнены!");
-
-        }
-
-        private void ChoseMeasuringInstrumentButton_Click(object sender, EventArgs e)
-        {
-            MeasuringInstrumentDGV form = new MeasuringInstrumentDGV(true);
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                inventoryBox.Text = form.PickedMeasuringInstrument.InventoryNumber;
-                factoryBox.Text = form.PickedMeasuringInstrument.FactoryNumber;
-            }
+             if (AddProtocol.Create())
+             {
+                this.Hide();
+             }
+             else
+             {
+                MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
+             }
         }
 
         private void ProtocolForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -39,48 +39,45 @@ namespace Avionika_Si.Helpers
                 $"`measuring_instrument`.`id_department`" +
                 $"FROM `oborot_si`.`measuring_instrument` ORDER BY `measuring_instrument`.`id_name_instrument`;");
         }
-
-        public List<Models.Schedule> GetScheduleList()
+        public List<Models.Journal> GetJournalList()
         {
-            return DatabaseAdapter.GetListDataByQuery<Models.Schedule>
-                ($"SELECT `schedule`.`id_schedule`," +
+            return DatabaseAdapter.GetListDataByQuery<Models.Journal>
+                ($"SELECT `journal`.`id_journal`, " +
+                $"`journal`.`num_journal`," +
                 $"`name_instrument`.`name_instrument`," +
                 $"`measuring_instrument`.`type`," +
                 $"`measuring_instrument`.`inventory_number`," +
                 $"`measuring_instrument`.`factory_number`," +
-                $"`schedule`.`frequency`," +
-                $"`schedule`.`old_date`," +
-                $"`schedule`.`old_venue`," +
-                $"`schedule`.`next_date`," +
-                $"`schedule`.`new_venue`," +
-                $"`conclusion`.`conclusion`," +
-                $"`type_of_work`.`type_of_work`" +
-                $"FROM `oborot_si`.`measuring_instrument` " +
-                $"JOIN `oborot_si`.`name_instrument` " +
-                $"ON `measuring_instrument`.`id_name_instrument` = `name_instrument`.`id_name_instrument`" +
-                $"JOIN `oborot_si`.`schedule`" +
-                $"ON `measuring_instrument`.`id_measuring_instrument` = `schedule`.`id_measuring_instrument`" +
-                $"JOIN `oborot_si`.`journal`" +
-                $"ON `measuring_instrument`.`id_measuring_instrument` = `journal`.`id_measuring_instrument`" +
-                $"JOIN `oborot_si`.`conclusion`" +
-                $"ON `journal`.`id_conclusion` = `conclusion`.`id_conclusion`" +
-                $"JOIN  `oborot_si`.`type_of_work`" +
-                $"ON `journal`.`id_type_work` = `type_of_work`.`id_type_work`" +
-                $"WHERE `schedule`.`next_date`>= '{DateTime.Now.Date.ToString("yyyy-MM-dd")}'" +
-                $"GROUP BY (`schedule`.`id_schedule`)" +
-                $"ORDER BY `schedule`.`next_date`;");
+                $" `conclusion`.`conclusion`," +
+                $" `type_of_work`.`type_of_work`  " +
+                $" FROM `oborot_si`.`journal` " +
+                $"JOIN `oborot_si`.`schedule` " +
+                $" on  `schedule`.`id_schedule` = `journal`.`schedule_reference` " +
+                $" JOIN `oborot_si`.`measuring_instrument`" +
+                $"on `measuring_instrument`.`id_measuring_instrument` = `schedule`.`id_measuring_instrument` " +
+                $"JOIN `oborot_si`.`conclusion` " +
+                $"on `conclusion`.`id_conclusion` = `journal`.`id_conclusion` " +
+                $"JOIN `oborot_si`.`name_instrument`" +
+                $"on `name_instrument`.`id_name_instrument` = `measuring_instrument`.`id_name_instrument` " +
+                $"JOIN `oborot_si`.`type_of_work`  " +
+                $"on `type_of_work`.`id_type_work` = `schedule`.`id_type_work` " +
+                $" ORDER BY `journal`.`num_journal`; ");
         }
 
-        public DataTable GetScheduleList(DateTime nextDate)
+        public DataTable GetScheduleList(DateTime nextDate)//поверка
         {
             return DatabaseAdapter.GetDataTableQuery
-                ($"CALL `oborot_si`.`GetScheduleByData`('{nextDate.ToString("yyyy-MM-dd")}');");
+                ($"CALL `oborot_si`.`GetScheduleVerificationByData`('{nextDate.ToString("yyyy-MM-dd")}');");
         }
-
-        public DataTable GetScheduleListByInventoryFactoryNumbers(DateTime nextDate, string inventory_num, string factory_num)
+        public DataTable GetScheduleCalibrationCheckList(DateTime nextDate)//калибровка и проверка
         {
             return DatabaseAdapter.GetDataTableQuery
-                ($"CALL `oborot_si`.`GetScheduleDataByInventoryFactoryNumbers`('{nextDate.ToString("yyyy-MM-dd")}', '{inventory_num}', '{factory_num}');");
+                ($"CALL `oborot_si`.`GetScheduleCalibrationCheckByData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleListByInventoryFactoryNumbers(DateTime nextDate, string inventory_num, string factory_num)//поверка
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleVerificationDataByInventoryFactoryNumbers`('{nextDate.ToString("yyyy-MM-dd")}', '{inventory_num}', '{factory_num}');");
         }
 
         public DataTable GetJournalByInventoryFactoryNumbers(string inventory_num, string factory_num)
@@ -88,56 +85,125 @@ namespace Avionika_Si.Helpers
             return DatabaseAdapter.GetDataTableQuery
                 ($"CALL `oborot_si`.`GetJournalDGVByInventoryFactory`('{inventory_num}', '{factory_num}');");
         }
-        public DataTable GetScheduleArchiveByInventoryFactory(string inventory_num, string factory_num)
+        public DataTable GetProtocolDGVByInventoryFactoryNumbers(string inventory_num, string factory_num)
         {
             return DatabaseAdapter.GetDataTableQuery
-                ($"CALL `oborot_si`.`GetScheduleArchiveByInventoryFactory`('{inventory_num}', '{factory_num}');");
+                ($"CALL `oborot_si`.`GetProtocolDGVByInventoryFactoryNumbers`('{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetCertificateByInventoryFactoryNumbers(string inventory_num, string factory_num)
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetCertificateByInventoryFactoryNumbers`('{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetScheduleArchiveByInventoryFactory(string inventory_num, string factory_num)//поверка
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleVerificationArchiveByInventoryFactory`('{inventory_num}', '{factory_num}');");
         }
         public DataTable GetJournalDGV()
         {
             return DatabaseAdapter.GetDataTableQuery
                 ($"CALL `oborot_si`.`GetJournalDGV`;");
         }
-        public DataTable GetScheduleArchive()
+        public DataTable GetCertificateDGV()
         {
             return DatabaseAdapter.GetDataTableQuery
-                ($"CALL `oborot_si`.`GetScheduleArchive`;");
+                ($"CALL `oborot_si`.`GetCertificateDGV`;");
         }
-        public DataTable GetScheduleByNextDataFilter(DateTime nextDate)
+        public DataTable GetProtocolDGV()
         {
             return DatabaseAdapter.GetDataTableQuery
-                ($"CALL `oborot_si`.`GetScheduleByNextDataFilter`('{nextDate.ToString("yyyy-MM-dd")}');");
+                ($"CALL `oborot_si`.`GetProtocolDGV`;");
         }
-        public DataTable GetScheduleArchiveByData(DateTime nextDate)
+        public DataTable GetScheduleArchive()//поверка
         {
             return DatabaseAdapter.GetDataTableQuery
-                ($"CALL `oborot_si`.`GetScheduleArchiveByData`('{nextDate.ToString("yyyy-MM-dd")}');");
+                ($"CALL `oborot_si`.`GetScheduleVerificationArchive`;");
         }
-        public List<Models.Passport> GetPassportList(string inventoryNumber, string factoryNumber)
+        public DataTable GetScheduleByNextDataFilter(DateTime nextDate)//поверка
         {
-            return DatabaseAdapter.GetListDataByQuery<Models.Passport>
-                ($"SELECT `name_instrument`.`name_instrument`," +
-                $"`measuring_instrument`.`type`," +
-                $"`measuring_instrument`.`manufacturer`," +
-                $"`measuring_instrument`.`inventory_number`," +
-                $"`measuring_instrument`.`factory_number`," +
-                $"`department`.`department`," +
-                $"`journal`.`date`," +
-                $"`conclusion`.`conclusion`," +
-                $"`type_of_work`.`type_of_work`" +
-                $"FROM `oborot_si`.`measuring_instrument` " +
-                $"JOIN `oborot_si`.`name_instrument` " +
-                $"ON `measuring_instrument`.`id_name_instrument` = `name_instrument`.`id_name_instrument`" +
-                $"JOIN `oborot_si`.`department`" +
-                $"ON `measuring_instrument`.`id_department` = `department`.`id_department`" +
-                $"JOIN `oborot_si`.`journal`" +
-                $"ON `measuring_instrument`.`id_measuring_instrument` = `journal`.`id_measuring_instrument`" +
-                $"JOIN `oborot_si`.`conclusion`" +
-                $"ON `journal`.`id_conclusion` = `conclusion`.`id_conclusion`" +
-                $"JOIN  `oborot_si`.`type_of_work`" +
-                $"ON `journal`.`id_type_work` = `type_of_work`.`id_type_work`" +
-                $"WHERE `measuring_instrument`.`inventory_number` like '%{inventoryNumber}%' " +
-                $"AND `measuring_instrument`.`factory_number` like '%{factoryNumber}%' ");
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleVerificationByNextDataFilter`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleArchiveByData(DateTime nextDate)//поверка
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleVerificationArchiveByData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleCalibrationCheckDataByInventoryFactoryNumbers(DateTime nextDate, string inventory_num, string factory_num)//поиск калибровки и проверки по инвентарному и заводскому номеру
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleCalibrationCheckDataByInventoryFactoryNumbers`('{nextDate.ToString("yyyy-MM-dd")}', '{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetScheduleCalibrationByNextData(DateTime nextDate)//поиск калибровки и проверки по дате
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleCalibrationByNextData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleCalibrationCheckArchive()//поиск архива калибровки и проверки
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleCalibrationCheckArchive`();");
+        }
+        public DataTable GetScheduleCalibrationCheckArchiveByInventoryFactory(string inventory_num, string factory_num)//поиск архива калибровки и проверки по инвентарному и заводскому номеру
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleCalibrationCheckArchiveByInventoryFactory`('{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetScheduleCalibrationCheckArchiveByData(DateTime nextDate)//поиск архива калибровки и проверки по дате
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleCalibrationCheckArchiveByData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleOnlyCalibrationByData(DateTime nextDate)//поиск калибровок
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCalibrationByData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleOnlyCalibrationDataByInventoryFactoryNumbers(DateTime nextDate, string inventory_num, string factory_num)//поиск калибровки по номерам
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCalibrationDataByInventoryFactoryNumbers`('{nextDate.ToString("yyyy-MM-dd")}', '{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetScheduleOnlyCalibrationByNextData(DateTime nextDate)//поиск калибровок по дате
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCalibrationByNextData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleOnlyCalibrationArchive()//поиск архива калибровок
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCalibrationArchive`();");
+        }
+        public DataTable GetScheduleOnlyCalibrationArchiveByInventoryFactory(string inventory_num, string factory_num)//поиск архива калибровок по номерам
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCalibrationArchiveByInventoryFactory`('{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetScheduleOnlyCheckByData(DateTime nextDate)//поиск проверки
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCheckByData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleOnlyCheckDataByInventoryFactoryNumbers(DateTime nextDate, string inventory_num, string factory_num)//поиск проверки по номерам 
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCheckDataByInventoryFactoryNumbers`('{nextDate.ToString("yyyy-MM-dd")}', '{inventory_num}', '{factory_num}');");
+        }
+        public DataTable GetScheduleOnlyCheckByNextData(DateTime nextDate)//поиск проверок по дате
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCheckByNextData`('{nextDate.ToString("yyyy-MM-dd")}');");
+        }
+        public DataTable GetScheduleOnlyCheckArchive()//поиск архива проверок
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCheckArchive`();");
+        }
+        public DataTable GetScheduleOnlyCheckArchiveByInventoryFactory(string inventory_num, string factory_num)//поиск архива проверок по номерам
+        {
+            return DatabaseAdapter.GetDataTableQuery
+                ($"CALL `oborot_si`.`GetScheduleOnlyCheckArchiveByInventoryFactory`('{inventory_num}', '{factory_num}');");
         }
 
         public InstrumentName GetInstrumentNameById(int id_name)
@@ -266,17 +332,6 @@ namespace Avionika_Si.Helpers
                 $"AND `measuring_instrument`.`factory_number` like '%{factoryNumber}%' ");
         }
 
-        public List<Models.Journal> GetJournalList()
-        {
-            return DatabaseAdapter.GetListDataByQuery<Models.Journal>
-                ($"SELECT `journal`.`id_journal`," +
-                $"`journal`.`num_journal`," +
-                $"`journal`.`id_measuring_instrument`," +
-                $"`journal`.`id_conclusion`," +
-                $"`journal`.`id_type_work " +
-                $"FROM `oborot_si`.`journal`; ");
-        }
-
         public int GetLastNumJournalQuery()
         {
             return DatabaseAdapter.GetScalarQuery<int>
@@ -330,7 +385,7 @@ namespace Avionika_Si.Helpers
             return DatabaseAdapter.ExecuteActionQuery
                 ($"INSERT INTO `oborot_si`.`journal`" +
                 $"(num_journal,id_measuring_instrument,id_conclusion) " +
-                $"VALUES ({journal.NumJournal}, {journal.MeasuringInstrumentReferenceId}, {journal.ConclusionReferenceId});");
+                $"VALUES ({journal.NumJournal}, {journal.ConclusionReferenceId});");
         }
 
         public List<Models.EmployeeData> GetEmployeeDataList()

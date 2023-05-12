@@ -11,44 +11,38 @@ using Avionika_Si;
 using MySql.Data.MySqlClient;
 using Avionika_Si.Models;
 using DFLS.Adapters;
-
-namespace Oborot_SI
+namespace Avionika_Si
 {
-    public partial class JournalDGV : Form
+    public partial class ProtocolDGV : Form
     {
-
-
-        public JournalDGV()
+        public ProtocolDGV()
         {
             InitializeComponent();
-            FillJournalDataGrid();
+            FillProtocolDataGrid();
         }
 
-        private void FillJournalDataGrid()
+        private void FillProtocolDataGrid()
         {
-            TableHelper.FillJournalTable(Program.DbHelper.GetJournalDGV(), JournalGridView);
-        }
-        private void Pasport_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            TableHelper.FillProtocolTable(Program.DbHelper.GetProtocolDGV(), ProtocolGridView);
         }
 
-        private void JournalDGV_Load(object sender, EventArgs e)
+        private void ProtocolDGV_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void inventoryBox_TextChanged(object sender, EventArgs e)
         {
+
             int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
             if (refMeasuringInstrumentId != 0)
             {
 
-                TableHelper.FillJournalTable(Program.DbHelper.GetJournalByInventoryFactoryNumbers(inventoryBox.Text, factoryBox.Text), JournalGridView);
+                TableHelper.FillProtocolTable(Program.DbHelper.GetProtocolDGVByInventoryFactoryNumbers(inventoryBox.Text, factoryBox.Text), ProtocolGridView);
             }
             else
             {
-                TableHelper.FillJournalTable(Program.DbHelper.GetJournalDGV(), JournalGridView);
+                TableHelper.FillProtocolTable(Program.DbHelper.GetProtocolDGV(), ProtocolGridView);
             }
         }
 
@@ -58,11 +52,11 @@ namespace Oborot_SI
             if (refMeasuringInstrumentId != 0)
             {
 
-                TableHelper.FillJournalTable(Program.DbHelper.GetJournalByInventoryFactoryNumbers(inventoryBox.Text, factoryBox.Text), JournalGridView);
+                TableHelper.FillProtocolTable(Program.DbHelper.GetProtocolDGVByInventoryFactoryNumbers(inventoryBox.Text, factoryBox.Text), ProtocolGridView);
             }
             else
             {
-                TableHelper.FillJournalTable(Program.DbHelper.GetJournalDGV(), JournalGridView);
+                TableHelper.FillProtocolTable(Program.DbHelper.GetProtocolDGV(), ProtocolGridView);
             }
         }
     }

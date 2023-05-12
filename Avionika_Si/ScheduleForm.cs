@@ -16,6 +16,9 @@ namespace Oborot_SI
 {
     public partial class ScheduleForm : Form
     {
+        public string PreviousForm { get; set; }
+        public string SelectedInventoryNumJournal { get; set; }
+        public string SelectedFactoryNumJournal { get; set; }
         public string SelectedInventoryNumSchedule { get; set; }
         public string SelectedFactoryNumSchedule { get; set; }
         public ScheduleForm()
@@ -45,8 +48,15 @@ namespace Oborot_SI
             InitOldVenueBox();
             InitNewVenueBox();
             InitTypeWork();
-            inventoryBox.Text = SelectedInventoryNumSchedule;
-            factoryBox.Text = SelectedFactoryNumSchedule;
+  
+            if (PreviousForm == "График калибровки и проверки")
+            {
+                oldVenueBox.Visible = false;
+                newVenueBox.Visible = false;
+                oldVenueLabel.Visible = false;
+                newVenueLabel.Visible = false;
+
+            }    
         }
 
         private void Add_Button_Click(object sender, EventArgs e)
@@ -80,6 +90,8 @@ namespace Oborot_SI
                         if (schedule.Create())
                         {
                             this.Hide();
+                            JournalForm form = new JournalForm();
+                            form.Show();
                         }
                         else
                         {
@@ -194,10 +206,18 @@ namespace Oborot_SI
             }
         }
 
-        private void ScheduleForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void ChoseMeasuringInstrumentButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Закончите заполнение всех данных");
-            e.Cancel = true;
+            SelectedInventoryNumJournal = null;
+            SelectedFactoryNumJournal = null;
+            MeasuringInstrumentDGV form = new MeasuringInstrumentDGV(true);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                inventoryBox.Text = form.PickedMeasuringInstrument.InventoryNumber;
+                factoryBox.Text = form.PickedMeasuringInstrument.FactoryNumber;
+                SelectedInventoryNumJournal = inventoryBox.Text;
+                SelectedFactoryNumJournal = factoryBox.Text;
+            }
         }
     }
 }

@@ -255,9 +255,9 @@
             this.groupBox2.Controls.Add(this.mesInstrInvNumbLabel);
             this.groupBox2.Controls.Add(this.updateMeasuringIstrumentButton);
             this.groupBox2.Controls.Add(this.createMeasuringInstrumentButton);
-            this.groupBox2.Location = new System.Drawing.Point(1109, 209);
+            this.groupBox2.Location = new System.Drawing.Point(1109, 195);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(269, 297);
+            this.groupBox2.Size = new System.Drawing.Size(269, 311);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Управление";
@@ -270,7 +270,7 @@
             this.mesInstrInvNumbLabel.Location = new System.Drawing.Point(10, 100);
             this.mesInstrInvNumbLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mesInstrInvNumbLabel.Name = "mesInstrInvNumbLabel";
-            this.mesInstrInvNumbLabel.Size = new System.Drawing.Size(248, 128);
+            this.mesInstrInvNumbLabel.Size = new System.Drawing.Size(248, 142);
             this.mesInstrInvNumbLabel.TabIndex = 38;
             this.mesInstrInvNumbLabel.Text = "mesInstrumentInvNum";
             // 
@@ -307,7 +307,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.measuringsGridView);
             this.Name = "MeasuringInstrumentDGV";
-            this.Text = "Список средств измерений";
+            this.Text = "Метрология - список средств измерений";
             this.Load += new System.EventHandler(this.MeasuringInstrumentDGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.measuringsGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

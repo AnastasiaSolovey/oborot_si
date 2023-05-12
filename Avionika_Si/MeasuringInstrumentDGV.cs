@@ -88,7 +88,7 @@ namespace Avionika_Si
 
                             if(SelectedInstrument!= null)
                             {
-                                mesInstrInvNumbLabel.Text = $"Выбранно СИ" +
+                                mesInstrInvNumbLabel.Text = $"Выбрано СИ" +
                                 $"{Environment.NewLine}" +
                                 $"Инв. №:" +
                                 $"{Environment.NewLine}{SelectedInstrument.InventoryNumber}" +

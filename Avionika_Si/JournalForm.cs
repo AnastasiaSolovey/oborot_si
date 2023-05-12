@@ -42,39 +42,23 @@ namespace Oborot_SI
 
         }
 
-
-
         private void Add_Button_Click(object sender, EventArgs e)
         {
-
-            int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(InventoryBox.Text, FactoryBox.Text);
-
-            if (refMeasuringInstrumentId!=0)
+            Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
             {
-              
-                    Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
-                    {
-                        NumJournal = Convert.ToInt32(JournalNumberUpDown.Value),
-                        MeasuringInstrumentReferenceId = refMeasuringInstrumentId,
-                        ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
-                    };
+                NumJournal = Convert.ToInt32(JournalNumberUpDown.Value),
+                ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
+            };
 
-                    if (journal.Create())
-                    {
-                        this.Hide();
-                        ProtocolForm form = new ProtocolForm();
-                        form.SelectedInventoryNumProtocol = InventoryBox.Text;
-                        form.SelectedFactoryNumProtocol = FactoryBox.Text;
-                        form.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
-                    }
+            if (journal.Create())
+            {
+                this.Hide();
+                ProtocolForm form = new ProtocolForm();
+                form.Show();
             }
             else
             {
-                MessageBox.Show("Ошибка. СИ с таким инвентарным и заводским номером не найдено.");
+                MessageBox.Show("Ошибка. Проверьте корректность введеных данных");
             }
         }
         private void JournalForm_Resize(object sender, EventArgs e)
@@ -82,20 +66,6 @@ namespace Oborot_SI
             if (this.WindowState == FormWindowState.Minimized)
             {
                 this.WindowState = FormWindowState.Minimized;
-            }
-        }
-
-        private void ChoseMeasuringInstrumentButton_Click(object sender, EventArgs e)
-        {
-            SelectedInventoryNumJournal = null;
-            SelectedFactoryNumJournal = null;
-            MeasuringInstrumentDGV form = new MeasuringInstrumentDGV(true);
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                InventoryBox.Text = form.PickedMeasuringInstrument.InventoryNumber;
-                FactoryBox.Text = form.PickedMeasuringInstrument.FactoryNumber;
-                SelectedInventoryNumJournal = InventoryBox.Text;
-                SelectedFactoryNumJournal = FactoryBox.Text;
             }
         }
     }

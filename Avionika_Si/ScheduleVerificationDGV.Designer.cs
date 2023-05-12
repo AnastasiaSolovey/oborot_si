@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class ScheduleDGV
+    partial class ScheduleVerificationDGV
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleDGV));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleVerificationDGV));
             this.InventoryFactoryNumbersFilterGroupBox = new System.Windows.Forms.GroupBox();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.InventoryBox = new System.Windows.Forms.TextBox();
@@ -38,14 +38,14 @@
             this.scheduleGridView = new System.Windows.Forms.DataGridView();
             this.naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invent_nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zavod_nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invent_nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Jh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddScheduleButton = new System.Windows.Forms.Button();
             this.DateFilterGroupBox = new System.Windows.Forms.GroupBox();
             this.NextDateWorkBox = new System.Windows.Forms.DateTimePicker();
@@ -74,7 +74,7 @@
             // 
             this.inventoryLabel.AutoSize = true;
             this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventoryLabel.Location = new System.Drawing.Point(5, 24);
+            this.inventoryLabel.Location = new System.Drawing.Point(5, 60);
             this.inventoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.inventoryLabel.Name = "inventoryLabel";
             this.inventoryLabel.Size = new System.Drawing.Size(141, 16);
@@ -85,7 +85,7 @@
             // 
             this.InventoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InventoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.InventoryBox.Location = new System.Drawing.Point(187, 22);
+            this.InventoryBox.Location = new System.Drawing.Point(197, 57);
             this.InventoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.InventoryBox.Name = "InventoryBox";
             this.InventoryBox.Size = new System.Drawing.Size(177, 22);
@@ -97,7 +97,7 @@
             this.factoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.factoryLabel.AutoSize = true;
             this.factoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.factoryLabel.Location = new System.Drawing.Point(5, 60);
+            this.factoryLabel.Location = new System.Drawing.Point(5, 25);
             this.factoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.factoryLabel.Name = "factoryLabel";
             this.factoryLabel.Size = new System.Drawing.Size(122, 16);
@@ -108,7 +108,7 @@
             // 
             this.FactoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FactoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FactoryBox.Location = new System.Drawing.Point(187, 57);
+            this.FactoryBox.Location = new System.Drawing.Point(197, 22);
             this.FactoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.FactoryBox.Name = "FactoryBox";
             this.FactoryBox.Size = new System.Drawing.Size(177, 22);
@@ -124,14 +124,14 @@
             this.scheduleGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.naimenovanie,
             this.dataGridViewTextBoxColumn1,
-            this.invent_nomer,
             this.zavod_nomer,
-            this.Column3,
+            this.invent_nomer,
+            this.Column6,
             this.Column1,
+            this.Column3,
             this.Jh,
             this.Column4,
-            this.Column5,
-            this.Column2});
+            this.Column5});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -167,15 +167,6 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 51;
             // 
-            // invent_nomer
-            // 
-            this.invent_nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.invent_nomer.HeaderText = "Инвентарный номер";
-            this.invent_nomer.MinimumWidth = 6;
-            this.invent_nomer.Name = "invent_nomer";
-            this.invent_nomer.ReadOnly = true;
-            this.invent_nomer.Width = 124;
-            // 
             // zavod_nomer
             // 
             this.zavod_nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -185,14 +176,20 @@
             this.zavod_nomer.ReadOnly = true;
             this.zavod_nomer.Width = 112;
             // 
-            // Column3
+            // invent_nomer
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column3.HeaderText = "Периодичность";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 110;
+            this.invent_nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.invent_nomer.HeaderText = "Инвентарный номер";
+            this.invent_nomer.MinimumWidth = 6;
+            this.invent_nomer.Name = "invent_nomer";
+            this.invent_nomer.ReadOnly = true;
+            this.invent_nomer.Width = 124;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Подразделение";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column1
             // 
@@ -202,6 +199,15 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 58;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column3.HeaderText = "Периодичность";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 110;
             // 
             // Jh
             // 
@@ -223,20 +229,11 @@
             // 
             // Column5
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column5.HeaderText = "Следующее место проведения";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 171;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Вид работы";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // AddScheduleButton
             // 
@@ -318,7 +315,7 @@
             this.DateFilterRadioButton.UseVisualStyleBackColor = true;
             this.DateFilterRadioButton.CheckedChanged += new System.EventHandler(this.DateFilterRadioButton_CheckedChanged);
             // 
-            // ScheduleDGV
+            // ScheduleVerificationDGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -333,8 +330,8 @@
             this.Controls.Add(this.scheduleGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ScheduleDGV";
-            this.Text = "Просмотр графика";
+            this.Name = "ScheduleVerificationDGV";
+            this.Text = "Метрология - просмотр графика поверки";
             this.Load += new System.EventHandler(this.ScheduleView_Load);
             this.InventoryFactoryNumbersFilterGroupBox.ResumeLayout(false);
             this.InventoryFactoryNumbersFilterGroupBox.PerformLayout();
@@ -355,21 +352,21 @@
         private System.Windows.Forms.TextBox FactoryBox;
         private System.Windows.Forms.DataGridView scheduleGridView;
         private System.Windows.Forms.Button AddScheduleButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn naimenovanie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invent_nomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zavod_nomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.GroupBox DateFilterGroupBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker NextDateWorkBox;
         private System.Windows.Forms.RadioButton InventoryFactoryNumbersFilterRadioButton;
         private System.Windows.Forms.RadioButton DateFilterRadioButton;
         private System.Windows.Forms.CheckBox ShowArchiveCheck;
+        private System.Windows.Forms.DataGridViewTextBoxColumn naimenovanie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zavod_nomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invent_nomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

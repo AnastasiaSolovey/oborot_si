@@ -127,24 +127,35 @@
     <Compile Include="Models\InstrumentName.cs" />
     <Compile Include="Models\Journal.cs" />
     <Compile Include="Models\MeasuringInstrument.cs" />
-    <Compile Include="Models\Passport.cs" />
     <Compile Include="Models\Protocol.cs" />
     <Compile Include="Models\ReferenceData.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\TypeWork.cs" />
     <Compile Include="Models\Venue.cs" />
+    <Compile Include="ProtocolDGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolDGV.Designer.cs">
+      <DependentUpon>ProtocolDGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleCalibrationDGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleCalibrationDGV.Designer.cs">
+      <DependentUpon>ScheduleCalibrationDGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScheduleForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ScheduleForm.Designer.cs">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScheduleDGV.cs">
+    <Compile Include="ScheduleVerificationDGV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScheduleDGV.Designer.cs">
-      <DependentUpon>ScheduleDGV.cs</DependentUpon>
+    <Compile Include="ScheduleVerificationDGV.Designer.cs">
+      <DependentUpon>ScheduleVerificationDGV.cs</DependentUpon>
     </Compile>
     <Compile Include="JournalForm.cs">
       <SubType>Form</SubType>
@@ -172,6 +183,12 @@
     <Compile Include="ProtocolForm.Designer.cs">
       <DependentUpon>ProtocolForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectionScheduleMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectionScheduleMenu.Designer.cs">
+      <DependentUpon>SelectionScheduleMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CertificateForm.resx">
       <DependentUpon>CertificateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,11 +204,17 @@
     <EmbeddedResource Include="MeasuringInstrumentForm.resx">
       <DependentUpon>MeasuringInstrumentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolDGV.resx">
+      <DependentUpon>ProtocolDGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleCalibrationDGV.resx">
+      <DependentUpon>ScheduleCalibrationDGV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScheduleForm.resx">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScheduleDGV.resx">
-      <DependentUpon>ScheduleDGV.cs</DependentUpon>
+    <EmbeddedResource Include="ScheduleVerificationDGV.resx">
+      <DependentUpon>ScheduleVerificationDGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JournalForm.resx">
       <DependentUpon>JournalForm.cs</DependentUpon>
@@ -213,6 +236,9 @@
     </Compile>
     <EmbeddedResource Include="ProtocolForm.resx">
       <DependentUpon>ProtocolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionScheduleMenu.resx">
+      <DependentUpon>SelectionScheduleMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

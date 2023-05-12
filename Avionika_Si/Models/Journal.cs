@@ -15,13 +15,12 @@ namespace Avionika_Si.Models
     {
         public int ID { get; set; }
         public int NumJournal { get; set; }
-        public DateTime DateWork { get; set; }
-        public int MeasuringInstrumentReferenceId { get; set; }
+        public int ScheduleReferenceId { get; set; }
         public int ConclusionReferenceId { get; set; }
         public int TypeWorkReferenceID { get; set; }
-        public MeasuringInstrument MeasureInst { get; set; }
-        public Conclusion Conclus { get; set; }
-        public TypeWork Type { get; set; }
+        public MeasuringInstrument InventoryNumber { get; set; }
+        public MeasuringInstrument FactoryNumber { get; set; }
+        
 
 
         public Journal()
@@ -32,12 +31,9 @@ namespace Avionika_Si.Models
         {
             ID = DB.DataConverter.Convert<int>(input["id_journal"]);
             NumJournal = DB.DataConverter.Convert<int>(input["num_journal"]);
-            DateWork = DateTime.ParseExact(input["date"].ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            MeasuringInstrumentReferenceId = DB.DataConverter.Convert<int>(input["id_measuring_instrument"]);
+            ScheduleReferenceId = DB.DataConverter.Convert<int>(input["schedule_reference"]);
             ConclusionReferenceId = DB.DataConverter.Convert<int>(input["id_conclusion"]);
-            TypeWorkReferenceID = DB.DataConverter.Convert<int>(input["id_type_work"]);
             Program.DbHelper.GetConclusionById(ConclusionReferenceId);
-            Program.DbHelper.GetTypeWorkById(TypeWorkReferenceID);
         }
 
 

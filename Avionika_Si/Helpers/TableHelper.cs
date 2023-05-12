@@ -87,9 +87,38 @@ namespace DFLS.Adapters
 
                 foreach(DataRow row in scheduleDataTable.Rows)
                 {
-                    int id = DGV.BaseDGV.Rows.Add(row["name_instrument"], row["type"], row["inventory_number"], 
-                        row["factory_number"], row["frequency"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"),
-                        row["old_ven"], DB.DataConverter.Convert<DateTime>(row["next_date"]).ToString("dd.MM.yyyy"), row["new_ven"], row["type_of_work"]);
+                    int id = DGV.BaseDGV.Rows.Add(row["name_instrument"], row["type"], row["factory_number"], 
+                        row["inventory_number"], row["department"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"),
+                        row["frequency"], row["old_ven"], DB.DataConverter.Convert<DateTime>(row["next_date"]).ToString("dd.MM.yyyy"), row["new_ven"]);
+                    DGV.BaseDGV.Rows[id].Tag = row["id_schedule"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
+            }
+            DGV.ResumeLayout();
+        }
+
+        public static void FillScheduleCalibrationCheckTable(DataTable scheduleDataTable, DataGridView scheduleDGV)
+        {
+            //scheduleDGV.AutoGenerateColumns = false;
+            //scheduleDGV.DataSource = scheduleDataTable;
+
+
+            DGVExtension DGV = new DGVExtension(scheduleDGV);
+            DGV.InitCopyCellContextMenu();
+            DGV.SuspendLayout();
+            try
+            {
+                DGV.BaseDGV.Rows.Clear();
+                DGV.BaseDGV.Columns[0].ValueType = typeof(string);
+
+                foreach (DataRow row in scheduleDataTable.Rows)
+                {
+                    int id = DGV.BaseDGV.Rows.Add(row["name_instrument"], row["type"], row["factory_number"],
+                        row["inventory_number"], row["department"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"),
+                        row["frequency"], DB.DataConverter.Convert<DateTime>(row["next_date"]).ToString("dd.MM.yyyy"), row["type_of_work"]);
                     DGV.BaseDGV.Rows[id].Tag = row["id_schedule"];
                 }
             }
@@ -116,10 +145,65 @@ namespace DFLS.Adapters
 
                 foreach (DataRow row in journalDataTable.Rows)
                 {
-                    int id = DGV.BaseDGV.Rows.Add(row["num_journal"], row["name_instrument"], row["type"], row["manufacturer"], row["inventory_number"],
-                        row["factory_number"], row["department"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"),
-                        row["conclusion"],row["type_of_work"]);
+                    int id = DGV.BaseDGV.Rows.Add(row["num_journal"], row["name_instrument"], row["type"], row["inventory_number"],
+                        row["factory_number"],row["conclusion"],row["type_of_work"]);
                     DGV.BaseDGV.Rows[id].Tag = row["id_journal"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
+            }
+            DGV.ResumeLayout();
+        }
+
+        public static void FillProtocolTable(DataTable protocolDataTable, DataGridView protocolDGV)
+        {
+            //scheduleDGV.AutoGenerateColumns = false;
+            //scheduleDGV.DataSource = scheduleDataTable;
+
+
+            DGVExtension DGV = new DGVExtension(protocolDGV);
+            DGV.InitCopyCellContextMenu();
+            DGV.SuspendLayout();
+            try
+            {
+                DGV.BaseDGV.Rows.Clear();
+                DGV.BaseDGV.Columns[0].ValueType = typeof(string);
+
+                foreach (DataRow row in protocolDataTable.Rows)
+                {
+                    int id = DGV.BaseDGV.Rows.Add(row["num_protocol"], row["name_instrument"], row["type"], row["inventory_number"],
+                        row["factory_number"], row["type_of_work"], row["note"], row["conclusion"], row["employee_name"]);
+                    DGV.BaseDGV.Rows[id].Tag = row["id_protocol"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
+            }
+            DGV.ResumeLayout();
+        }
+
+        public static void FillCertificateTable(DataTable certificateDataTable, DataGridView certificateDGV)
+        {
+            //scheduleDGV.AutoGenerateColumns = false;
+            //scheduleDGV.DataSource = scheduleDataTable;
+
+
+            DGVExtension DGV = new DGVExtension(certificateDGV);
+            DGV.InitCopyCellContextMenu();
+            DGV.SuspendLayout();
+            try
+            {
+                DGV.BaseDGV.Rows.Clear();
+                DGV.BaseDGV.Columns[0].ValueType = typeof(string);
+
+                foreach (DataRow row in certificateDataTable.Rows)
+                {
+                    int id = DGV.BaseDGV.Rows.Add(row["num_protocol"], row["name_instrument"], row["factory_number"], row["inventory_number"],
+                        row["department"], DB.DataConverter.Convert<DateTime>(row["old_date"]).ToString("dd.MM.yyyy"), DB.DataConverter.Convert<DateTime>(row["next_date"]).ToString("dd.MM.yyyy"), row["employee_name"]);
+                    DGV.BaseDGV.Rows[id].Tag = row["id_protocol"];
                 }
             }
             catch (Exception ex)

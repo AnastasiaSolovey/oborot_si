@@ -35,13 +35,14 @@
             this.ShowFormJournalDGV = new System.Windows.Forms.Button();
             this.ShowFormScheduleDGV = new System.Windows.Forms.Button();
             this.ShowFormCreatingCertificate = new System.Windows.Forms.Button();
+            this.ShowFormProtocolDGV = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ShowFormMeasuringInstrumentDGV
             // 
             this.ShowFormMeasuringInstrumentDGV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ShowFormMeasuringInstrumentDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowFormMeasuringInstrumentDGV.Location = new System.Drawing.Point(42, 62);
+            this.ShowFormMeasuringInstrumentDGV.Location = new System.Drawing.Point(39, 54);
             this.ShowFormMeasuringInstrumentDGV.Margin = new System.Windows.Forms.Padding(2);
             this.ShowFormMeasuringInstrumentDGV.Name = "ShowFormMeasuringInstrumentDGV";
             this.ShowFormMeasuringInstrumentDGV.Size = new System.Drawing.Size(159, 53);
@@ -54,7 +55,7 @@
             // 
             this.exitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(42, 310);
+            this.exitButton.Location = new System.Drawing.Point(39, 367);
             this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(159, 40);
@@ -68,7 +69,7 @@
             this.mainmenuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mainmenuLabel.AutoSize = true;
             this.mainmenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mainmenuLabel.Location = new System.Drawing.Point(50, 29);
+            this.mainmenuLabel.Location = new System.Drawing.Point(47, 21);
             this.mainmenuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mainmenuLabel.Name = "mainmenuLabel";
             this.mainmenuLabel.Size = new System.Drawing.Size(141, 20);
@@ -79,7 +80,7 @@
             // 
             this.ShowFormJournalDGV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ShowFormJournalDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowFormJournalDGV.Location = new System.Drawing.Point(42, 176);
+            this.ShowFormJournalDGV.Location = new System.Drawing.Point(39, 168);
             this.ShowFormJournalDGV.Margin = new System.Windows.Forms.Padding(2);
             this.ShowFormJournalDGV.Name = "ShowFormJournalDGV";
             this.ShowFormJournalDGV.Size = new System.Drawing.Size(159, 53);
@@ -92,7 +93,7 @@
             // 
             this.ShowFormScheduleDGV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ShowFormScheduleDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowFormScheduleDGV.Location = new System.Drawing.Point(42, 119);
+            this.ShowFormScheduleDGV.Location = new System.Drawing.Point(39, 111);
             this.ShowFormScheduleDGV.Margin = new System.Windows.Forms.Padding(2);
             this.ShowFormScheduleDGV.Name = "ShowFormScheduleDGV";
             this.ShowFormScheduleDGV.Size = new System.Drawing.Size(159, 53);
@@ -105,20 +106,35 @@
             // 
             this.ShowFormCreatingCertificate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ShowFormCreatingCertificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowFormCreatingCertificate.Location = new System.Drawing.Point(42, 233);
+            this.ShowFormCreatingCertificate.Location = new System.Drawing.Point(39, 282);
             this.ShowFormCreatingCertificate.Margin = new System.Windows.Forms.Padding(2);
             this.ShowFormCreatingCertificate.Name = "ShowFormCreatingCertificate";
             this.ShowFormCreatingCertificate.Size = new System.Drawing.Size(159, 53);
             this.ShowFormCreatingCertificate.TabIndex = 8;
             this.ShowFormCreatingCertificate.Text = "Создание аттестата";
             this.ShowFormCreatingCertificate.UseVisualStyleBackColor = true;
+            this.ShowFormCreatingCertificate.Click += new System.EventHandler(this.ShowFormCreatingCertificate_Click);
+            // 
+            // ShowFormProtocolDGV
+            // 
+            this.ShowFormProtocolDGV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ShowFormProtocolDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowFormProtocolDGV.Location = new System.Drawing.Point(39, 225);
+            this.ShowFormProtocolDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowFormProtocolDGV.Name = "ShowFormProtocolDGV";
+            this.ShowFormProtocolDGV.Size = new System.Drawing.Size(159, 53);
+            this.ShowFormProtocolDGV.TabIndex = 9;
+            this.ShowFormProtocolDGV.Text = "Просмотр протокола";
+            this.ShowFormProtocolDGV.UseVisualStyleBackColor = true;
+            this.ShowFormProtocolDGV.Click += new System.EventHandler(this.ShowFormProtocolDGV_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(251, 383);
+            this.ClientSize = new System.Drawing.Size(249, 418);
+            this.Controls.Add(this.ShowFormProtocolDGV);
             this.Controls.Add(this.ShowFormCreatingCertificate);
             this.Controls.Add(this.ShowFormScheduleDGV);
             this.Controls.Add(this.ShowFormJournalDGV);
@@ -130,7 +146,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MainMenu";
-            this.Text = "Главное меню";
+            this.Text = "Метрология";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainMenu_FormClosing);
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
@@ -146,5 +162,6 @@
         private System.Windows.Forms.Button ShowFormJournalDGV;
         private System.Windows.Forms.Button ShowFormScheduleDGV;
         private System.Windows.Forms.Button ShowFormCreatingCertificate;
+        private System.Windows.Forms.Button ShowFormProtocolDGV;
     }
 }

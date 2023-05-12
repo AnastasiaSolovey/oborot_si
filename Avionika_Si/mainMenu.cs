@@ -45,7 +45,7 @@ namespace Oborot_SI
      
         private void ScheduleDGV_Button_Click(object sender, EventArgs e)
         {
-            OpenFormAsDialog(new ScheduleDGV());
+            OpenFormAsDialog(new SelectionScheduleMenu());
         }
 
 
@@ -57,6 +57,16 @@ namespace Oborot_SI
         private void exitButton_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void ShowFormProtocolDGV_Click(object sender, EventArgs e)
+        {
+            OpenFormAsDialog(new ProtocolDGV());
+        }
+
+        private void ShowFormCreatingCertificate_Click(object sender, EventArgs e)
+        {
+            OpenFormAsDialog(new CreatingCertificate());
         }
     }
 }

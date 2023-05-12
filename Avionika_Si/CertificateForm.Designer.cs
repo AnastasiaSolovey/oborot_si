@@ -326,7 +326,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CertificateForm";
-            this.Text = "Создание аттестата";
+            this.Text = "Метрология - создание аттестата";
             this.Load += new System.EventHandler(this.Attestat_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

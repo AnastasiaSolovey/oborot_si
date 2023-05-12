@@ -15,10 +15,10 @@ using DFLS.Adapters;
 
 namespace Oborot_SI
 {
-    public partial class ScheduleDGV : Form
+    public partial class ScheduleVerificationDGV : Form
     {
         private List<Schedule> schedules = null;
-        public ScheduleDGV()
+        public ScheduleVerificationDGV()
         {
             InitializeComponent();
             FillScheduleDataGrid();
@@ -45,7 +45,8 @@ namespace Oborot_SI
 
         private void AddScheduleButton_Click(object sender, EventArgs e)
         {
-            JournalForm form = new JournalForm();
+            ScheduleForm form = new ScheduleForm();
+            form.PreviousForm = "График поверки";
             form.Show();
         }
 
