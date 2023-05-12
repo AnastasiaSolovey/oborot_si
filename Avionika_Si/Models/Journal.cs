@@ -20,6 +20,7 @@ namespace Avionika_Si.Models
         public int TypeWorkReferenceID { get; set; }
         public MeasuringInstrument InventoryNumber { get; set; }
         public MeasuringInstrument FactoryNumber { get; set; }
+        public int Year { get; set; }
         
 
 
@@ -33,6 +34,7 @@ namespace Avionika_Si.Models
             NumJournal = DB.DataConverter.Convert<int>(input["num_journal"]);
             ScheduleReferenceId = DB.DataConverter.Convert<int>(input["schedule_reference"]);
             ConclusionReferenceId = DB.DataConverter.Convert<int>(input["id_conclusion"]);
+            Year = DB.DataConverter.Convert<int>(input["year"]);
             Program.DbHelper.GetConclusionById(ConclusionReferenceId);
         }
 

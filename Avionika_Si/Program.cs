@@ -23,7 +23,8 @@ namespace Avionika_Si
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Oborot_SI.MainMenu());
+            //Application.Run(new Oborot_SI.MainMenu());
+            Application.Run(new Avionika_Si.Dummy.DummyCertForm());
         }
 
     }
