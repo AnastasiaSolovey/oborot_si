@@ -51,7 +51,7 @@ namespace Oborot_SI
 
         private void mainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(0);
+            
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -66,7 +66,12 @@ namespace Oborot_SI
 
         private void ShowFormCreatingCertificate_Click(object sender, EventArgs e)
         {
-            OpenFormAsDialog(new CreatingCertificate());
+            OpenFormAsDialog(new CertificateInfoViewForm());
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

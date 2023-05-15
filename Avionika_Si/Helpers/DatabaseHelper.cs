@@ -514,5 +514,15 @@ namespace Avionika_Si.Helpers
                 $"WHERE `measuring_instrument`.`inventory_number` = '{inventoryNumber}' " +
                 $"AND `measuring_instrument`.`factory_number` = '{factoryNumber}'");
         }
+
+        public bool CheckUserActivity(string login)
+        {
+            return DatabaseAdapter.GetScalarQuery<bool>($"SELECT `oborot_si`.`CheckIfUserIsActive`('{login}')");
+        }
+
+        public bool CheckUserCredentials(string login, string password)
+        {
+            return DatabaseAdapter.GetScalarQuery<bool>($"SELECT `oborot_si`.`CheckUserPassword`('{login}', '{password}')");
+        }
     }
 }
