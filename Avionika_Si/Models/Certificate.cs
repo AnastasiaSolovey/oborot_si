@@ -1,8 +1,12 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DB = DatabaseAdapter;
 
 namespace Avionika_Si.Models
 {
@@ -27,6 +31,18 @@ namespace Avionika_Si.Models
             OldDate = oldDate;
             NewDate = newDate;
             EmployeeName = employeeName;
+        }
+
+        public Certificate(DataRow input)
+        {
+            ProtocolNumber = DB.DataConverter.Convert<int>(input["num_protocol"]);
+            MeasuringInstrumentName = DB.DataConverter.Convert<string>(input["name_instrument"]);
+            FactoryNumber = DB.DataConverter.Convert<string>(input["factory_number"]);
+            InventoryNumber = DB.DataConverter.Convert<string>(input["inventory_number"]);
+            Department = DB.DataConverter.Convert<string>(input["department"]);
+            OldDate = DB.DataConverter.Convert<DateTime>(input["old_date"]);
+            NewDate = DB.DataConverter.Convert<DateTime>(input["next_date"]);
+            EmployeeName = DB.DataConverter.Convert<string>(input["employee_name"]);
         }
 
         public Dictionary<string, string> GetCertificatePropsDictionartForWord()

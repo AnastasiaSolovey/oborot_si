@@ -212,5 +212,29 @@ namespace DFLS.Adapters
             }
             DGV.ResumeLayout();
         }
+
+        /*public static void FillCertificateTable(DataTable certificateDataTable, DataGridView certificateDGV)
+        {
+
+            
+            DGVExtension DGV = new DGVExtension(certificateDGV);
+            DGV.InitCopyCellContextMenu();
+            DGV.SuspendLayout();
+            try
+            {
+                DGV.BaseDGV.Rows.Clear();
+                DGV.BaseDGV.Columns[0].ValueType = typeof(string);
+
+                //BindingSource bs = new BindingSource();
+               // bs.DataSource = certificateDataTable;
+                certificateDGV.DataSource = certificateDataTable;
+                certificateDGV. = certificateDataTable.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось сформировать таблицу согласований. {ex.Message}");
+            }
+            DGV.ResumeLayout();
+        }*/
     }
 }

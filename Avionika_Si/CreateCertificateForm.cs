@@ -19,14 +19,15 @@ using Oborot_SI;
 
 namespace Oborot_SI
 {
-    Certificate inputProtocol = null;
-    public partial class CertificateForm : Form
+    public partial class CreateCertificateForm : Form
     {
-        public CertificateForm()
+        Certificate inputProtocol = null;
+
+        public CreateCertificateForm()
         {
             InitializeComponent();
         }
-        public CertificateForm(Certificate cerificate)
+        public CreateCertificateForm(Certificate cerificate)
         {
             inputProtocol = new Certificate(cerificate);
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace Oborot_SI
 
             Certificate certificate = new Certificate
                 (int.Parse(NumProtocolBox.Text), NameMeasuringInstrumentBox.Text, FactoryNumBox.Text, InventoryNumBox.Text, DepartmentBox.Text, 
-                DateWorkBox.Value, NextDateWorkBox.Value, EmployeeBox.Text);
+                DateTime.Parse(oldDateTextBox.Text), DateTime.Parse(newDateTextBox.Text), EmployeeBox.Text);
 
             WordHelper.CreateCertificateDoc(certificate);
 
@@ -47,13 +48,13 @@ namespace Oborot_SI
         {
             if (inputProtocol != null)
             {
-                NumProtocolBox.Text = inputProtocol.ProtocolNumber;
+                NumProtocolBox.Text = inputProtocol.ProtocolNumber.ToString();
                 NameMeasuringInstrumentBox.Text = inputProtocol.MeasuringInstrumentName;
                 FactoryNumBox.Text = inputProtocol.FactoryNumber;
                 InventoryNumBox.Text = inputProtocol.InventoryNumber;
                 DepartmentBox.Text = inputProtocol.Department;
-                DateWorkBox.Text = inputProtocol.OldDate;
-                NextDateWorkBox.Text = inputProtocol.NewDate;
+                oldDateTextBox.Text = inputProtocol.OldDate.ToString("dd    MMMM     yyyy");
+                newDateTextBox.Text = inputProtocol.NewDate.ToString("dd    MMMM    yyyy");
                 EmployeeBox.Text = inputProtocol.EmployeeName;
             }
         }

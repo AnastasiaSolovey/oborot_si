@@ -1,6 +1,6 @@
 ﻿namespace Oborot_SI
 {
-    partial class CertificateForm
+    partial class CreateCertificateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CertificateForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateCertificateForm));
             this.dateLabel = new System.Windows.Forms.Label();
-            this.DateWorkBox = new System.Windows.Forms.DateTimePicker();
             this.belongLabel = new System.Windows.Forms.Label();
             this.newdateLabel = new System.Windows.Forms.Label();
-            this.NextDateWorkBox = new System.Windows.Forms.DateTimePicker();
             this.employeeLabel = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -46,38 +44,26 @@
             this.DepartmentBox = new System.Windows.Forms.TextBox();
             this.EmployeeBox = new System.Windows.Forms.TextBox();
             this.NumProtocolBox = new System.Windows.Forms.TextBox();
+            this.oldDateTextBox = new System.Windows.Forms.TextBox();
+            this.newDateTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // dateLabel
             // 
-            this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateLabel.Location = new System.Drawing.Point(24, 313);
+            this.dateLabel.Location = new System.Drawing.Point(8, 315);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(90, 16);
             this.dateLabel.TabIndex = 48;
             this.dateLabel.Text = "Дата работы";
             // 
-            // DateWorkBox
-            // 
-            this.DateWorkBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DateWorkBox.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateWorkBox.Enabled = false;
-            this.DateWorkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateWorkBox.Location = new System.Drawing.Point(27, 331);
-            this.DateWorkBox.Margin = new System.Windows.Forms.Padding(2);
-            this.DateWorkBox.Name = "DateWorkBox";
-            this.DateWorkBox.Size = new System.Drawing.Size(250, 22);
-            this.DateWorkBox.TabIndex = 47;
-            // 
             // belongLabel
             // 
-            this.belongLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.belongLabel.AutoSize = true;
             this.belongLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.belongLabel.Location = new System.Drawing.Point(24, 253);
+            this.belongLabel.Location = new System.Drawing.Point(8, 255);
             this.belongLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.belongLabel.Name = "belongLabel";
             this.belongLabel.Size = new System.Drawing.Size(119, 16);
@@ -86,34 +72,20 @@
             // 
             // newdateLabel
             // 
-            this.newdateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newdateLabel.AutoSize = true;
             this.newdateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newdateLabel.Location = new System.Drawing.Point(24, 370);
+            this.newdateLabel.Location = new System.Drawing.Point(8, 372);
             this.newdateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newdateLabel.Name = "newdateLabel";
             this.newdateLabel.Size = new System.Drawing.Size(120, 16);
             this.newdateLabel.TabIndex = 55;
             this.newdateLabel.Text = "Действителен до";
             // 
-            // NextDateWorkBox
-            // 
-            this.NextDateWorkBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NextDateWorkBox.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NextDateWorkBox.Enabled = false;
-            this.NextDateWorkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NextDateWorkBox.Location = new System.Drawing.Point(27, 388);
-            this.NextDateWorkBox.Margin = new System.Windows.Forms.Padding(2);
-            this.NextDateWorkBox.Name = "NextDateWorkBox";
-            this.NextDateWorkBox.Size = new System.Drawing.Size(250, 22);
-            this.NextDateWorkBox.TabIndex = 54;
-            // 
             // employeeLabel
             // 
-            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeLabel.AutoSize = true;
             this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.employeeLabel.Location = new System.Drawing.Point(24, 431);
+            this.employeeLabel.Location = new System.Drawing.Point(8, 433);
             this.employeeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.employeeLabel.Name = "employeeLabel";
             this.employeeLabel.Size = new System.Drawing.Size(110, 16);
@@ -122,9 +94,8 @@
             // 
             // createButton
             // 
-            this.createButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.createButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.createButton.Location = new System.Drawing.Point(27, 491);
+            this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createButton.Location = new System.Drawing.Point(11, 493);
             this.createButton.Margin = new System.Windows.Forms.Padding(2);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(189, 46);
@@ -135,10 +106,9 @@
             // 
             // nameLabel
             // 
-            this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameLabel.Location = new System.Drawing.Point(24, 195);
+            this.nameLabel.Location = new System.Drawing.Point(8, 197);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(128, 16);
@@ -147,10 +117,9 @@
             // 
             // factoryLabel
             // 
-            this.factoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.factoryLabel.AutoSize = true;
             this.factoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.factoryLabel.Location = new System.Drawing.Point(24, 133);
+            this.factoryLabel.Location = new System.Drawing.Point(8, 135);
             this.factoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.factoryLabel.Name = "factoryLabel";
             this.factoryLabel.Size = new System.Drawing.Size(122, 16);
@@ -159,21 +128,20 @@
             // 
             // InventoryNumBox
             // 
-            this.InventoryNumBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.InventoryNumBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.InventoryNumBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.InventoryNumBox.Location = new System.Drawing.Point(27, 89);
+            this.InventoryNumBox.Location = new System.Drawing.Point(11, 91);
             this.InventoryNumBox.Margin = new System.Windows.Forms.Padding(2);
             this.InventoryNumBox.Name = "InventoryNumBox";
             this.InventoryNumBox.ReadOnly = true;
-            this.InventoryNumBox.Size = new System.Drawing.Size(250, 22);
+            this.InventoryNumBox.Size = new System.Drawing.Size(290, 22);
             this.InventoryNumBox.TabIndex = 43;
             // 
             // protocolLabel
             // 
-            this.protocolLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.protocolLabel.AutoSize = true;
             this.protocolLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.protocolLabel.Location = new System.Drawing.Point(24, 18);
+            this.protocolLabel.Location = new System.Drawing.Point(8, 20);
             this.protocolLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.protocolLabel.Name = "protocolLabel";
             this.protocolLabel.Size = new System.Drawing.Size(93, 16);
@@ -182,10 +150,9 @@
             // 
             // inventoryLabel
             // 
-            this.inventoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inventoryLabel.AutoSize = true;
             this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inventoryLabel.Location = new System.Drawing.Point(24, 71);
+            this.inventoryLabel.Location = new System.Drawing.Point(8, 73);
             this.inventoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.inventoryLabel.Name = "inventoryLabel";
             this.inventoryLabel.Size = new System.Drawing.Size(141, 16);
@@ -194,65 +161,89 @@
             // 
             // FactoryNumBox
             // 
-            this.FactoryNumBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FactoryNumBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.FactoryNumBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FactoryNumBox.Location = new System.Drawing.Point(27, 151);
+            this.FactoryNumBox.Location = new System.Drawing.Point(11, 153);
             this.FactoryNumBox.Margin = new System.Windows.Forms.Padding(2);
             this.FactoryNumBox.Name = "FactoryNumBox";
             this.FactoryNumBox.ReadOnly = true;
-            this.FactoryNumBox.Size = new System.Drawing.Size(250, 22);
+            this.FactoryNumBox.Size = new System.Drawing.Size(290, 22);
             this.FactoryNumBox.TabIndex = 44;
             // 
             // NameMeasuringInstrumentBox
             // 
-            this.NameMeasuringInstrumentBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NameMeasuringInstrumentBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NameMeasuringInstrumentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameMeasuringInstrumentBox.Location = new System.Drawing.Point(27, 213);
+            this.NameMeasuringInstrumentBox.Location = new System.Drawing.Point(11, 215);
             this.NameMeasuringInstrumentBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameMeasuringInstrumentBox.Name = "NameMeasuringInstrumentBox";
             this.NameMeasuringInstrumentBox.ReadOnly = true;
-            this.NameMeasuringInstrumentBox.Size = new System.Drawing.Size(250, 22);
+            this.NameMeasuringInstrumentBox.Size = new System.Drawing.Size(290, 22);
             this.NameMeasuringInstrumentBox.TabIndex = 64;
             // 
             // DepartmentBox
             // 
-            this.DepartmentBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DepartmentBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DepartmentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DepartmentBox.Location = new System.Drawing.Point(27, 271);
+            this.DepartmentBox.Location = new System.Drawing.Point(11, 273);
             this.DepartmentBox.Margin = new System.Windows.Forms.Padding(2);
             this.DepartmentBox.Name = "DepartmentBox";
             this.DepartmentBox.ReadOnly = true;
-            this.DepartmentBox.Size = new System.Drawing.Size(250, 22);
+            this.DepartmentBox.Size = new System.Drawing.Size(290, 22);
             this.DepartmentBox.TabIndex = 65;
             // 
             // EmployeeBox
             // 
-            this.EmployeeBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EmployeeBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EmployeeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EmployeeBox.Location = new System.Drawing.Point(27, 449);
+            this.EmployeeBox.Location = new System.Drawing.Point(11, 451);
             this.EmployeeBox.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeeBox.Name = "EmployeeBox";
             this.EmployeeBox.ReadOnly = true;
-            this.EmployeeBox.Size = new System.Drawing.Size(250, 22);
+            this.EmployeeBox.Size = new System.Drawing.Size(290, 22);
             this.EmployeeBox.TabIndex = 66;
             // 
             // NumProtocolBox
             // 
-            this.NumProtocolBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NumProtocolBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NumProtocolBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NumProtocolBox.Location = new System.Drawing.Point(27, 36);
+            this.NumProtocolBox.Location = new System.Drawing.Point(11, 38);
             this.NumProtocolBox.Margin = new System.Windows.Forms.Padding(2);
             this.NumProtocolBox.Name = "NumProtocolBox";
             this.NumProtocolBox.ReadOnly = true;
-            this.NumProtocolBox.Size = new System.Drawing.Size(250, 22);
+            this.NumProtocolBox.Size = new System.Drawing.Size(290, 22);
             this.NumProtocolBox.TabIndex = 67;
             // 
-            // CertificateForm
+            // oldDateTextBox
+            // 
+            this.oldDateTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.oldDateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.oldDateTextBox.Location = new System.Drawing.Point(11, 333);
+            this.oldDateTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.oldDateTextBox.Name = "oldDateTextBox";
+            this.oldDateTextBox.ReadOnly = true;
+            this.oldDateTextBox.Size = new System.Drawing.Size(290, 22);
+            this.oldDateTextBox.TabIndex = 68;
+            // 
+            // newDateTextBox
+            // 
+            this.newDateTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.newDateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.newDateTextBox.Location = new System.Drawing.Point(11, 390);
+            this.newDateTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.newDateTextBox.Name = "newDateTextBox";
+            this.newDateTextBox.ReadOnly = true;
+            this.newDateTextBox.Size = new System.Drawing.Size(290, 22);
+            this.newDateTextBox.TabIndex = 69;
+            // 
+            // CreateCertificateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(372, 549);
+            this.ClientSize = new System.Drawing.Size(312, 549);
+            this.Controls.Add(this.newDateTextBox);
+            this.Controls.Add(this.oldDateTextBox);
             this.Controls.Add(this.NumProtocolBox);
             this.Controls.Add(this.EmployeeBox);
             this.Controls.Add(this.DepartmentBox);
@@ -266,13 +257,11 @@
             this.Controls.Add(this.InventoryNumBox);
             this.Controls.Add(this.employeeLabel);
             this.Controls.Add(this.newdateLabel);
-            this.Controls.Add(this.NextDateWorkBox);
             this.Controls.Add(this.belongLabel);
             this.Controls.Add(this.dateLabel);
-            this.Controls.Add(this.DateWorkBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "CertificateForm";
+            this.Name = "CreateCertificateForm";
             this.Text = "Метрология - создание аттестата";
             this.Load += new System.EventHandler(this.Attestat_Load);
             this.ResumeLayout(false);
@@ -282,10 +271,8 @@
 
         #endregion
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.DateTimePicker DateWorkBox;
         private System.Windows.Forms.Label belongLabel;
         private System.Windows.Forms.Label newdateLabel;
-        private System.Windows.Forms.DateTimePicker NextDateWorkBox;
         private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Label nameLabel;
@@ -298,5 +285,7 @@
         private System.Windows.Forms.TextBox DepartmentBox;
         private System.Windows.Forms.TextBox EmployeeBox;
         private System.Windows.Forms.TextBox NumProtocolBox;
+        private System.Windows.Forms.TextBox oldDateTextBox;
+        private System.Windows.Forms.TextBox newDateTextBox;
     }
 }

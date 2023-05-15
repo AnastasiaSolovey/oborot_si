@@ -1,6 +1,6 @@
 ﻿namespace Avionika_Si
 {
-    partial class CreatingCertificate
+    partial class CertificateInfoViewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CertificateGridView = new System.Windows.Forms.DataGridView();
+            this.CertificateGridView.AutoGenerateColumns = false;
             this.NumProtocol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zavod_nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +51,8 @@
             // 
             // CertificateGridView
             // 
+            this.CertificateGridView.AllowUserToAddRows = false;
+            this.CertificateGridView.AllowUserToDeleteRows = false;
             this.CertificateGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.CertificateGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CertificateGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -71,6 +74,7 @@
             this.CertificateGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.CertificateGridView.Location = new System.Drawing.Point(12, 148);
             this.CertificateGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.CertificateGridView.MultiSelect = false;
             this.CertificateGridView.Name = "CertificateGridView";
             this.CertificateGridView.ReadOnly = true;
             this.CertificateGridView.RowHeadersWidth = 51;
@@ -79,6 +83,7 @@
             this.CertificateGridView.Size = new System.Drawing.Size(1189, 365);
             this.CertificateGridView.TabIndex = 24;
             this.CertificateGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CertificateGridView_CellDoubleClick);
+            this.CertificateGridView.SelectionChanged += new System.EventHandler(this.CertificateGridView_SelectionChanged);
             // 
             // NumProtocol
             // 
@@ -215,7 +220,7 @@
             this.chooseLabel.Size = new System.Drawing.Size(0, 20);
             this.chooseLabel.TabIndex = 44;
             // 
-            // CreatingCertificate
+            // CertificateInfoViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -223,7 +228,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chooseLabel);
             this.Controls.Add(this.CertificateGridView);
-            this.Name = "CreatingCertificate";
+            this.Name = "CertificateInfoViewForm";
             this.Text = "Метрология - создание аттестата";
             this.Load += new System.EventHandler(this.CreatingCertificate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CertificateGridView)).EndInit();
