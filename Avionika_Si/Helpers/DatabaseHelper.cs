@@ -331,7 +331,42 @@ namespace Avionika_Si.Helpers
                 $"WHERE `measuring_instrument`.`inventory_number` like '%{inventoryNumber}%' " +
                 $"AND `measuring_instrument`.`factory_number` like '%{factoryNumber}%' ");
         }
-
+        public int GetOnlyYear()
+        {
+            return DatabaseAdapter.GetScalarQuery<int>
+                ($"Select Year(`schedule`.`old_date`) " +
+                $"From `schedule` " +
+                $"Where `schedule`.`id_schedule` = " +
+                $"(Select Max(`schedule`.`id_schedule`) " +
+                $"from `schedule`);");
+        }
+        public int GetLastScheduleID()
+        {
+            return DatabaseAdapter.GetScalarQuery<int>
+                ($"Select `schedule`.`id_schedule`  " +
+                $"From `schedule` " +
+                $"Where `schedule`.`id_schedule` = " +
+                $"(Select Max(`schedule`.`id_schedule`) " +
+                $"from `schedule`)");
+        }
+        public int GetLastJournalNum()
+        {
+            return DatabaseAdapter.GetScalarQuery<int>
+                ($"Select `journal`.`num_journal`  " +
+                $"From `journal`" +
+                $" Where `journal`.`num_journal` = " +
+                $"(Select Max(`journal`.`num_journal`) " +
+                $"from `journal`)");
+        }
+        public int GetLastJournalID()
+        {
+            return DatabaseAdapter.GetScalarQuery<int>
+                ($"Select `journal`.`id_journal`  " +
+                $"From `journal`" +
+                $" Where `journal`.`id_journal` = " +
+                $"(Select Max(`journal`.`id_journal`) " +
+                $"from `journal`)");
+        }
         public int GetLastNumJournalQuery()
         {
             return DatabaseAdapter.GetScalarQuery<int>
@@ -346,14 +381,14 @@ namespace Avionika_Si.Helpers
             $"FROM `protocol` " +
             $"ORDER BY `id_protocol` DESC LIMIT 1");
         }
-
-        public TypeWork GetTypeWorkById(int id_type_work)
+        public TypeWork GetTypeWorkByNum(int num_protocol)
         {
             return DatabaseAdapter.GetObjectDataByQuery<TypeWork>
-                ($"SELECT `type_of_work`.`id_type_work`, " +
-                $"`type_of_work`.`type_of_work` " +
-                $"FROM `oborot_si`.`type_of_work` " +
-                $"WHERE `type_of_work`.`id_type_work` = {id_type_work};");
+                ($"    Select `type_of_work`.`type_of_work` From `type_of_work` " +
+                $"Join `schedule` On `schedule`.`id_type_work` = `type_of_work`.`id_type_work `" +
+                $"Join `journal` On `journal`.`schedule_reference` = `schedule`.`id_schedule`" +
+                $"Join `protocol` On `protocol`.`id_journal` = `journal`.`id_journal`" +
+                $"Where `protocol`.`num_protocol` =  {num_protocol};");
         }
 
         public Conclusion GetConclusionById(int id_conclusion)
@@ -384,8 +419,8 @@ namespace Avionika_Si.Helpers
         {
             return DatabaseAdapter.ExecuteActionQuery
                 ($"INSERT INTO `oborot_si`.`journal`" +
-                $"(num_journal,id_measuring_instrument,id_conclusion) " +
-                $"VALUES ({journal.NumJournal}, {journal.ConclusionReferenceId});");
+                $"(num_journal,schedule_reference,id_conclusion,year) " +
+                $"VALUES ({journal.NumJournal},{journal.ScheduleReferenceId}, {journal.ConclusionReferenceId},{journal.Year});");
         }
 
         public List<Models.EmployeeData> GetEmployeeDataList()
@@ -459,8 +494,8 @@ namespace Avionika_Si.Helpers
         public bool CreateProtocol(Models.Protocol protocol)
         {
             return DatabaseAdapter.ExecuteActionQuery
-                ($"INSERT INTO `oborot_si`.`protocol`(`num_protocol`,`id_measuring_instrument`,`note`,`id_employee`)" +
-                 $"VALUES({protocol.NumProtocol},{protocol.InstrumentNameReferenceID}, '{protocol.Note}', {protocol.EmployeeReferenceID});");
+                ($"INSERT INTO `oborot_si`.`protocol`(`num_protocol`,`id_journal`,`note`,`id_employee`)" +
+                 $"VALUES({protocol.NumProtocol},{protocol.JournalReferenceId}, '{protocol.Note}', {protocol.EmployeeReferenceID});");
         }
 
         public int GetEmployeeConcatQuery(int id)

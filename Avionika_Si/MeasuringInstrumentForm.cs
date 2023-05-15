@@ -17,18 +17,6 @@ namespace Oborot_SI
 {
     public partial class MeasuringInstrumentForm : Form
     {
-        /*public int id { get; private set; }
-        public int name { get; set; }
-        public string type { get; set; }
-        public string manufacturer { get; set; }
-        public string measuringRange { get; set; }
-        public string inventoryNumber { get; set; }
-        public string factoryNumber { get; set; }
-        public int etallon { get; set; }
-        public int idCondition { get; set; }
-        public string equipment { get; set; }
-        public string description { get; set; }
-        public int idBelongTo { get; set; }*/
 
         MeasuringInstrument inputInstrument = null;
 
@@ -203,73 +191,6 @@ namespace Oborot_SI
                     MessageBox.Show("Все обязательные поля должны быть заполнены!");
             }
             
-
-        }
-
-        private void Search_Button_Click(object sender, EventArgs e)
-        {
-                int refMeasuringInstrumentId = Program.DbHelper.GetInventoryFactoryQuery(inventoryBox.Text, factoryBox.Text);
-                if (refMeasuringInstrumentId != 0)
-                {
-                    Avionika_Si.Models.MeasuringInstrument measuring = new Avionika_Si.Models.MeasuringInstrument()
-                    {
-
-
-                    };
-                    measuringInstruments = Program.DbHelper.GetInstrumentByFactoryInventory(inventoryBox.Text, factoryBox.Text);
-                    nameBox.Text = "Name";
-                    typeBox.Text = "Type";
-                    manufacturerBox.Text = "Manufacturer";
-                    rangeBox.Text = "MeasuringRange";
-                    inventoryBox.Text = "InventoryNumber";
-                    factoryBox.Text = "FactoryNumber";
-                    bool IsEtalon = Program.DbHelper.GetEtalon(inventoryBox.Text, factoryBox.Text);
-                    if (IsEtalon == false)
-                    {
-                        EtalonStatusCheckBox.Checked = false;
-                    }
-                    else
-                    {
-                        EtalonStatusCheckBox.Checked = true;
-                    }
-                    conditionBox.Text = "Condition";
-                    equipmentBox.Text = "Equipment";
-                    descriptionBox.Text = "Description";
-                    belongBox.Text = "Belongs";
-
-                }
-                else
-                {
-                    MessageBox.Show("Ошибка. СИ с таким инвентарным и/или заводским номером не найдено.");
-                }
-        }
-
-        private void Clear_button_Click(object sender, EventArgs e)
-        {
-            typeBox.Clear();
-            manufacturerBox.Clear();
-            rangeBox.Clear();
-            inventoryBox.Clear();
-            factoryBox.Clear();
-            EtalonStatusCheckBox.Checked = false;
-            equipmentBox.Clear();
-            descriptionBox.Clear();
-
-        }
-
-        private void updateButton_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void DGWMeasureViewLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-            this.Hide();
-            MeasuringInstrumentDGV F = new MeasuringInstrumentDGV();
-            F.ShowDialog();
-            this.Show();
 
         }
 

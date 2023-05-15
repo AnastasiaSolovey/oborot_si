@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Avionika_Si;
+using Oborot_SI;
 using MySql.Data.MySqlClient;
 using Avionika_Si.Models;
 using DFLS.Adapters;
@@ -16,6 +17,7 @@ namespace Avionika_Si
 {
     public partial class CreatingCertificate : Form
     {
+        private Certificate SelectedProtocolNum = null;
         public CreatingCertificate()
         {
             InitializeComponent();
@@ -57,6 +59,25 @@ namespace Avionika_Si
             {
                 TableHelper.FillCertificateTable(Program.DbHelper.GetCertificateDGV(), CertificateGridView);
             }
+        }
+
+        private void CertificateGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (SelectedProtocolNum != null)
+            {
+
+                    CertificateForm form = new CertificateForm(SelectedProtocolNum);
+
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        FillCerificatelDataGrid();
+                    }
+            }
+            else
+            {
+                MessageBox.Show("Средство измерения не выбрано");
+            }
+
         }
     }
  }

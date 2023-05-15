@@ -17,8 +17,6 @@ namespace Oborot_SI
 {
     public partial class JournalForm : Form
     {
-        public string SelectedInventoryNumJournal { get; set; }
-        public string SelectedFactoryNumJournal { get; set; }
         public JournalForm()
         {
             InitializeComponent();
@@ -44,10 +42,14 @@ namespace Oborot_SI
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
+            int GetScheduleReferenceId = Program.DbHelper.GetLastScheduleID();
+            int GetYear = Program.DbHelper.GetOnlyYear();
             Avionika_Si.Models.Journal journal = new Avionika_Si.Models.Journal()
             {
                 NumJournal = Convert.ToInt32(JournalNumberUpDown.Value),
+                ScheduleReferenceId = GetScheduleReferenceId,
                 ConclusionReferenceId = Convert.ToInt32(ConclusionBox.SelectedValue),
+                Year = GetYear,
             };
 
             if (journal.Create())

@@ -15,8 +15,6 @@ namespace Oborot_SI
 {
     public partial class ProtocolForm : Form
     {
-        public string SelectedInventoryNumProtocol { get; set; }
-        public string SelectedFactoryNumProtocol { get; set; }
         public ProtocolForm()
         {
             InitializeComponent();
@@ -44,8 +42,12 @@ namespace Oborot_SI
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
+            int GetJournalReferenceId = Program.DbHelper.GetLastJournalID();
+            int GetLastJournalNum = Program.DbHelper.GetLastJournalNum();
             Avionika_Si.Models.Protocol AddProtocol = new Avionika_Si.Models.Protocol()
             {
+            NumProtocol = GetLastJournalNum,
+            JournalReferenceId = GetJournalReferenceId,
             Note = Convert.ToString(NoteBox.Text),
             EmployeeReferenceID = Convert.ToInt32(employeeBox.SelectedValue),
              };

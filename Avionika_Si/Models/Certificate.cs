@@ -43,5 +43,19 @@ namespace Avionika_Si.Models
                 {"Employee", EmployeeName}
             };
         }
+        public Certificate(Certificate input)
+        {
+
+            ProtocolNumber = input.ProtocolNumber;
+            MeasuringInstrumentName = input.MeasuringInstrumentName;
+            FactoryNumber = input.FactoryNumber;
+            InventoryNumber = input.InventoryNumber;
+            Department = input.Department;
+            OldDate = input.OldDate;
+            NewDate = input.NewDate;
+            EmployeeName = input.EmployeeName;
+
+
+        }
     }
 }

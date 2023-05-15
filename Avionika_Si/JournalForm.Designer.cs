@@ -44,7 +44,7 @@
             this.ConclusionBox.DisplayMember = "zakluchenie";
             this.ConclusionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ConclusionBox.FormattingEnabled = true;
-            this.ConclusionBox.Location = new System.Drawing.Point(12, 104);
+            this.ConclusionBox.Location = new System.Drawing.Point(22, 114);
             this.ConclusionBox.Margin = new System.Windows.Forms.Padding(2);
             this.ConclusionBox.Name = "ConclusionBox";
             this.ConclusionBox.Size = new System.Drawing.Size(269, 24);
@@ -56,7 +56,7 @@
             this.conclusionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.conclusionLabel.AutoSize = true;
             this.conclusionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.conclusionLabel.Location = new System.Drawing.Point(8, 86);
+            this.conclusionLabel.Location = new System.Drawing.Point(18, 96);
             this.conclusionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.conclusionLabel.Name = "conclusionLabel";
             this.conclusionLabel.Size = new System.Drawing.Size(89, 16);
@@ -67,7 +67,7 @@
             // 
             this.addButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addButton.Location = new System.Drawing.Point(11, 145);
+            this.addButton.Location = new System.Drawing.Point(22, 161);
             this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(128, 40);
@@ -81,7 +81,7 @@
             this.idLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.idLabel.AutoSize = true;
             this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.idLabel.Location = new System.Drawing.Point(8, 16);
+            this.idLabel.Location = new System.Drawing.Point(16, 22);
             this.idLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(121, 16);
@@ -92,7 +92,7 @@
             // 
             this.JournalNumberUpDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.JournalNumberUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.JournalNumberUpDown.Location = new System.Drawing.Point(12, 35);
+            this.JournalNumberUpDown.Location = new System.Drawing.Point(20, 41);
             this.JournalNumberUpDown.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -118,7 +118,7 @@
             this.LastNumLabel.AutoSize = true;
             this.LastNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LastNumLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LastNumLabel.Location = new System.Drawing.Point(9, 60);
+            this.LastNumLabel.Location = new System.Drawing.Point(17, 66);
             this.LastNumLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LastNumLabel.Name = "LastNumLabel";
             this.LastNumLabel.Size = new System.Drawing.Size(92, 13);
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(361, 205);
+            this.ClientSize = new System.Drawing.Size(361, 228);
             this.Controls.Add(this.LastNumLabel);
             this.Controls.Add(this.JournalNumberUpDown);
             this.Controls.Add(this.idLabel);

@@ -42,6 +42,7 @@ namespace Avionika_Si.Helpers
 
         public static void CreateCertificateDoc(Certificate certificate)
         {
+
             string templatePath = $"{templateDir}\\calibration_cert_template.docx";
             string outputPath = $"{outputDir}\\{certificate.MeasuringInstrumentName}_{certificate.ProtocolNumber}_{DateTime.Now.ToString("dd_MM_yyy_HH_mm_ss")}.docx";
             if (File.Exists(templatePath))

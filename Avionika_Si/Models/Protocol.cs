@@ -14,6 +14,7 @@ namespace Avionika_Si.Models
     {
         public int ID { get; set; }
         public int NumProtocol { get; set; }
+        public int JournalReferenceId { get; set; }
         public int InstrumentNameReferenceID { get; set; }
         public string Note { get; set; }
         public int EmployeeReferenceID { get; set; }
@@ -29,7 +30,7 @@ namespace Avionika_Si.Models
         {
             ID = DB.DataConverter.Convert<int>(input["id_protocol"]);
             NumProtocol = DB.DataConverter.Convert<int>(input["num_protocol"]);
-            InstrumentNameReferenceID = DB.DataConverter.Convert<int>(input["id_measuring_instrument"]);
+            JournalReferenceId = DB.DataConverter.Convert<int>(input["id_journal"]);
             Note = DB.DataConverter.Convert<string>(input["description"]);
             EmployeeReferenceID = DB.DataConverter.Convert<int>(input["id_employee"]);
 

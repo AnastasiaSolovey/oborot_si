@@ -48,6 +48,7 @@ namespace Oborot_SI
             ScheduleForm form = new ScheduleForm();
             form.PreviousForm = "График поверки";
             form.Show();
+            TableHelper.FillScheduleTable(Program.DbHelper.GetScheduleList(DateTime.Today.Date), scheduleGridView);
         }
 
         private void InventoryBox_TextChanged(object sender, EventArgs e)

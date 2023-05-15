@@ -24,7 +24,6 @@ namespace Avionika_Si
 
         private void FillScheduleDataGrid()
         {
-            //schedules = Program.DbHelper.GetScheduleList();
             TableHelper.FillScheduleCalibrationCheckTable(Program.DbHelper.GetScheduleCalibrationCheckList(DateTime.Today.Date), scheduleGridView);
         }
 
@@ -34,6 +33,7 @@ namespace Avionika_Si
             ScheduleForm form = new ScheduleForm();
             form.PreviousForm = "График калибровки и проверки";
             form.Show();
+            TableHelper.FillScheduleCalibrationCheckTable(Program.DbHelper.GetScheduleCalibrationCheckList(DateTime.Today.Date), scheduleGridView);
         }
 
         private void FactoryBox_TextChanged(object sender, EventArgs e)
